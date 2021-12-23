@@ -1,5 +1,4 @@
 <?php
 
-
-
-require_once("Views/index.php");
+    require_once("Views/Menu/Menu.php");
+    
