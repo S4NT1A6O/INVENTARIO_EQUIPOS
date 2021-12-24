@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-        <a class="navbar-brand" href="<?= URL ?>Index.php">
-            <img src="<?= URL ?>Assets/img/Icon.png" alt="" width="30" height="24" class="d-inline-block align-text-top">
+        <i class="fas fa-boxes" style="color:#FFFFFF; font-size: larger;" >   
+        <a class="navbar-brand" href="<?= URL ?>Views/Menu/Menu.php"></i>
             Inventario
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -11,7 +11,7 @@
             <ul class="navbar-nav">
 
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle active" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Empresas
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" >
@@ -21,24 +21,24 @@
                 </li>
 
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle active" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Empleados
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <li><a class="dropdown-item" href="#">Registro Empleado</a></li>
-                        <li><a class="dropdown-item" href="#">Empleados Resgistrados</a></li>
+                        <li><a style="color:#000000;" class="dropdown-item" href="#">Registro Empleado</a></li>
+                        <li><a style="color:#000000;" class="dropdown-item" href="#">Empleados Resgistrados</a></li>
                     </ul>
                 </li>
 
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle active" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Computadores
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <li><a class="dropdown-item" href="#">Registro Computador</a></li>
-                        <li><a class="dropdown-item" href="#">Computador Registrado</a></li>
-                        <li><a class="dropdown-item" href="#">Asignar Computador</a></li>
-                        <li><a class="dropdown-item" href="#">Historial de Asignaciones</a></li>
+                        <li><a style="color:#000000;" class="dropdown-item" href="#">Registro Computador</a></li>
+                        <li><a style="color:#000000;" class="dropdown-item" href="#">Computador Registrado</a></li>
+                        <li><a style="color:#000000;" class="dropdown-item" href="#">Asignar Computador</a></li>
+                        <li><a style="color:#000000;" class="dropdown-item" href="#">Historial de Asignaciones</a></li>
                     </ul>
                 </li>
             </ul>
