@@ -1,7 +1,7 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark bg-danger bg-gradient" >
     <div class="container-sm">
         <i class="fas fa-boxes" style="color:#FFFFFF; font-size: larger;" >   
-        <a class="navbar-brand " href="<?= URL ?>Views/Menu/Menu.php"></i>
+        <a class="navbar-brand " href="<?= URL ?>Menu"></i>
             Inventario
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">

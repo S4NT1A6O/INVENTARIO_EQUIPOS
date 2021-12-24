@@ -1,5 +1,5 @@
-<!doctype html>
-<html lang="es">
+<!DOCTYPE html>
+<html lang="en">
     <head>
         <title>Registro de Empresas</title>
         <!-- Required meta tags -->
@@ -15,11 +15,46 @@
             require_once('../Components/NavbarGeneral.php');
         ?>
         <!-- Page Content -->
-        <div class="container-md">
-            <div class="row">
-                <div class="col-xs|sm|md|lg|xl-1-12">
-                    
-                </div>              
+        <div class="container-sm">
+            <br>
+            <div class="card text-dark bg-light">
+                <div class="card-header" style="background-color:#317EB5; color:#FFFFFF;">
+                    <h3 class="card-title">Registro para Empresas</h3>
+                </div>
+                <div class="card-body">
+                    <div class="container-sm">                        
+                        <form action="" method="post">
+
+                            <input type="text" name="ID_EMPRESA" id="ID_EMPRESA" value="" hidden disable>
+
+                            <div class="container-md">
+                                <div class="mb-3">
+                                    <label for="RAZON_SOCIAL_EMPRESA" class="form-label">Razon Social</label>
+                                    <input type="text" class="form-control" id="RAZON_SOCIAL_EMPRESA" placeholder=" Razon social...">
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="NIT_EMPRESA" class="form-label">NIT</label>
+                                    <input type="number" class="form-control" id="NIT_EMPRESA" placeholder=" NIT...">
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="DIRECCION_EMPRESA" class="form-label">Dirección</label>
+                                    <input type="text" class="form-control" id="DIRECCION_EMPRESA" placeholder=" Dirección...">
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="CODIGO_POSTAL_EMPRESA" class="form-label">Codigo Postal</label>
+                                    <input type="number" class="form-control" id="CODIGO_POSTAL_EMPRESA" placeholder=" Codigo Postal...">
+                                </div>
+
+                                <div class="d-grid gap-2 col-6 mx-auto">
+                                    <button class="btn btn-danger" type="button" id="btn_set_company" >Registrar</button>
+                                </div>            
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
         <?php require_once('../Components/Scripts.php') ?>
