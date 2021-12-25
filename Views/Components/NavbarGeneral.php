@@ -1,7 +1,10 @@
+<?php
+    const URL = 'http://localhost/inventario_equipos/';
+?>
 <nav class="navbar navbar-expand-lg navbar-dark bg-danger bg-gradient" >
     <div class="container-sm">
         <i class="fas fa-boxes" style="color:#FFFFFF; font-size: larger;" >   
-        <a class="navbar-brand " href="<?= URL ?>Menu"></i>
+        <a class="navbar-brand " href="<?= URL ?>Index.php"></i>
             Inventario
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -15,8 +18,8 @@
                     Empresas
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" >
-                        <li><a style="color:#000000;" class="dropdown-item" href="<?= URL ?>Views/Empresa/RegistroEmpresa.php">Regitro Empresa</a></li>
-                        <li><a style="color:#000000;" class="dropdown-item" href="<?= URL ?>Views/Empresa/Empresas.php">Empresas Registradas</a></li>
+                        <li><a style="color:#000000;" class="dropdown-item" href="<?= URL; ?>Views/Empresa/RegistroEmpresa.php">Regitro Empresa</a></li>
+                        <li><a style="color:#000000;" class="dropdown-item" href="<?= URL; ?>Views/Empresa/Empresas.php">Empresas Registradas</a></li>
                     </ul>
                 </li>
 
@@ -25,8 +28,8 @@
                     Empleados
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <li><a style="color:#000000;" class="dropdown-item" href="#">Registro Empleado</a></li>
-                        <li><a style="color:#000000;" class="dropdown-item" href="#">Empleados Resgistrados</a></li>
+                        <li><a style="color:#000000;" class="dropdown-item" href="<?= URL; ?>Views/Empleado/RegistroEmpleado">Registro Empleado</a></li>
+                        <li><a style="color:#000000;" class="dropdown-item" href="<?= URL; ?>Views/">Empleados Resgistrados</a></li>
                     </ul>
                 </li>
 

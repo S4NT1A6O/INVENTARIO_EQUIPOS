@@ -1,7 +1,5 @@
 <?php
 
 // Ruta raiz del proyecto
-const URL = 'http://localhost/InventarioEquipos/';
+// const URL = 'http://localhost/inventario_equipos/';
 
-
-?>
