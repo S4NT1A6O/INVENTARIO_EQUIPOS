@@ -38,7 +38,7 @@
                     Computadores
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <li><a style="color:#000000;" class="dropdown-item" href="<?= URL; ?>Views/Computador/RegistroComputadore.php">Registro Computador</a></li>
+                        <li><a style="color:#000000;" class="dropdown-item" href="<?= URL; ?>Views/Computador/RegistroComputador.php">Registro Computador</a></li>
                         <li><a style="color:#000000;" class="dropdown-item" href="<?= URL; ?>Views/Computador/Computadores.php">Computadores Registrado</a></li>
                         <li><a style="color:#000000;" class="dropdown-item" href="<?= URL; ?>Views/Computador/AsignarComputador.php">Asignar Computador</a></li>
                         <li><a style="color:#000000;" class="dropdown-item" href="<?= URL; ?>Views/Computador/HistorialAsignaciones.php">Historial de Asignaciones</a></li>

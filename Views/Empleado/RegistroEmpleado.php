@@ -27,32 +27,52 @@
                     <div class="container-sm">                        
                         <form action="" method="post">
 
-                            <input type="text" name="ID_EMPRESA" id="ID_EMPRESA" value="" hidden disable>
+                            <input type="number" name="ID_EMPLEADO" id="ID_EMPLEADO" value="" hidden disable>
 
                             <div class="container-md">
                                 <div class="mb-3">
-                                    <label for="RAZON_SOCIAL_EMPRESA" class="form-label">Razon Social</label>
-                                    <input type="text" class="form-control" id="RAZON_SOCIAL_EMPRESA" placeholder=" Razon social...">
+                                    <label for="ID_EMPRESA_FK" class="form-label">Empresa a la que Corresponde</label>
+                                    <input type="text" class="form-control" id="ID_EMPRESA_FK" placeholder=" Empresa...">
                                 </div>
 
                                 <div class="mb-3">
-                                    <label for="NIT_EMPRESA" class="form-label">NIT</label>
-                                    <input type="number" class="form-control" id="NIT_EMPRESA" placeholder=" NIT...">
+                                    <label for="NOMBRE_COMPLETO_EMPLEADO" class="form-label">Nombre Completo</label>
+                                    <input type="text" class="form-control" id="NOMBRE_COMPLETO_EMPLEADO" placeholder=" Nombre Completo...">
                                 </div>
 
                                 <div class="mb-3">
-                                    <label for="DIRECCION_EMPRESA" class="form-label">Dirección</label>
-                                    <input type="text" class="form-control" id="DIRECCION_EMPRESA" placeholder=" Dirección...">
+                                    <label for="CORREO_EMPLEADO" class="form-label">Correo Empleado</label>
+                                    <input type="email" class="form-control" id="CORREO_EMPLEADO" placeholder=" Example@exam.ple...">
                                 </div>
 
                                 <div class="mb-3">
-                                    <label for="CODIGO_POSTAL_EMPRESA" class="form-label">Codigo Postal</label>
-                                    <input type="number" class="form-control" id="CODIGO_POSTAL_EMPRESA" placeholder=" Codigo Postal...">
+                                    <label for="TIPO_DOCUMENTO_EMPLEADO" class="form-label">Identificación Empleado</label>
+                                    <input type="text" class="form-control" id="TIPO_DOCUMENTO_EMPLEADO" placeholder=" Codigo Postal...">
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="NUMERO_DOCUMENTO_EMPLEADO" class="form-label">Numero de Identificación Empleado</label>
+                                    <input type="number" class="form-control" id="NUMERO_DOCUMENTO_EMPLEADO" placeholder=" Codigo Postal...">
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="FECHA_NACIMIENTO_EMPLEADO" class="form-label">Fecha de Nacimiento Empleado</label>
+                                    <input type="date" class="form-control" id="FECHA_NACIMIENTO_EMPLEADO" >
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="NUMERO_CELULAR_EMPLEADO" class="form-label">Telefono Celular Empleado</label>
+                                    <input type="number" class="form-control" id="NUMERO_CELULAR_EMPLEADO" placeholder=" Codigo Postal...">
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="NUMERO_FIJO_EMPLEADO" class="form-label">Telefono Fijo Empleado</label>
+                                    <input type="number" class="form-control" id="NUMERO_FIJO_EMPLEADO" placeholder=" Codigo Postal...">
                                 </div>
 
                                 <div class="d-grid gap-2 col-6 mx-auto">
                                     <button class="btn btn-danger" type="button" id="btn_set_company" >Registrar</button>
-                                </div>            
+                                </div>
                             </div>
                         </form>
                     </div>
