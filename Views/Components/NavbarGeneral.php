@@ -28,8 +28,8 @@
                     Empleados
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <li><a style="color:#000000;" class="dropdown-item" href="<?= URL; ?>Views/Empleado/RegistroEmpleado">Registro Empleado</a></li>
-                        <li><a style="color:#000000;" class="dropdown-item" href="<?= URL; ?>Views/">Empleados Resgistrados</a></li>
+                        <li><a style="color:#000000;" class="dropdown-item" href="<?= URL; ?>Views/Empleado/RegistroEmpleado.php">Registro Empleado</a></li>
+                        <li><a style="color:#000000;" class="dropdown-item" href="<?= URL; ?>Views/Empleado/Empleados.php">Empleados Resgistrados</a></li>
                     </ul>
                 </li>
 
@@ -38,10 +38,10 @@
                     Computadores
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <li><a style="color:#000000;" class="dropdown-item" href="#">Registro Computador</a></li>
-                        <li><a style="color:#000000;" class="dropdown-item" href="#">Computador Registrado</a></li>
-                        <li><a style="color:#000000;" class="dropdown-item" href="#">Asignar Computador</a></li>
-                        <li><a style="color:#000000;" class="dropdown-item" href="#">Historial de Asignaciones</a></li>
+                        <li><a style="color:#000000;" class="dropdown-item" href="<?= URL; ?>Views/Computador/RegistroComputadore.php">Registro Computador</a></li>
+                        <li><a style="color:#000000;" class="dropdown-item" href="<?= URL; ?>Views/Computador/Computadores.php">Computadores Registrado</a></li>
+                        <li><a style="color:#000000;" class="dropdown-item" href="<?= URL; ?>Views/Computador/AsignarComputador.php">Asignar Computador</a></li>
+                        <li><a style="color:#000000;" class="dropdown-item" href="<?= URL; ?>Views/Computador/HistorialAsignaciones.php">Historial de Asignaciones</a></li>
                     </ul>
                 </li>
             </ul>
