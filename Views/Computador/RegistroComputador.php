@@ -11,9 +11,7 @@
     </head>
     <body>
         <!-- Menu de Navegación -->
-        <?php
-            require_once('../Components/NavbarGeneral.php');
-        ?>
+        
         <!-- Page Content -->
         <div class="container-sm">
             <br>

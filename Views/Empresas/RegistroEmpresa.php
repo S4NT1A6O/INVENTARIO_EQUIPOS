@@ -12,7 +12,7 @@
     <body>
         <!-- Menu de Navegación -->
         <?php         
-            require_once('../Components/NavbarGeneral.php');
+            include_once("../Components/NavbarGeneral.php");
         ?>
 
         <!-- Page Content -->
