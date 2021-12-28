@@ -23,7 +23,7 @@
                         <div class="container-sm">
                             <form action="" method="post">
 
-                            <table class="table table-success table-stripeds">
+                            <table class="table table-striped table-hover">
                                     <thead>
                                         <tr>
                                             <th scope="col"> ID </th>
