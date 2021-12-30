@@ -27,8 +27,6 @@
                                     <input type="text" class="form-control" name="RAZON_SOCIAL_EMPRESA" id="RAZON_SOCIAL_EMPRESA" placeholder=" Razon social...">
                                 </div>
 
-
-
                                 <div class="mb-3">
                                     <label for="NIT_EMPRESA" class="form-label">NIT</label>
                                     <input type="number" class="form-control" name="NIT_EMPRESA" id="NIT_EMPRESA"  placeholder=" NIT...">

@@ -10,8 +10,6 @@ class connectionDB{
             $opcionesPDO[PDO::ATTR_ERRMODE] = PDO::ERRMODE_EXCEPTION;
 
             self::$instancia = new PDO('mysql:host=localhost;dbname=db_computers_inventory','root','', $opcionesPDO);
-        
-            echo "Conexion relizada";
         }
         return self::$instancia;
     }

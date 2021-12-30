@@ -18,47 +18,48 @@
                     <h3 class="card-title">Empresas</h3>
                 </div>
                 <div class="card-body">
-                    <div class="container-sm"><br>
-                            <h3>Listade Empresas Registradas</h3><br>
-                        <div class="container-sm">
-                            <form action="" method="post">
-
+                    <div class="container-sm">
+                        <br>
+                        <h3>Lista de Empresas Registradas</h3>
+                        <div class="container">
+                            <br>
+                            <a name="" id="" class="btn btn-warning" href="?controlador=Empresas&accion=RegistroEmpresa" role="button">Registrar Empresa</a>
+                            <br>
                             <table class="table table-striped table-hover">
-                                    <thead>
+                                <thead>
+                                    <tr>
+                                        <th scope="col"> ID </th>
+                                        <th scope="col"> Nombre </th>
+                                        <th scope="col"> NIT </th>
+                                        <th scope="col"> Dirección </th>
+                                        <th scope="col"> Cod. Postal </th>
+                                        <th scope="col"> Creado </th>
+                                        <th scope="col"> Modificado </th>
+                                        <th scope="col">  </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php foreach($empresas as $empresa){?>
                                         <tr>
-                                            <th scope="col"> ID </th>
-                                            <th scope="col"> Razon Social </th>
-                                            <th scope="col"> NIT </th>
-                                            <th scope="col"> Dirección </th>
-                                            <th scope="col"> Codigo Postal </th>
+                                            <!-- datos -->
+                                            <th scope="row"> <?php echo $empresa->ID_EMPRESA; ?> </th>
+                                            <td><?php echo $empresa->RAZON_SOCIAL_EMPRESA; ?></td>
+                                            <td><?php echo $empresa->NIT_EMPRESA; ?></td>
+                                            <td><?php echo $empresa->DIRECCION_EMPRESA; ?></td>
+                                            <td><?php echo $empresa->CODIGO_POSTAL_EMPRESA; ?></td>
+                                            <td><?php echo $empresa->CREATED_AT; ?></td>
+                                            <td><?php echo $empresa->UPDATED_AT; ?></td>
+                                            <!-- btn's acciones -->
+                                            <td>
+                                                <div class="btn-group" role="group" aria-label="">
+                                                    <a href="#" class="btn btn-info"> Editar </a>
+                                                    <a href="?controlador=Empresas&accion=BorrarEmpresa" class="btn btn-danger"> Eliminar </a>
+                                                </div>
+                                            </td>
                                         </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <th scope="row">1</th>
-                                            <td>Mark</td>
-                                            <td>Otto</td>
-                                            <td>@mdo</td>
-                                            <td>@mdo</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">2</th>
-                                            <td>Jacob</td>
-                                            <td>Thornton</td>
-                                            <td>@fat</td>
-                                            <td>@fat</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">3</th>
-                                            <td>Jacob</td>
-                                            <td>Thornton</td>
-                                            <td>@fat</td>
-                                            <td>@fat</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-
-                            </form>
+                                    <?php } ?>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>

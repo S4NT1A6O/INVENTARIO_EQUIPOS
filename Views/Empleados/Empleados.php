@@ -10,8 +10,6 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"  integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     </head>
     <body>
-        <!-- Menu de Navegación -->
-
         <!-- Page Content -->
         <div class="container-sm">
             <br>
@@ -20,61 +18,35 @@
                     <h3 class="card-title">Empleados</h3>
                 </div>
                 <div class="card-body">
-                    <div class="container-sm">                        
-                        <form action="" method="post">
-
+                    <div class="container-sm">
                         <table class="table">
-                                <thead>
-                                    <tr>
-                                        <th scope="col"> ID </th>
-                                        <th scope="col"> Empresa </th>
-                                        <th scope="col"> Empleado </th>
-                                        <th scope="col"> Correo </th>
-                                        <th scope="col"> Tipo Documento </th>
-                                        <th scope="col"> Documento </th>
-                                        <th scope="col"> Fecha Nacimiento </th>
-                                        <th scope="col"> Tel. Celular </th>
-                                        <th scope="col"> Tel. Fijo </th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <th scope="row">1</th>
-                                        <td>Mark</td>
-                                        <td>Otto</td>
-                                        <td>@mdo</td>
-                                        <td>@mdo</td>
-                                        <td>Mark</td>
-                                        <td>Otto</td>
-                                        <td>@mdo</td>
-                                        <td>@mdo</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">2</th>
-                                        <td>Jacob</td>
-                                        <td>Thornton</td>
-                                        <td>@fat</td>
-                                        <td>@fat</td>
-                                        <td>Jacob</td>
-                                        <td>Thornton</td>
-                                        <td>@fat</td>
-                                        <td>@fat</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">3</th>
-                                        <td>Jacob</td>
-                                        <td>Thornton</td>
-                                        <td>@fat</td>
-                                        <td>@fat</td>
-                                        <td>Jacob</td>
-                                        <td>Thornton</td>
-                                        <td>@fat</td>
-                                        <td>@fat</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-
-                        </form>
+                            <thead>
+                                <tr>
+                                    <th scope="col"> ID </th>
+                                    <th scope="col"> Empresa </th>
+                                    <th scope="col"> Empleado </th>
+                                    <th scope="col"> Correo </th>
+                                    <th scope="col"> Tipo Documento </th>
+                                    <th scope="col"> Documento </th>
+                                    <th scope="col"> Fecha Nacimiento </th>
+                                    <th scope="col"> Tel. Celular </th>
+                                    <th scope="col"> Tel. Fijo </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>

@@ -7,6 +7,7 @@ include_once("Connection.php");
 class controladorEmpresas{
 
     public function Empresas(){
+        $empresas= modeloEmpresas::selectEmpresas();
         include_once("Views/Empresas/Empresas.php");
     }
 
