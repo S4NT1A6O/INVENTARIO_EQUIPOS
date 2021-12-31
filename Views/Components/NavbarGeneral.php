@@ -7,20 +7,31 @@
         <a class="navbar-brand " href="<?= URL ?>Index.php"></i>
             Inventario
         </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
         <div class="collapse navbar-collapse navbar-text" id="navbarNavDropdown">
             <ul class="navbar-nav">
-                
+                <ul class="nav justify-content-end">
+
+                    <li class="nav-item">
+                        <a class="nav-link active" href="<?= URL ?>?controlador=Empresas&accion=Empresas">
+                            Empresas
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active" href="<?= URL ?>?controlador=Empleados&accion=Empleados">Empleados</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active" href="<?= URL ?>?controlador=Computador&accion=Computadores">Equipos</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active" href="<?= URL ?>?controlador=Computador&accion=HistorialAsignaciones">Asignaciones</a>
+                    </li>
+
+                </ul>
+<!--                 
                 <li class="nav-item dropdown col-6 col-sm-5">
-                    <a class="nav-link dropdown-toggle active" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Empresas
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" >
-                        <li><a style="color:#000000;" class="dropdown-item" href="<?= URL; ?>Views/Empresa/RegistroEmpresa.php">Regitro Empresa</a></li>
-                        <li><a style="color:#000000;" class="dropdown-item" href="<?= URL; ?>Views/Empresa/Empresas.php">Empresas Registradas</a></li>
-                    </ul>
                 </li>
 
                 <li class="nav-item dropdown col-6 col-sm-5">
@@ -43,7 +54,7 @@
                         <li><a style="color:#000000;" class="dropdown-item" href="<?= URL; ?>Views/Computador/AsignarComputador.php">Asignar Computador</a></li>
                         <li><a style="color:#000000;" class="dropdown-item" href="<?= URL; ?>Views/Computador/HistorialAsignaciones.php">Historial de Asignaciones</a></li>
                     </ul>
-                </li>
+                </li> -->
             </ul>
         </div>
     </div>

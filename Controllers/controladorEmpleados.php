@@ -14,7 +14,7 @@ class controladorEmpleados{
 
 
         if ($_POST) {
-            print_r($_POST);
+            
             $ID_EMPRESA_FK = $_POST['ID_EMPRESA_FK'];
             $NOMBRE_COMPLETO_EMPLEADO = $_POST['NOMBRE_COMPLETO_EMPLEADO'];
             $CORREO_EMPLEADO = $_POST['CORREO_EMPLEADO'];

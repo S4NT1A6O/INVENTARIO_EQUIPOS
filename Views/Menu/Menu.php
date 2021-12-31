@@ -19,8 +19,17 @@
     <!-- Page Content -->
       <div class="container">
           <div class="row">
-              <div class="col-xs|sm|md|lg|xl-1-12">
-                  
+              <div class="col-12">
+                  <div class="p-5 bg-light">
+                    <div class="container">
+                      <h1 class="display-3"> Sistema de Inventario</h1>
+                      <p class="lead"> Sistema de Inventario para Equipos</p>
+                      <hr class="my-2">
+                      <br>
+                      <a class="btn btn-primary btn-lg" href="https://github.com/S4NT1A6O/INVENTARIO_EQUIPOS" target="_blank" role="button">Más Información</a>
+                      
+                    </div>
+                  </div>
               </div>              
           </div>
       </div>
