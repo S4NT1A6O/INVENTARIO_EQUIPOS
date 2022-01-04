@@ -11,14 +11,14 @@
     </head>
     <body>
         <!-- Page Content -->        
-        <div class="container-sm">
+        <div class="container">
             <br>
             <div class="card text-dark bg-light">
                 <div class="card-header" style="background-color:#317EB5; color:#FFFFFF;">
                     <h3 class="card-title">Computadores</h3>
                 </div>
                 <div class="card-body">
-                    <div class="container-sm"><br>
+                    <div class="container"><br>
                         <h3>Lista Computadores Registradas</h3><br>
                         <div class="container-sm">                        
                             <form action="" method="post">

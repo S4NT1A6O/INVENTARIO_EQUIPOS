@@ -25,18 +25,13 @@
                                 <thead>
                                     <tr>
                                         <th scope="col"> ID</th>
-                                        <th scope="col"> Marca</th>
-                                        <th scope="col"> Modelo</th>
-                                        <th scope="col"> Serial</th>
-                                        <th scope="col"> Procesador</th>
-                                        <th scope="col"> RAM</th>
-                                        <th scope="col"> Uni. RAM</th>
-                                        <th scope="col"> Almacenamiento</th>
-                                        <th scope="col"> Uni. Alma.</th>
-                                        <th scope="col"> Tipo</th>
-                                        <th scope="col"> S.O.</th>
-                                        <th scope="col"> Version S.O.</th>
-                                        <th scope="col"> Estado</th>
+                                        <th scope="col"> Empleado</th>
+                                        <th scope="col"> Computador</th>
+                                        <th scope="col"> Inicio Prestamo</th>
+                                        <th scope="col"> Fin Prestamo</th>
+                                        <th scope="col"> Registrado</th>
+                                        <th scope="col"> Actualizado</th>
+                                        <th scope="col"> </th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -48,42 +43,13 @@
                                         <td>@mdo</td>
                                         <td>Mark</td>
                                         <td>Otto</td>
-                                        <td>@mdo</td>
-                                        <td>@mdo</td>
-                                        <td>Mark</td>
-                                        <td>Otto</td>
-                                        <td>@mdo</td>
-                                        <td>@mdo</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">2</th>
-                                        <td>Jacob</td>
-                                        <td>Thornton</td>
-                                        <td>@fat</td>
-                                        <td>@fat</td>
-                                        <td>Jacob</td>
-                                        <td>Thornton</td>
-                                        <td>@fat</td>
-                                        <td>@fat</td>
-                                        <td>Jacob</td>
-                                        <td>Thornton</td>
-                                        <td>@fat</td>
-                                        <td>@fat</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">3</th>
-                                        <td>Jacob</td>
-                                        <td>Thornton</td>
-                                        <td>@fat</td>
-                                        <td>@fat</td>
-                                        <td>Jacob</td>
-                                        <td>Thornton</td>
-                                        <td>@fat</td>
-                                        <td>@fat</td>
-                                        <td>Jacob</td>
-                                        <td>Thornton</td>
-                                        <td>@fat</td>
-                                        <td>@fat</td>
+                                        <!-- btn's acciones -->
+                                        <td>
+                                            <div class="btn-group" role="group" aria-label="">
+                                                <a href="#" class="btn btn-info"> Editar </a>
+                                                <a href="?controlador=Empresas&accion=BorrarEmpresa" class="btn btn-danger"> Eliminar </a>
+                                            </div>
+                                        </td>                                      
                                     </tr>
                                 </tbody>
                             </table>
