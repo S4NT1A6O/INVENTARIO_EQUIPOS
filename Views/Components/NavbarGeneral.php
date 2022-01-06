@@ -29,7 +29,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link active" href="<?= URL ?>?controlador=Computador&accion=HistorialAsignaciones">
+                    <a class="nav-link active" href="<?= URL ?>?controlador=Asignaciones&accion=HistorialAsignaciones">
                     <i class="fas fa-clipboard-list"></i> Asignaciones
                     </a>
                 </li>

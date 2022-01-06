@@ -3,6 +3,8 @@
 class modeloComputador{
 
     // Atributos Computador
+
+    // Computador
     public $ID_PC;
     public $MARCA_PC;
     public $MODELO_PC;
@@ -18,6 +20,9 @@ class modeloComputador{
     public $DISPONIBILIDAD_PC;
     public $CREATED_AT;
     public $UPDATED_AT;
+
+
+
 
     // Metodos
 
@@ -66,30 +71,8 @@ class modeloComputador{
             $listaComputadores[]=new modeloEmpresas($computador['ID_PC'],$computador['MARCA_PC'],$computador['MODELO_PC'],$computador['SERIAL_PC'],$computador['PROCESADOR_PC'],$computador['RAM_PC'],$computador['UNIDAD_RAM_PC'],$computador['ALMACENAMIENTO_PC'],$computador['UNIDAD_ALMACENAMIENTO_PC'],$computador['TIPO_SISTEMA_PC'],$computador['SISTEMA_OPERATIVO_PC'],$computador['VERSION_SO_PC'],$computador['DISPONIBILIDAD_PC'],$computador['CREATED_AT'],$computador['UPDATED_AT']);
         };
 
-        return $listaEmpresas;
+        return $listaComputadores;
 
-    }
-
-    public static function selectDataEmpleado(){
-
-        $conexionDB=connectionDB::crearInstancia();
-        $sql="SELECT ID_EMPLEADO,NOMBRE_COMPLETO_EMPLEADO FROM EMPLEADO";
-        $stmt = $conexionDB->prepare($sql);
-        $stmt->execute();
-        $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-        return $data;
-    }
-
-    public static function selectDataComputador(){
-
-        $conexionDB=connectionDB::crearInstancia();
-        $sql="SELECT ID_PC,MODELO_PC FROM COMPUTADOR";
-        $stmt = $conexionDB->prepare($sql);
-        $stmt->execute();
-        $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-        return $data;
     }
 
     public static function setComputador(
@@ -113,18 +96,6 @@ class modeloComputador{
         $sql->execute(array($MARCA_PC,$MODELO_PC,$SERIAL_PC,$PROCESADOR_PC,$RAM_PC,$UNIDAD_RAM_PC,$ALMACENAMIENTO_PC,$UNIDAD_ALMACENAMIENTO_PC,$TIPO_SISTEMA_PC,$SISTEMA_OPERATIVO_PC,$VERSION_SO_PC,$DISPONIBILIDAD_PC,$CREATED_AT,$UPDATED_AT));
     }
 
-    public static function setAsignacion(
-        $ID_EMPLEADO_FK,
-        $ID_PC_FK,
-        $FECHA_INICIO_PRESTAMO,
-        $FECHA_FIN_PRESTAMO,
-        $CREATED_AT,
-        $UPDATED_AT
-    ){
-        $conexionDB=connectionDB::crearInstancia();
-        $sql=$conexionDB->prepare("INSERT INTO PRESTAMO (ID_EMPLEADO_FK, ID_PC_FK, FECHA_INICIO_PRESTAMO, FECHA_FIN_PRESTAMO, CREATED_AT, UPDATED_AT) VALUES (?,?,?,?,?,?)");
-        $sql->execute(array($ID_EMPLEADO_FK,$ID_PC_FK,$FECHA_INICIO_PRESTAMO,$FECHA_FIN_PRESTAMO,$CREATED_AT,$UPDATED_AT));
-    }
 }
 
 ?>

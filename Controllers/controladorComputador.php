@@ -40,32 +40,5 @@ class controladorComputador{
         include_once("Views/Computador/Computadores.php");
     }
 
-    public function AsignarComputador(){
-
-        $data['list-empleados']= modeloComputador::selectDataEmpleado();
-
-        $data['list-computadores']= modeloComputador::selectDataComputador();
-
-        if ($_POST) {
-
-            print_r($_POST);
-            $ID_EMPLEADO_FK=$_POST['ID_EMPLEADO_FK'];
-            $ID_PC_FK=$_POST['ID_PC_FK'];
-            $FECHA_INICIO_PRESTAMO=$_POST['FECHA_INICIO_PRESTAMO'];
-            $FECHA_FIN_PRESTAMO=$_POST['FECHA_FIN_PRESTAMO'];
-            $time = new DateTime();
-            $time->setTimezone(new DateTimeZone('America/Bogota'));
-            $CREATED_AT = $time->format("Y-m-d h:i:s");
-            $UPDATED_AT = $time->format("Y-m-d h:i:s");
-
-            modeloComputador::setAsignacion($ID_EMPLEADO_FK,$ID_PC_FK,$FECHA_INICIO_PRESTAMO,$FECHA_FIN_PRESTAMO,$CREATED_AT,$UPDATED_AT);
-        }
-        include_once("Views/Computador/AsignarComputador.php");
-    }
-
-    public function HistorialAsignaciones(){
-        include_once("Views/Computador/HistorialAsignaciones.php");
-    }
-
 }
 ?>

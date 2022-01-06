@@ -23,7 +23,7 @@
                         <h3>Lista de Asignaciones</h3>
                         <div class="container">
                             <br>
-                            <a name="" id="" class="btn btn-warning" href="?controlador=Computador&accion=AsignarComputador" role="button">Asignar Equipos</a>
+                            <a name="" id="" class="btn btn-warning" href="?controlador=Asignaciones&accion=AsignarComputador" role="button">Asignar Equipos</a>
                             <br>
 
                             <table class="table table-striped table-hover">
