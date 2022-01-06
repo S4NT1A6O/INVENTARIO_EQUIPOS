@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="es">
     <head>
-        <title>Registro de Empresas</title>
+        <title>Asignaciones</title>
         <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -15,13 +15,18 @@
             <br>
             <div class="card text-dark bg-light">
                 <div class="card-header" style="background-color:#317EB5; color:#FFFFFF;">
-                    <h3 class="card-title">Computadores Registrados</h3>
+                    <h3 class="card-title">Asignaciones</h3>
                 </div>
                 <div class="card-body">
-                    <div class="container-sm">                        
-                        <form action="" method="post">
+                    <div class="container">
+                        <br>
+                        <h3>Lista de Asignaciones</h3>
+                        <div class="container">
+                            <br>
+                            <a name="" id="" class="btn btn-warning" href="?controlador=Computador&accion=AsignarComputador" role="button">Asignar Equipos</a>
+                            <br>
 
-                        <table class="table table-striped table-hover">
+                            <table class="table table-striped table-hover">
                                 <thead>
                                     <tr>
                                         <th scope="col"> ID</th>
@@ -36,25 +41,25 @@
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <th scope="row">1</th>
-                                        <td>Mark</td>
-                                        <td>Otto</td>
-                                        <td>@mdo</td>
-                                        <td>@mdo</td>
-                                        <td>Mark</td>
-                                        <td>Otto</td>
+                                        <th scope="row"></th>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
                                         <!-- btn's acciones -->
                                         <td>
                                             <div class="btn-group" role="group" aria-label="">
-                                                <a href="#" class="btn btn-info"> Editar </a>
-                                                <a href="?controlador=Empresas&accion=BorrarEmpresa" class="btn btn-danger"> Eliminar </a>
+                                                <a href="#" class="btn btn-info"> <i class="fas fa-pen" style="color:#ffffff;"></i> </a>
+                                                <a href="?controlador=Empresas&accion=BorrarEmpresa" class="btn btn-danger"> <i class="fas fa-trash-alt" style="color:#ffffff;"></i> </a>
                                             </div>
                                         </td>                                      
                                     </tr>
                                 </tbody>
                             </table>
 
-                        </form>
+                        </div>
                     </div>
                 </div>
             </div>

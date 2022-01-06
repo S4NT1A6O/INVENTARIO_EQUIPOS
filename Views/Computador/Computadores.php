@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="es">
     <head>
-        <title>Registro de Empresas</title>
+        <title>Computadores</title>
         <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -18,77 +18,57 @@
                     <h3 class="card-title">Computadores</h3>
                 </div>
                 <div class="card-body">
-                    <div class="container"><br>
-                        <h3>Lista Computadores Registradas</h3><br>
-                        <div class="container-sm">                        
-                            <form action="" method="post">
+                    <div class="container">
+                        <br>
+                        <h3>Lista de Computadores</h3>
+                        <div class="container">
+                            <br>
+                            <a name="" id="" class="btn btn-warning" href="?controlador=Computador&accion=RegistroComputador" role="button">Registrar Computador</a>
+                            <br>
                             <table class="table table-striped table-hover">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col"> ID</th>
-                                            <th scope="col"> Marca</th>
-                                            <th scope="col"> Modelo</th>
-                                            <th scope="col"> Serial</th>
-                                            <th scope="col"> Procesador</th>
-                                            <th scope="col"> RAM</th>
-                                            <th scope="col"> Uni. RAM</th>
-                                            <th scope="col"> Espacio</th>
-                                            <th scope="col"> Uni. Alma.</th>
-                                            <th scope="col"> Tipo</th>
-                                            <th scope="col"> S.O.</th>
-                                            <th scope="col"> Version S.O.</th>
-                                            <th scope="col"> Estado</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <th scope="row">1</th>
-                                            <td>Mark</td>
-                                            <td>Otto</td>
-                                            <td>@mdo</td>
-                                            <td>@mdo</td>
-                                            <td>Mark</td>
-                                            <td>Otto</td>
-                                            <td>@mdo</td>
-                                            <td>@mdo</td>
-                                            <td>Mark</td>
-                                            <td>Otto</td>
-                                            <td>@mdo</td>
-                                            <td>@mdo</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">2</th>
-                                            <td>Jacob</td>
-                                            <td>Thornton</td>
-                                            <td>@fat</td>
-                                            <td>@fat</td>
-                                            <td>Jacob</td>
-                                            <td>Thornton</td>
-                                            <td>@fat</td>
-                                            <td>@fat</td>
-                                            <td>Jacob</td>
-                                            <td>Thornton</td>
-                                            <td>@fat</td>
-                                            <td>@fat</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">3</th>
-                                            <td>Jacob</td>
-                                            <td>Thornton</td>
-                                            <td>@fat</td>
-                                            <td>@fat</td>
-                                            <td>Jacob</td>
-                                            <td>Thornton</td>
-                                            <td>@fat</td>
-                                            <td>@fat</td>
-                                            <td>Jacob</td>
-                                            <td>Thornton</td>
-                                            <td>@fat</td>
-                                            <td>@fat</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </form>
+                                <thead>
+                                    <tr>
+                                        <th scope="col"> ID</th>
+                                        <th scope="col"> Marca</th>
+                                        <th scope="col"> Modelo</th>
+                                        <th scope="col"> Serial</th>
+                                        <th scope="col"> Procesador</th>
+                                        <th scope="col"> RAM</th>
+                                        <th scope="col"> Uni. RAM</th>
+                                        <th scope="col"> Espacio</th>
+                                        <th scope="col"> Uni. Alma.</th>
+                                        <th scope="col"> Tipo</th>
+                                        <th scope="col"> S.O.</th>
+                                        <th scope="col"> Version S.O.</th>
+                                        <th scope="col"> Estado</th>
+                                        <th scope="col"> </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row"></th>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <!-- btn's acciones -->
+                                        <td>
+                                            <div class="btn-group" role="group" aria-label="">
+                                                <a href="#" class="btn btn-info"> <i class="fas fa-pen" style="color:#ffffff;"></i> </a>
+                                                <a href="?controlador=Computador&accion=Borrar" class="btn btn-danger"> <i class="fas fa-trash-alt" style="color:#ffffff;"></i> </a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>

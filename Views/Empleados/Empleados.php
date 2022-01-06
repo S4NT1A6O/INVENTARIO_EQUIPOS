@@ -19,34 +19,49 @@
                 </div>
                 <div class="card-body">
                     <div class="container-sm">
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th scope="col"> ID </th>
-                                    <th scope="col"> Empresa </th>
-                                    <th scope="col"> Empleado </th>
-                                    <th scope="col"> Correo </th>
-                                    <th scope="col"> Tipo Documento </th>
-                                    <th scope="col"> Documento </th>
-                                    <th scope="col"> Fecha Nacimiento </th>
-                                    <th scope="col"> Tel. Celular </th>
-                                    <th scope="col"> Tel. Fijo </th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                            </tbody>
-                        </table>
+                        <br>
+                        <h3>Lista de Empleados</h3>
+                        <div class="container">
+                            <br>
+                            <a name="" id="" class="btn btn-warning" href="?controlador=Empleados&accion=RegistroEmpleado" role="button">Registrar Empleado</a>
+                            <br>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col"> ID </th>
+                                        <th scope="col"> Empresa </th>
+                                        <th scope="col"> Empleado </th>
+                                        <th scope="col"> Correo </th>
+                                        <th scope="col"> Tipo Documento </th>
+                                        <th scope="col"> Documento </th>
+                                        <th scope="col"> Fecha Nacimiento </th>
+                                        <th scope="col"> Tel. Celular </th>
+                                        <th scope="col"> Tel. Fijo </th>
+                                        <th scope="col"> </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row"></th>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <!-- btn's acciones -->
+                                        <td>
+                                            <div class="btn-group" role="group" aria-label="">
+                                                <a href="#" class="btn btn-info"> <i class="fas fa-pen" style="color:#ffffff;"></i> </a>
+                                                <a href="?controlador=Empresas&accion=BorrarEmpresa" class="btn btn-danger"> <i class="fas fa-trash-alt" style="color:#ffffff;"></i> </a>
+                                            </div>
+                                        </td> 
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>

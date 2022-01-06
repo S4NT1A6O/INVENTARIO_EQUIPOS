@@ -20,7 +20,7 @@
                 <div class="card-body">
                     <div class="container-sm">
                         <br>
-                        <h3>Lista de Empresas Registradas</h3>
+                        <h3>Lista de Empresas</h3>
                         <div class="container">
                             <br>
                             <a name="" id="" class="btn btn-warning" href="?controlador=Empresas&accion=RegistroEmpresa" role="button">Registrar Empresa</a>
@@ -49,13 +49,14 @@
                                             <td><?php echo $empresa->CODIGO_POSTAL_EMPRESA; ?></td>
                                             <td><?php echo $empresa->CREATED_AT; ?></td>
                                             <td><?php echo $empresa->UPDATED_AT; ?></td>
+
                                             <!-- btn's acciones -->
                                             <td>
                                                 <div class="btn-group" role="group" aria-label="">
-                                                    <a href="#" class="btn btn-info"> Editar </a>
-                                                    <a href="?controlador=Empresas&accion=BorrarEmpresa" class="btn btn-danger"> Eliminar </a>
+                                                    <a href="#" class="btn btn-info"> <i class="fas fa-pen" style="color:#ffffff;"></i> </a>
+                                                    <a href="?controlador=Empresas&accion=BorrarEmpresa" class="btn btn-danger"> <i class="fas fa-trash-alt" style="color:#ffffff;"></i> </a>
                                                 </div>
-                                            </td>
+                                            </td> 
                                         </tr>
                                     <?php } ?>
                                 </tbody>

@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="es">
     <head>
-        <title>Registro de Empresas</title>
+        <title>Computadores</title>
         <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -15,7 +15,7 @@
             <br>
             <div class="card text-dark bg-light">
                 <div class="card-header" style="background-color:#317EB5; color:#FFFFFF;">
-                    <h3 class="card-title">Registro para Empresas</h3>
+                    <h3 class="card-title">Registro de Computadores</h3>
                 </div>
                 <div class="card-body">
                     <div class="container-sm">                        
