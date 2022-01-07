@@ -71,7 +71,17 @@ class modeloEmpleados{
         $sql->execute(array($ID_EMPRESA_FK,$NOMBRE_COMPLETO_EMPLEADO,$CORREO_EMPLEADO,$TIPO_DOCUMENTO_EMPLEADO,$NUMERO_DOCUMENTO_EMPLEADO,$FECHA_NACIMIENTO_EMPLEADO,$NUMERO_CELULAR_EMPLEADO,$NUMERO_FIJO_EMPLEADO,$CREATED_AT,$UPDATED_AT));
     }
 
-    public static function selectEmpleado(){
+    public static function selectEmpleados(){
+
+        $listaEmpleados=[];
+        $conexionDB=connectionDB::crearInstancia();
+        $sql = $conexionDB->query("SELECT * FROM EMPLEADO");
+
+        foreach($sql->fetchAll() as $empleado){
+            $listaEmpleados[]=new modeloEmpleados($empleado['ID_EMPLEADO'],$empleado['ID_EMPRESA_FK'],$empleado['NOMBRE_COMPLETO_EMPLEADO'],$empleado['CORREO_EMPLEADO'],$empleado['TIPO_DOCUMENTO_EMPLEADO'],$empleado['NUMERO_DOCUMENTO_EMPLEADO'],$empleado['FECHA_NACIMIENTO_EMPLEADO'],$empleado['NUMERO_CELULAR_EMPLEADO'],$empleado['NUMERO_FIJO_EMPLEADO'],$empleado['CREATED_AT'],$empleado['UPDATED_AT']);
+        };
+
+        return $listaEmpleados;
     }
 }
 

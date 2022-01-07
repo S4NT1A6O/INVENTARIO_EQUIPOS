@@ -29,6 +29,7 @@ class controladorAsignaciones{
     }
 
     public function HistorialAsignaciones(){
+        $asignaciones= modeloAsignaciones::selectAsignaciones();
         include_once("Views/Computador/HistorialAsignaciones.php");
     }
 

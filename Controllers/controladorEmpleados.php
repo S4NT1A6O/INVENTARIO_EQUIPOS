@@ -6,6 +6,7 @@ include_once("Connection.php");
 class controladorEmpleados{
 
     public function Empleados(){
+        $empleados= modeloEmpleados::selectEmpleados();
         include_once("Views/Empleados/Empleados.php");
     }
 

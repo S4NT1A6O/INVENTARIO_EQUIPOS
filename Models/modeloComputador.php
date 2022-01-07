@@ -21,9 +21,6 @@ class modeloComputador{
     public $CREATED_AT;
     public $UPDATED_AT;
 
-
-
-
     // Metodos
 
     // Constructor
@@ -68,7 +65,7 @@ class modeloComputador{
         $sql = $conexionDB->query("SELECT * FROM COMPUTADOR");
 
         foreach($sql->fetchAll() as $computador){
-            $listaComputadores[]=new modeloEmpresas($computador['ID_PC'],$computador['MARCA_PC'],$computador['MODELO_PC'],$computador['SERIAL_PC'],$computador['PROCESADOR_PC'],$computador['RAM_PC'],$computador['UNIDAD_RAM_PC'],$computador['ALMACENAMIENTO_PC'],$computador['UNIDAD_ALMACENAMIENTO_PC'],$computador['TIPO_SISTEMA_PC'],$computador['SISTEMA_OPERATIVO_PC'],$computador['VERSION_SO_PC'],$computador['DISPONIBILIDAD_PC'],$computador['CREATED_AT'],$computador['UPDATED_AT']);
+            $listaComputadores[]=new modeloComputador($computador['ID_PC'],$computador['MARCA_PC'],$computador['MODELO_PC'],$computador['SERIAL_PC'],$computador['PROCESADOR_PC'],$computador['RAM_PC'],$computador['UNIDAD_RAM_PC'],$computador['ALMACENAMIENTO_PC'],$computador['UNIDAD_ALMACENAMIENTO_PC'],$computador['TIPO_SISTEMA_PC'],$computador['SISTEMA_OPERATIVO_PC'],$computador['VERSION_SO_PC'],$computador['DISPONIBILIDAD_PC'],$computador['CREATED_AT'],$computador['UPDATED_AT']);
         };
 
         return $listaComputadores;

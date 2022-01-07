@@ -40,22 +40,24 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <th scope="row"></th>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <!-- btn's acciones -->
-                                        <td>
-                                            <div class="btn-group" role="group" aria-label="">
-                                                <a href="#" class="btn btn-info"> <i class="fas fa-pen" style="color:#ffffff;"></i> </a>
-                                                <a href="?controlador=Empresas&accion=BorrarEmpresa" class="btn btn-danger"> <i class="fas fa-trash-alt" style="color:#ffffff;"></i> </a>
-                                            </div>
-                                        </td>                                      
-                                    </tr>
+                                    <?php foreach($asignaciones as $asignacion){?>
+                                        <tr>
+                                            <th scope="row"><?php echo $asignacion->ID_PRESTAMO; ?></th>
+                                            <td><?php echo $asignacion->ID_EMPLEADO_FK; ?></td>
+                                            <td><?php echo $asignacion->ID_PC_FK; ?></td>
+                                            <td><?php echo $asignacion->FECHA_INICIO_PRESTAMO; ?></td>
+                                            <td><?php echo $asignacion->FECHA_FIN_PRESTAMO; ?></td>
+                                            <td><?php echo $asignacion->CREATED_AT; ?></td>
+                                            <td><?php echo $asignacion->UPDATED_AT; ?></td>
+                                            <!-- btn's acciones -->
+                                            <td>
+                                                <div class="btn-group" role="group" aria-label="">
+                                                    <a href="#" class="btn btn-info"> <i class="fas fa-pen" style="color:#ffffff;"></i> </a>
+                                                    <a href="?controlador=Empresas&accion=BorrarEmpresa" class="btn btn-danger"> <i class="fas fa-trash-alt" style="color:#ffffff;"></i> </a>
+                                                </div>
+                                            </td>                                      
+                                        </tr>
+                                    <?php } ?>
                                 </tbody>
                             </table>
 

@@ -28,29 +28,34 @@
                             <table class="table">
                                 <thead>
                                     <tr>
-                                        <th scope="col"> ID </th>
-                                        <th scope="col"> Empresa </th>
-                                        <th scope="col"> Empleado </th>
-                                        <th scope="col"> Correo </th>
-                                        <th scope="col"> Tipo Documento </th>
-                                        <th scope="col"> Documento </th>
-                                        <th scope="col"> Fecha Nacimiento </th>
-                                        <th scope="col"> Tel. Celular </th>
-                                        <th scope="col"> Tel. Fijo </th>
-                                        <th scope="col"> </th>
+                                        <th scope="col" style="font-size: small;"> ID </th>
+                                        <th scope="col" style="font-size: small;"> Empresa </th>
+                                        <th scope="col" style="font-size: small;"> Empleado </th>
+                                        <th scope="col" style="font-size: small;"> Correo </th>
+                                        <th scope="col" style="font-size: small;"> Tipo Documento </th>
+                                        <th scope="col" style="font-size: small;"> Documento </th>
+                                        <th scope="col" style="font-size: small;"> Fecha Nacimiento </th>
+                                        <th scope="col" style="font-size: small;"> N° Celular </th>
+                                        <th scope="col" style="font-size: small;"> N° Fijo </th>
+                                        <th scope="col" style="font-size: small;"> Registrado</th>
+                                        <th scope="col" style="font-size: small;"> Editado</th>
+                                        <th scope="col" style="font-size: small;"> </th>
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    <?php foreach($empleados as $empleado){?>
                                     <tr>
-                                        <th scope="row"></th>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
+                                        <th scope="row" style="font-size: small;"><?php echo $empleado->ID_EMPLEADO ?></th>
+                                        <td style="font-size: small;"><?php echo $empleado->ID_EMPRESA_FK ?></td>
+                                        <td style="font-size: small;"><?php echo $empleado->NOMBRE_COMPLETO_EMPLEADO ?></td>
+                                        <td style="font-size: small;"><?php echo $empleado->CORREO_EMPLEADO ?></td>
+                                        <td style="font-size: small;"><?php echo $empleado->TIPO_DOCUMENTO_EMPLEADO ?></td>
+                                        <td style="font-size: small;"><?php echo $empleado->NUMERO_DOCUMENTO_EMPLEADO ?></td>
+                                        <td style="font-size: small;"><?php echo $empleado->FECHA_NACIMIENTO_EMPLEADO ?></td>
+                                        <td style="font-size: small;"><?php echo $empleado->NUMERO_CELULAR_EMPLEADO ?></td>
+                                        <td style="font-size: small;"><?php echo $empleado->NUMERO_FIJO_EMPLEADO ?></td>
+                                        <td style="font-size: small;"><?php echo $empleado->CREATED_AT ?></td>
+                                        <td style="font-size: small;"><?php echo $empleado->UPDATED_AT ?></td>
                                         <!-- btn's acciones -->
                                         <td>
                                             <div class="btn-group" role="group" aria-label="">
@@ -59,6 +64,7 @@
                                             </div>
                                         </td> 
                                     </tr>
+                                    <?php } ?>
                                 </tbody>
                             </table>
                         </div>
