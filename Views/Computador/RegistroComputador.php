@@ -90,9 +90,9 @@
                                         <label for="DISPONIBILIDAD_PC" class="form-label">Disponibilidad Equipo</label>
                                         <select class="form-control" name="DISPONIBILIDAD_PC" id="DISPONIBILIDAD_PC">
                                             <option disabled selected > Seleccione el Estado </option>
-                                            <option value="1">Disponible</option>
-                                            <option value="2">Asignado</option>
-                                            <option value="0">Mantenimiento</option>
+                                            <option value="Disponible">Disponible</option>
+                                            <option value="Asignado">Asignado</option>
+                                            <option value="Mantenimiento">Mantenimiento</option>
                                         </select>
                                     </div>
                                 </div>                                

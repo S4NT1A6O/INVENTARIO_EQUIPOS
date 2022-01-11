@@ -11,9 +11,8 @@ class controladorEmpleados{
     }
 
     public function RegistroEmpleado(){ 
+
         $data['list-empresas']= modeloEmpleados::selectDataEmpresa();
-
-
         if ($_POST) {
             
             $ID_EMPRESA_FK = $_POST['ID_EMPRESA_FK'];
@@ -30,9 +29,20 @@ class controladorEmpleados{
             $UPDATED_AT = $time->format("Y-m-d h:i:s");
 
             modeloEmpleados::setEmpleado($ID_EMPRESA_FK,$NOMBRE_COMPLETO_EMPLEADO,$CORREO_EMPLEADO,$TIPO_DOCUMENTO_EMPLEADO,$NUMERO_DOCUMENTO_EMPLEADO,$FECHA_NACIMIENTO_EMPLEADO,$NUMERO_CELULAR_EMPLEADO,$NUMERO_FIJO_EMPLEADO,$CREATED_AT,$UPDATED_AT);
+
+            header("Location:./?controlador=Empleados&accion=Empleados");
         }
         include_once("Views/Empleados/RegistroEmpleado.php");
     }
 
+    public function BorrarEmpleados(){
+
+        $ID_EMPLEADO=$_GET['ID'];
+
+        modeloEmpleados::deleteEmpleado($ID_EMPLEADO);
+
+        header("Location:./?controlador=Empleados&accion=Empleados");
+
+    }
 }
 ?>

@@ -54,6 +54,14 @@ class modeloEmpresas{
         $sql=$conexionDB->prepare("INSERT INTO EMPRESA (RAZON_SOCIAL_EMPRESA, NIT_EMPRESA, DIRECCION_EMPRESA, CODIGO_POSTAL_EMPRESA, CREATED_AT, UPDATED_AT) VALUES (?,?,?,?,?,?)");
         $sql->execute(array($RAZON_SOCIAL_EMPRESA,$NIT_EMPRESA,$DIRECCION_EMPRESA,$CODIGO_POSTAL_EMPRESA,$CREATED_AT,$UPDATED_AT));
     }
+
+    public static function deleteEmpresa($ID_EMPRESA){
+
+        $conexionDB=connectionDB::crearInstancia();
+        $sql=$conexionDB->prepare("DELETE FROM EMPRESA WHERE ID_EMPRESA = ?;");
+        $sql->execute(array($ID_EMPRESA));
+
+    }
 }
 
 ?>

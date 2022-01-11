@@ -58,6 +58,14 @@ class modeloAsignaciones{
         $sql->execute(array($ID_EMPLEADO_FK,$ID_PC_FK,$FECHA_INICIO_PRESTAMO,$FECHA_FIN_PRESTAMO,$CREATED_AT,$UPDATED_AT));
     }
 
+    public static function deleteAsignacion ($ID_PRESTAMO){
+
+        $conexionDB=connectionDB::crearInstancia();
+        $sql=$conexionDB->prepare("DELETE FROM PRESTAMO WHERE ID_PRESTAMO = ?;");
+        $sql->execute(array($ID_PRESTAMO));
+
+    }
+
     public static function selectDataEmpleado(){
 
         $conexionDB=connectionDB::crearInstancia();
@@ -72,7 +80,7 @@ class modeloAsignaciones{
     public static function selectDataComputador(){
 
         $conexionDB=connectionDB::crearInstancia();
-        $sql="SELECT ID_PC,MODELO_PC FROM COMPUTADOR";
+        $sql="SELECT ID_PC,MODELO_PC FROM COMPUTADOR WHERE DISPONIBILIDAD_PC LIKE 'DISPONIBLE';";
         $stmt = $conexionDB->prepare($sql);
         $stmt->execute();
         $data = $stmt->fetchAll(PDO::FETCH_ASSOC);

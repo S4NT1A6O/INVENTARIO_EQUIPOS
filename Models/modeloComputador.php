@@ -93,6 +93,14 @@ class modeloComputador{
         $sql->execute(array($MARCA_PC,$MODELO_PC,$SERIAL_PC,$PROCESADOR_PC,$RAM_PC,$UNIDAD_RAM_PC,$ALMACENAMIENTO_PC,$UNIDAD_ALMACENAMIENTO_PC,$TIPO_SISTEMA_PC,$SISTEMA_OPERATIVO_PC,$VERSION_SO_PC,$DISPONIBILIDAD_PC,$CREATED_AT,$UPDATED_AT));
     }
 
+    public static function deleteComputador($ID_PC){
+
+        $conexionDB=connectionDB::crearInstancia();
+        $sql=$conexionDB->prepare("DELETE FROM COMPUTADOR WHERE ID_PC = ?;");
+        $sql->execute(array($ID_PC));
+
+    }
+
 }
 
 ?>

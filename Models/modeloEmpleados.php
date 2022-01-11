@@ -83,6 +83,14 @@ class modeloEmpleados{
 
         return $listaEmpleados;
     }
+
+    public static function deleteEmpleado($ID_EMPLEADO){
+
+        $conexionDB=connectionDB::crearInstancia();
+        $sql=$conexionDB->prepare("DELETE FROM EMPLEADO WHERE ID_EMPLEADO = ?;");
+        $sql->execute(array($ID_EMPLEADO));
+
+    }
 }
 
 ?>

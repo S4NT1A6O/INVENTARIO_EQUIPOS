@@ -60,7 +60,7 @@
                                         <td>
                                             <div class="btn-group" role="group" aria-label="">
                                                 <a href="#" class="btn btn-info"> <i class="fas fa-pen" style="color:#ffffff;"></i> </a>
-                                                <a href="?controlador=Empresas&accion=BorrarEmpresa" class="btn btn-danger"> <i class="fas fa-trash-alt" style="color:#ffffff;"></i> </a>
+                                                <a href="?controlador=Empleados&accion=BorrarEmpleados&ID=<?php echo $empleado->ID_EMPLEADO ?>" class="btn btn-danger"> <i class="fas fa-trash-alt" style="color:#ffffff;"></i> </a>
                                             </div>
                                         </td> 
                                     </tr>

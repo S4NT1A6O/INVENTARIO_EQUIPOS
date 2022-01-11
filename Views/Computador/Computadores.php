@@ -64,7 +64,7 @@
                                     <td>
                                         <div class="btn-group" role="group" aria-label="">
                                             <a href="#" class="btn btn-info"> <i class="fas fa-pen" style="color:#ffffff;"></i> </a>
-                                            <a href="?controlador=Computador&accion=Borrar" class="btn btn-danger"> <i class="fas fa-trash-alt" style="color:#ffffff;"></i> </a>
+                                            <a href="?controlador=Computador&accion=BorrarComputador&ID=<?php echo $computador->ID_PC ?>" class="btn btn-danger"> <i class="fas fa-trash-alt" style="color:#ffffff;"></i> </a>
                                         </div>
                                     </td>
                                 </tr>

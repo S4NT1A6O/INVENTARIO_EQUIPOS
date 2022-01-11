@@ -25,8 +25,20 @@ class controladorEmpresas{
             $UPDATED_AT = $time->format("Y-m-d h:i:s");
 
             modeloEmpresas::setEmpresa($RAZON_SOCIAL_EMPRESA,$NIT_EMPRESA,$DIRECCION_EMPRESA,$CODIGO_POSTAL_EMPRESA,$CREATED_AT,$UPDATED_AT);
+
+            header("Location:./?controlador=Empresas&accion=Empresas");
         }
         include_once("Views/Empresas/RegistroEmpresa.php");
+    }
+
+    public function BorrarEmpresa(){
+
+        $ID_EMPRESA=$_GET['ID'];
+
+        modeloEmpresas::deleteEmpresa($ID_EMPRESA);
+
+        header("Location:./?controlador=Empresas&accion=Empresas");
+
     }
 
 }

@@ -27,8 +27,9 @@ class controladorComputador{
             $CREATED_AT = $time->format("Y-m-d h:i:s");
             $UPDATED_AT = $time->format("Y-m-d h:i:s");
 
-            
             modeloComputador::setComputador($MARCA_PC,$MODELO_PC,$SERIAL_PC,$PROCESADOR_PC,$RAM_PC,$UNIDAD_RAM_PC,$ALMACENAMIENTO_PC,$UNIDAD_ALMACENAMIENTO_PC,$TIPO_SISTEMA_PC,$SISTEMA_OPERATIVO_PC,$VERSION_SO_PC,$DISPONIBILIDAD_PC,$CREATED_AT,$UPDATED_AT);
+
+            header("Location:./?controlador=Computador&accion=Computadores");
         }
 
         include_once("Views/Computador/RegistroComputador.php");
@@ -40,5 +41,12 @@ class controladorComputador{
         include_once("Views/Computador/Computadores.php");
     }
 
+    public function BorrarComputador(){
+        $ID_PC=$_GET['ID'];
+
+        modeloComputador::deleteComputador($ID_PC);
+
+        header("Location:./?controlador=Computador&accion=Computadores");
+    }
 }
 ?>

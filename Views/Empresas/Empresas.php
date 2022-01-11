@@ -42,7 +42,7 @@
                                     <?php foreach($empresas as $empresa){?>
                                         <tr>
                                             <!-- datos -->
-                                            <th scope="row"> <?php echo $empresa->ID_EMPRESA; ?> </th>
+                                            <th scope="row"><?php echo $empresa->ID_EMPRESA; ?></th>
                                             <td><?php echo $empresa->RAZON_SOCIAL_EMPRESA; ?></td>
                                             <td><?php echo $empresa->NIT_EMPRESA; ?></td>
                                             <td><?php echo $empresa->DIRECCION_EMPRESA; ?></td>
@@ -54,7 +54,7 @@
                                             <td>
                                                 <div class="btn-group" role="group" aria-label="">
                                                     <a href="#" class="btn btn-info"> <i class="fas fa-pen" style="color:#ffffff;"></i> </a>
-                                                    <a href="?controlador=Empresas&accion=BorrarEmpresa" class="btn btn-danger"> <i class="fas fa-trash-alt" style="color:#ffffff;"></i> </a>
+                                                    <a href="?controlador=Empresas&accion=BorrarEmpresa&ID=<?php echo $empresa->ID_EMPRESA; ?>" class="btn btn-danger"> <i class="fas fa-trash-alt" style="color:#ffffff;"></i> </a>
                                                 </div>
                                             </td> 
                                         </tr>
