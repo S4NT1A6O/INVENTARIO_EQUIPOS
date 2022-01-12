@@ -66,6 +66,16 @@ class modeloAsignaciones{
 
     }
 
+    public static function updateStateComputador($ID_PC_FK){
+
+        $conexionDB=connectionDB::crearInstancia();
+        $sql=$conexionDB->prepare("UPDATE COMPUTADOR SET DISPONIBILIDAD_PC = 'Asignado' WHERE ID_PC = ?;");
+        $sql->execute(array($ID_PC_FK));
+        
+        
+
+    }
+
     public static function selectDataEmpleado(){
 
         $conexionDB=connectionDB::crearInstancia();

@@ -24,6 +24,8 @@ class controladorAsignaciones{
 
             modeloAsignaciones::setAsignacion($ID_EMPLEADO_FK,$ID_PC_FK,$FECHA_INICIO_PRESTAMO,$FECHA_FIN_PRESTAMO,$CREATED_AT,$UPDATED_AT);
 
+            modeloAsignaciones::updateStateComputador($ID_PC_FK);
+
             header("Location:./?controlador=Asignaciones&accion=HistorialAsignaciones");
         }
         include_once("Views/Computador/AsignarComputador.php");
