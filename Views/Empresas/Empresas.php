@@ -54,7 +54,7 @@
                                             <td>
                                                 <div class="btn-group" role="group" aria-label="">
                                                     <a href="#" class="btn btn-info"> <i class="fas fa-pen" style="color:#ffffff;"></i> </a>
-                                                    <a href="?controlador=Empresas&accion=BorrarEmpresa&ID=<?php echo $empresa->ID_EMPRESA; ?>" class="btn btn-danger"> <i class="fas fa-trash-alt" style="color:#ffffff;"></i> </a>
+                                                    <a class="btn btn-danger"> <i class="fas fa-trash-alt" style="color:#ffffff;"></i> <input class="btn val" type="hidden" value="<?php echo $empresa->ID_EMPRESA; ?>"></a>
                                                 </div>
                                             </td> 
                                         </tr>
