@@ -53,7 +53,7 @@
                                             <td>
                                                 <div class="btn-group" role="group" aria-label="">
                                                     <a href="#" class="btn btn-info"> <i class="fas fa-pen" style="color:#ffffff;"></i> </a>
-                                                    <a href="?controlador=Asignaciones&accion=BorrarAsignacion&ID=<?php echo $asignacion->ID_EMPLEADO_FK; ?>" class="btn btn-danger"> <i class="fas fa-trash-alt" style="color:#ffffff;"></i> </a>
+                                                    <a class="btn btn-danger"> <i class="fas fa-trash-alt" style="color:#ffffff;"></i> <input class="btn val" type="hidden" value="<?php echo $asignacion->ID_EMPLEADO_FK; ?>"></a>
                                                 </div>
                                             </td>                                      
                                         </tr>

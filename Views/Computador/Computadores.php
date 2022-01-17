@@ -64,7 +64,7 @@
                                     <td>
                                         <div class="btn-group" role="group" aria-label="">
                                             <a href="#" class="btn btn-info"> <i class="fas fa-pen" style="color:#ffffff;"></i> </a>
-                                            <a href="?controlador=Computador&accion=BorrarComputador&ID=<?php echo $computador->ID_PC ?>" class="btn btn-danger"> <i class="fas fa-trash-alt" style="color:#ffffff;"></i> </a>
+                                            <a class="btn btn-danger"> <i class="fas fa-trash-alt" style="color:#ffffff;"></i> <input class="btn val" type="hidden" value="<?php echo $computador->ID_PC ?>"></a>
                                         </div>
                                     </td>
                                 </tr>

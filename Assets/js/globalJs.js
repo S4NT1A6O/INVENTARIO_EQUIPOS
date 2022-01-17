@@ -31,7 +31,7 @@ $(function(){
                 'success'
                 )
 
-                window.location.href = `http://localhost/inventario_equipos/?controlador=Empresas&accion=BorrarEmpresa&ID=`+ID;
+                window.location.href = `http://localhost/inventario_equipos/?controlador=Empleados&accion=BorrarEmpleados&ID=`+ID;
 
             }
         });
@@ -93,7 +93,7 @@ $(function(){
                 'success'
                 )
 
-                window.location.href = `http://localhost/inventario_equipos/?controlador=Empresas&accion=BorrarEmpresa&ID=`+ID;
+                window.location.href = `http://localhost/inventario_equipos/?controlador=Computador&accion=BorrarComputador&ID=`+ID;
 
             }
         });
@@ -124,7 +124,7 @@ $(function(){
                 'success'
                 )
 
-                window.location.href = `http://localhost/inventario_equipos/?controlador=Empresas&accion=BorrarEmpresa&ID=`+ID;
+                window.location.href = `http://localhost/inventario_equipos/?controlador=Asignaciones&accion=BorrarAsignacion&ID=`+ID;
 
             }
         });
