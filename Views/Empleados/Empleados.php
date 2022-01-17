@@ -25,7 +25,7 @@
                             <br>
                             <a name="" id="" class="btn btn-warning" href="?controlador=Empleados&accion=RegistroEmpleado" role="button">Registrar Empleado</a>
                             <br>
-                            <table class="table">
+                            <table id="employeesTable" class="table">
                                 <thead>
                                     <tr>
                                         <th scope="col" style="font-size: small;"> ID </th>

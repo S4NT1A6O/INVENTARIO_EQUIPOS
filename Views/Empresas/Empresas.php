@@ -25,7 +25,7 @@
                             <br>
                             <a name="" id="" class="btn btn-warning" href="?controlador=Empresas&accion=RegistroEmpresa" role="button">Registrar Empresa</a>
                             <br>
-                            <table class="table table-striped table-hover">
+                            <table id="companyTable" class="table table-striped table-hover">
                                 <thead>
                                     <tr>
                                         <th scope="col"> ID </th>
