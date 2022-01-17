@@ -26,7 +26,7 @@
                             <a name="" id="" class="btn btn-warning" href="?controlador=Asignaciones&accion=AsignarComputador" role="button">Asignar Equipos</a>
                             <br>
 
-                            <table class="table table-striped table-hover">
+                            <table id="assingmentTable" class="table table-striped table-hover">
                                 <thead>
                                     <tr>
                                         <th scope="col"> ID</th>

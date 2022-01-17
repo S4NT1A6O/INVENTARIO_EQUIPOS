@@ -23,7 +23,7 @@
                     <br>
                     <a name="" id="" class="btn btn-warning" href="?controlador=Computador&accion=RegistroComputador" role="button">Registrar Computador</a>
                     <br>
-                    <table class="table table-striped table-hover">
+                    <table id="computersTable" class="table table-striped table-hover">
                         <thead>
                             <tr>
                                 <th scope="col" style="font-size: small;"> ID</th>
