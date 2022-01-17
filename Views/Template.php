@@ -27,8 +27,6 @@
 
         <!-- Jquery -->
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <!-- JavaScrip -->
-        <script src="http://localhost/inventario_equipos/Assets/js/globalJs.js"></script>
         <!-- SwetAlert 2 JavaScript -->
         <script src="http://localhost/inventario_equipos/Assets/plugins/SweetAlert/dist/sweetalert2.all.min.js"></script>
         <!-- Bootstrap JavaScript Libraries -->
