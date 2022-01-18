@@ -75,7 +75,7 @@ class modeloEmpleados{
 
         $listaEmpleados=[];
         $conexionDB=connectionDB::crearInstancia();
-        $sql = $conexionDB->query("SELECT * FROM EMPLEADO");
+        $sql = $conexionDB->query("SELECT * FROM EMPLEADO WHERE ESTADO = 'ACTIVO'");
 
         foreach($sql->fetchAll() as $empleado){
             $listaEmpleados[]=new modeloEmpleados($empleado['ID_EMPLEADO'],$empleado['ID_EMPRESA_FK'],$empleado['NOMBRE_COMPLETO_EMPLEADO'],$empleado['CORREO_EMPLEADO'],$empleado['TIPO_DOCUMENTO_EMPLEADO'],$empleado['NUMERO_DOCUMENTO_EMPLEADO'],$empleado['FECHA_NACIMIENTO_EMPLEADO'],$empleado['NUMERO_CELULAR_EMPLEADO'],$empleado['NUMERO_FIJO_EMPLEADO'],$empleado['CREATED_AT'],$empleado['UPDATED_AT']);
@@ -87,8 +87,10 @@ class modeloEmpleados{
     public static function deleteEmpleado($ID_EMPLEADO){
 
         $conexionDB=connectionDB::crearInstancia();
-        $sql=$conexionDB->prepare("DELETE FROM EMPLEADO WHERE ID_EMPLEADO = ?;");
-        $sql->execute(array($ID_EMPLEADO));
+        $sql=$conexionDB->prepare("UPDATE EMPLEADO SET ESTADO = 'INACTIVO' WHERE ID_EMPLEADO = ?;");
+        $resultadoSql = $sql->execute(array($ID_EMPLEADO));
+
+        return $resultadoSql;
 
     }
 }

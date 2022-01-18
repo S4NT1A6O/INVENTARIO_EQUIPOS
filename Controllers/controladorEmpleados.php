@@ -37,11 +37,13 @@ class controladorEmpleados{
 
     public function BorrarEmpleados(){
 
-        $ID_EMPLEADO=$_GET['ID'];
+        $ID_EMPLEADO= $_POST['ID_EMPLEADO'];
 
-        modeloEmpleados::deleteEmpleado($ID_EMPLEADO);
+        $modeloEmpleados= modeloEmpleados::deleteEmpleado($ID_EMPLEADO);
 
-        header("Location:./?controlador=Empleados&accion=Empleados");
+        // echo json_encode($modeloEmpleados);
+
+        // header("Location:./?controlador=Empleados&accion=Empleados");
 
     }
 }

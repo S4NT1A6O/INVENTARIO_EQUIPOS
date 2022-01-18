@@ -25,13 +25,26 @@ $(function(){
             confirmButtonText: 'Si, eliminar!'
             }).then((result) => {
             if (result.isConfirmed) {
-                Swal.fire(
-                'Eliminado!',
-                'El registro a sido eliminado correctamente',
-                'success'
-                )
+                // Swal.fire(
+                // 'Eliminado!',
+                // 'El registro a sido eliminado correctamente',
+                // 'success'
+                // )
 
-                window.location.href = `http://localhost/inventario_equipos/?controlador=Empleados&accion=BorrarEmpleados&ID=`+ID;
+                $.ajax({
+
+                    url: "http://localhost/inventario_equipos/?controlador=Empleados&accion=BorrarEmpleados",
+                    type: "POST",
+                    dataType:"json",
+                    data: {
+                        ID_EMPLEADO:ID
+                    },
+                    success:function(data){
+                        location.reload();
+                    }
+
+                })
+                // window.location.href = `http://localhost/inventario_equipos/?controlador=Empleados&accion=BorrarEmpleados&ID=`+ID;
 
             }
         });
@@ -129,5 +142,7 @@ $(function(){
             }
         });
     });
+
+
 
 });
