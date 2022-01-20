@@ -72,7 +72,6 @@
                                             <option disabled selected > Seleccione el Tipo de Sistema </option>
                                             <option value="32">x32</option>
                                             <option value="64">x64</option>
-                                            <option value="86">x86</option>
                                         </select>
                                     </div>
 

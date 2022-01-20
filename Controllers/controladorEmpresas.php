@@ -19,12 +19,13 @@ class controladorEmpresas{
             $NIT_EMPRESA = $_POST['NIT_EMPRESA'];
             $DIRECCION_EMPRESA = $_POST['DIRECCION_EMPRESA'];
             $CODIGO_POSTAL_EMPRESA = $_POST['CODIGO_POSTAL_EMPRESA'];
+            $ESTADO = "ACTIVO";
             $time = new DateTime();
             $time->setTimezone(new DateTimeZone('America/Bogota'));
             $CREATED_AT = $time->format("Y-m-d h:i:s");
             $UPDATED_AT = $time->format("Y-m-d h:i:s");
 
-            modeloEmpresas::setEmpresa($RAZON_SOCIAL_EMPRESA,$NIT_EMPRESA,$DIRECCION_EMPRESA,$CODIGO_POSTAL_EMPRESA,$CREATED_AT,$UPDATED_AT);
+            modeloEmpresas::setEmpresa($RAZON_SOCIAL_EMPRESA,$NIT_EMPRESA,$DIRECCION_EMPRESA,$CODIGO_POSTAL_EMPRESA,$ESTADO,$CREATED_AT,$UPDATED_AT);
 
             header("Location:./?controlador=Empresas&accion=Empresas");
         }

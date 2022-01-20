@@ -14,7 +14,7 @@ class controladorEmpleados{
 
         $data['list-empresas']= modeloEmpleados::selectDataEmpresa();
         if ($_POST) {
-            
+
             $ID_EMPRESA_FK = $_POST['ID_EMPRESA_FK'];
             $NOMBRE_COMPLETO_EMPLEADO = $_POST['NOMBRE_COMPLETO_EMPLEADO'];
             $CORREO_EMPLEADO = $_POST['CORREO_EMPLEADO'];
@@ -23,12 +23,13 @@ class controladorEmpleados{
             $FECHA_NACIMIENTO_EMPLEADO = $_POST['FECHA_NACIMIENTO_EMPLEADO'];
             $NUMERO_CELULAR_EMPLEADO = $_POST['NUMERO_CELULAR_EMPLEADO'];
             $NUMERO_FIJO_EMPLEADO = $_POST['NUMERO_FIJO_EMPLEADO'];
+            $ESTADO = "ACTIVO";
             $time = new DateTime();
             $time->setTimezone(new DateTimeZone('America/Bogota'));
             $CREATED_AT = $time->format("Y-m-d h:i:s");
             $UPDATED_AT = $time->format("Y-m-d h:i:s");
 
-            modeloEmpleados::setEmpleado($ID_EMPRESA_FK,$NOMBRE_COMPLETO_EMPLEADO,$CORREO_EMPLEADO,$TIPO_DOCUMENTO_EMPLEADO,$NUMERO_DOCUMENTO_EMPLEADO,$FECHA_NACIMIENTO_EMPLEADO,$NUMERO_CELULAR_EMPLEADO,$NUMERO_FIJO_EMPLEADO,$CREATED_AT,$UPDATED_AT);
+            modeloEmpleados::setEmpleado($ID_EMPRESA_FK,$NOMBRE_COMPLETO_EMPLEADO,$CORREO_EMPLEADO,$TIPO_DOCUMENTO_EMPLEADO,$NUMERO_DOCUMENTO_EMPLEADO,$FECHA_NACIMIENTO_EMPLEADO,$NUMERO_CELULAR_EMPLEADO,$NUMERO_FIJO_EMPLEADO,$ESTADO,$CREATED_AT,$UPDATED_AT);
 
             header("Location:./?controlador=Empleados&accion=Empleados");
         }

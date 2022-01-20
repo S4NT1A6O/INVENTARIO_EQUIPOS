@@ -28,33 +28,33 @@
                             <table id="companyTable" class="table table-striped table-hover">
                                 <thead>
                                     <tr>
-                                        <th scope="col"> ID </th>
-                                        <th scope="col"> Nombre </th>
-                                        <th scope="col"> NIT </th>
-                                        <th scope="col"> Dirección </th>
-                                        <th scope="col"> Cod. Postal </th>
-                                        <th scope="col"> Creado </th>
-                                        <th scope="col"> Modificado </th>
-                                        <th scope="col">  </th>
+                                        <th scope="col" style="font-size: small;"> ID </th>
+                                        <th scope="col" style="font-size: small;"> Nombre </th>
+                                        <th scope="col" style="font-size: small;"> NIT </th>
+                                        <th scope="col" style="font-size: small;"> Dirección </th>
+                                        <th scope="col" style="font-size: small;"> Cod. Postal </th>
+                                        <th scope="col" style="font-size: small;"> Creado </th>
+                                        <th scope="col" style="font-size: small;"> Modificado </th>
+                                        <th scope="col" style="font-size: small;">  </th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <?php foreach($empresas as $empresa){?>
                                         <tr>
                                             <!-- datos -->
-                                            <th scope="row"><?php echo $empresa->ID_EMPRESA; ?></th>
-                                            <td><?php echo $empresa->RAZON_SOCIAL_EMPRESA; ?></td>
-                                            <td><?php echo $empresa->NIT_EMPRESA; ?></td>
-                                            <td><?php echo $empresa->DIRECCION_EMPRESA; ?></td>
-                                            <td><?php echo $empresa->CODIGO_POSTAL_EMPRESA; ?></td>
-                                            <td><?php echo $empresa->CREATED_AT; ?></td>
-                                            <td><?php echo $empresa->UPDATED_AT; ?></td>
+                                            <th scope="row" style="font-size: small;"><?php echo $empresa->ID_EMPRESA; ?></th>
+                                            <td style="font-size: small;"><?php echo $empresa->RAZON_SOCIAL_EMPRESA; ?></td>
+                                            <td style="font-size: small;"><?php echo $empresa->NIT_EMPRESA; ?></td>
+                                            <td style="font-size: small;"><?php echo $empresa->DIRECCION_EMPRESA; ?></td>
+                                            <td style="font-size: small;"><?php echo $empresa->CODIGO_POSTAL_EMPRESA; ?></td>
+                                            <td style="font-size: small;"><?php echo $empresa->CREATED_AT; ?></td>
+                                            <td style="font-size: small;"><?php echo $empresa->UPDATED_AT; ?></td>
 
                                             <!-- btn's acciones -->
                                             <td>
                                                 <div class="btn-group" role="group" aria-label="">
-                                                    <a href="#" class="btn btn-info"> <i class="fas fa-pen" style="color:#ffffff;"></i> </a>
-                                                    <a class="btn btn-danger"> <i class="fas fa-trash-alt" style="color:#ffffff;"></i> <input class="btn val" type="hidden" value="<?php echo $empresa->ID_EMPRESA; ?>"></a>
+                                                    <a href="#" class="btn btn-info" style="font-size: small;"> <i class="fas fa-pen" style="color:#ffffff;"></i> </a>
+                                                    <a class="btn btn-danger" style="font-size: small;"> <i class="fas fa-trash-alt" style="color:#ffffff;"></i> <input class="btn val" type="hidden" value="<?php echo $empresa->ID_EMPRESA; ?>"></a>
                                                 </div>
                                             </td> 
                                         </tr>

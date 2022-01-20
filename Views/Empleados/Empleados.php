@@ -25,15 +25,14 @@
                             <br>
                             <a name="" id="" class="btn btn-warning" href="?controlador=Empleados&accion=RegistroEmpleado" role="button">Registrar Empleado</a>
                             <br>
-                            <table id="employeesTable" class="table">
+                            <table id="employeesTable" class="table table-striped table-hover">
                                 <thead>
                                     <tr>
                                         <th scope="col" style="font-size: small;"> ID </th>
                                         <th scope="col" style="font-size: small;"> Empresa </th>
                                         <th scope="col" style="font-size: small;"> Empleado </th>
                                         <th scope="col" style="font-size: small;"> Correo </th>
-                                        <th scope="col" style="font-size: small;"> Tipo Documento </th>
-                                        <th scope="col" style="font-size: small;"> Documento </th>
+                                        <th scope="col" style="font-size: small;" colspan="2"> Documento </th>
                                         <th scope="col" style="font-size: small;"> Fecha Nacimiento </th>
                                         <th scope="col" style="font-size: small;"> N° Celular </th>
                                         <th scope="col" style="font-size: small;"> N° Fijo </th>
@@ -59,8 +58,8 @@
                                         <!-- btn's acciones -->
                                         <td>
                                             <div class="btn-group" role="group" aria-label="">
-                                                <a href="#" class="btn btn-info"> <i class="fas fa-pen" style="color:#ffffff;"></i> </a>
-                                                <a class="btn btn-danger"> <i class="fas fa-trash-alt" style="color:#ffffff;"></i> <input class="btn val" type="hidden" value="<?php echo $empleado->ID_EMPLEADO ?>"></a>
+                                                <a style="font-size: small;" href="#" class="btn btn-info"> <i class="fas fa-pen" style="color:#ffffff;"></i> </a>
+                                                <a style="font-size: small;"class="btn btn-danger"> <i class="fas fa-trash-alt" style="color:#ffffff;"></i> <input class="btn val" type="hidden" value="<?php echo $empleado->ID_EMPLEADO ?>"></a>
                                             </div>
                                         </td> 
                                     </tr>

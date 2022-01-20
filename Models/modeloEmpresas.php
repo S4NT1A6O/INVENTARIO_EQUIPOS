@@ -11,7 +11,6 @@ class modeloEmpresas{
     public $CREATED_AT;
     public $UPDATED_AT;
 
-    
     // Metodos
 
     public function __construct(
@@ -22,7 +21,8 @@ class modeloEmpresas{
         $CODIGO_POSTAL_EMPRESA,
         $ESTADO,
         $CREATED_AT,
-        $UPDATED_AT){
+        $UPDATED_AT
+        ){
         $this->ID_EMPRESA=$ID_EMPRESA;
         $this->RAZON_SOCIAL_EMPRESA=$RAZON_SOCIAL_EMPRESA;
         $this->NIT_EMPRESA=$NIT_EMPRESA;
@@ -51,11 +51,12 @@ class modeloEmpresas{
         $NIT_EMPRESA,
         $DIRECCION_EMPRESA,
         $CODIGO_POSTAL_EMPRESA,
+        $ESTADO,
         $CREATED_AT,
         $UPDATED_AT){
         $conexionDB=connectionDB::crearInstancia();
-        $sql=$conexionDB->prepare("INSERT INTO EMPRESA (RAZON_SOCIAL_EMPRESA, NIT_EMPRESA, DIRECCION_EMPRESA, CODIGO_POSTAL_EMPRESA, CREATED_AT, UPDATED_AT) VALUES (?,?,?,?,?,?)");
-        $sql->execute(array($RAZON_SOCIAL_EMPRESA,$NIT_EMPRESA,$DIRECCION_EMPRESA,$CODIGO_POSTAL_EMPRESA,$CREATED_AT,$UPDATED_AT));
+        $sql=$conexionDB->prepare("INSERT INTO EMPRESA (RAZON_SOCIAL_EMPRESA, NIT_EMPRESA, DIRECCION_EMPRESA, CODIGO_POSTAL_EMPRESA, ESTADO, CREATED_AT, UPDATED_AT) VALUES (?,?,?,?,?,?,?)");
+        $sql->execute(array($RAZON_SOCIAL_EMPRESA,$NIT_EMPRESA,$DIRECCION_EMPRESA,$CODIGO_POSTAL_EMPRESA,$ESTADO,$CREATED_AT,$UPDATED_AT));
     }
 
     public static function deleteEmpresa($ID_EMPRESA){

@@ -63,8 +63,8 @@
                                     <!-- btn's acciones -->
                                     <td>
                                         <div class="btn-group" role="group" aria-label="">
-                                            <a href="#" class="btn btn-info"> <i class="fas fa-pen" style="color:#ffffff;"></i> </a>
-                                            <a class="btn btn-danger"> <i class="fas fa-trash-alt" style="color:#ffffff;"></i> <input class="btn val" type="hidden" value="<?php echo $computador->ID_PC ?>"></a>
+                                            <a href="#" class="btn btn-info" style="font-size: small;"> <i class="fas fa-pen" style="color:#ffffff;"></i> </a>
+                                            <a class="btn btn-danger" style="font-size: small;"> <i class="fas fa-trash-alt" style="color:#ffffff;"></i> <input class="btn val" type="hidden" value="<?php echo $computador->ID_PC ?>"></a>
                                         </div>
                                     </td>
                                 </tr>

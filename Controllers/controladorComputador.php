@@ -22,12 +22,13 @@ class controladorComputador{
             $SISTEMA_OPERATIVO_PC = $_POST['SISTEMA_OPERATIVO_PC'];
             $VERSION_SO_PC = $_POST['VERSION_SO_PC'];
             $DISPONIBILIDAD_PC = $_POST['DISPONIBILIDAD_PC'];
+            $ESTADO = "ACTIVO";
             $time = new DateTime();
             $time->setTimezone(new DateTimeZone('America/Bogota'));
             $CREATED_AT = $time->format("Y-m-d h:i:s");
             $UPDATED_AT = $time->format("Y-m-d h:i:s");
 
-            modeloComputador::setComputador($MARCA_PC,$MODELO_PC,$SERIAL_PC,$PROCESADOR_PC,$RAM_PC,$UNIDAD_RAM_PC,$ALMACENAMIENTO_PC,$UNIDAD_ALMACENAMIENTO_PC,$TIPO_SISTEMA_PC,$SISTEMA_OPERATIVO_PC,$VERSION_SO_PC,$DISPONIBILIDAD_PC,$CREATED_AT,$UPDATED_AT);
+            modeloComputador::setComputador($MARCA_PC,$MODELO_PC,$SERIAL_PC,$PROCESADOR_PC,$RAM_PC,$UNIDAD_RAM_PC,$ALMACENAMIENTO_PC,$UNIDAD_ALMACENAMIENTO_PC,$TIPO_SISTEMA_PC,$SISTEMA_OPERATIVO_PC,$VERSION_SO_PC,$DISPONIBILIDAD_PC,$ESTADO,$CREATED_AT,$UPDATED_AT);
 
             header("Location:./?controlador=Computador&accion=Computadores");
         }

@@ -14,6 +14,9 @@ class modeloAsignaciones{
     public $CREATED_AT;
     public $UPDATED_AT;
 
+    // Metodos
+
+    // Constructor
     public function __construct(
         $ID_PRESTAMO,
         $ID_EMPLEADO_FK,
@@ -38,10 +41,15 @@ class modeloAsignaciones{
 
         $listaAsignaciones=[];
         $conexionDB=connectionDB::crearInstancia();
-        $sql = $conexionDB->query("SELECT * FROM PRESTAMO WHERE ESTADO = 'ACTIVO'");
+        $sql = $conexionDB->query( "SELECT PRESTAMO.ID_PRESTAMO ,EMPLEADO.NOMBRE_COMPLETO_EMPLEADO ,COMPUTADOR.SERIAL_PC ,PRESTAMO.FECHA_INICIO_PRESTAMO ,PRESTAMO.FECHA_FIN_PRESTAMO ,PRESTAMO.ESTADO ,PRESTAMO.CREATED_AT ,PRESTAMO.UPDATED_AT 
+                                    FROM PRESTAMO INNER JOIN EMPLEADO
+                                    ON PRESTAMO.ID_EMPLEADO_FK=EMPLEADO.ID_EMPLEADO
+                                    INNER JOIN COMPUTADOR
+                                    ON PRESTAMO.ID_PC_FK=COMPUTADOR.ID_PC
+                                    WHERE PRESTAMO.ESTADO = 'ACTIVO' ;" );
 
         foreach($sql->fetchAll() as $computador){
-            $listaAsignaciones[]=new modeloAsignaciones($computador['ID_PRESTAMO'],$computador['ID_EMPLEADO_FK'],$computador['ID_PC_FK'],$computador['FECHA_INICIO_PRESTAMO'],$computador['FECHA_FIN_PRESTAMO'],$computador['ESTADO'],$computador['CREATED_AT'],$computador['UPDATED_AT']);
+            $listaAsignaciones[]=new modeloAsignaciones($computador['ID_PRESTAMO'],$computador['NOMBRE_COMPLETO_EMPLEADO'],$computador['SERIAL_PC'],$computador['FECHA_INICIO_PRESTAMO'],$computador['FECHA_FIN_PRESTAMO'],$computador['ESTADO'],$computador['CREATED_AT'],$computador['UPDATED_AT']);
         };
 
         return $listaAsignaciones;
