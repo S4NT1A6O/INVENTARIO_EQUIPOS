@@ -12,6 +12,7 @@ class modeloEmpleados{
     public $FECHA_NACIMIENTO_EMPLEADO;
     public $NUMERO_CELULAR_EMPLEADO;
     public $NUMERO_FIJO_EMPLEADO;
+    public $ESTADO;
     public $CREATED_AT;
     public $UPDATED_AT;
 
@@ -80,7 +81,7 @@ class modeloEmpleados{
         $sql = $conexionDB->query("SELECT * FROM EMPLEADO WHERE ESTADO = 'ACTIVO'");
 
         foreach($sql->fetchAll() as $empleado){
-            $listaEmpleados[]=new modeloEmpleados($empleado['ID_EMPLEADO'],$empleado['ID_EMPRESA_FK'],$empleado['NOMBRE_COMPLETO_EMPLEADO'],$empleado['CORREO_EMPLEADO'],$empleado['TIPO_DOCUMENTO_EMPLEADO'],$empleado['NUMERO_DOCUMENTO_EMPLEADO'],$empleado['FECHA_NACIMIENTO_EMPLEADO'],$empleado['NUMERO_CELULAR_EMPLEADO'],$empleado['NUMERO_FIJO_EMPLEADO'],$empleado['CREATED_AT'],$empleado['UPDATED_AT']);
+            $listaEmpleados[]=new modeloEmpleados($empleado['ID_EMPLEADO'],$empleado['ID_EMPRESA_FK'],$empleado['NOMBRE_COMPLETO_EMPLEADO'],$empleado['CORREO_EMPLEADO'],$empleado['TIPO_DOCUMENTO_EMPLEADO'],$empleado['NUMERO_DOCUMENTO_EMPLEADO'],$empleado['FECHA_NACIMIENTO_EMPLEADO'],$empleado['NUMERO_CELULAR_EMPLEADO'],$empleado['NUMERO_FIJO_EMPLEADO'], $empleado['ESTADO'],$empleado['CREATED_AT'],$empleado['UPDATED_AT']);
         };
 
         return $listaEmpleados;

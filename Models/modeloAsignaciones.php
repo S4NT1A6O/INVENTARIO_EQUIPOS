@@ -10,6 +10,7 @@ class modeloAsignaciones{
     public $ID_PC_FK;
     public $FECHA_INICIO_PRESTAMO;
     public $FECHA_FIN_PRESTAMO;
+    public $ESTADO;
     public $CREATED_AT;
     public $UPDATED_AT;
 
@@ -40,7 +41,7 @@ class modeloAsignaciones{
         $sql = $conexionDB->query("SELECT * FROM PRESTAMO WHERE ESTADO = 'ACTIVO'");
 
         foreach($sql->fetchAll() as $computador){
-            $listaAsignaciones[]=new modeloAsignaciones($computador['ID_PRESTAMO'],$computador['ID_EMPLEADO_FK'],$computador['ID_PC_FK'],$computador['FECHA_INICIO_PRESTAMO'],$computador['FECHA_FIN_PRESTAMO'],$computador['CREATED_AT'],$computador['UPDATED_AT']);
+            $listaAsignaciones[]=new modeloAsignaciones($computador['ID_PRESTAMO'],$computador['ID_EMPLEADO_FK'],$computador['ID_PC_FK'],$computador['FECHA_INICIO_PRESTAMO'],$computador['FECHA_FIN_PRESTAMO'],$computador['ESTADO'],$computador['CREATED_AT'],$computador['UPDATED_AT']);
         };
 
         return $listaAsignaciones;
