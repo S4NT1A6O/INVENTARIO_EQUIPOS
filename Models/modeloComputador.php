@@ -18,6 +18,7 @@ class modeloComputador{
     public $SISTEMA_OPERATIVO_PC;
     public $VERSION_SO_PC;
     public $DISPONIBILIDAD_PC;
+    public $ESTADO;
     public $CREATED_AT;
     public $UPDATED_AT;
 
@@ -38,6 +39,7 @@ class modeloComputador{
         $SISTEMA_OPERATIVO_PC,
         $VERSION_SO_PC,
         $DISPONIBILIDAD_PC,
+        $ESTADO,
         $CREATED_AT,
         $UPDATED_AT
         ){
@@ -54,6 +56,7 @@ class modeloComputador{
         $this->SISTEMA_OPERATIVO_PC=$SISTEMA_OPERATIVO_PC;
         $this->VERSION_SO_PC=$VERSION_SO_PC;
         $this->DISPONIBILIDAD_PC=$DISPONIBILIDAD_PC;
+        $this->ESTADO=$ESTADO;
         $this->CREATED_AT=$CREATED_AT;
         $this->UPDATED_AT=$UPDATED_AT;
     }
@@ -62,10 +65,10 @@ class modeloComputador{
 
         $listaComputadores=[];
         $conexionDB=connectionDB::crearInstancia();
-        $sql = $conexionDB->query("SELECT * FROM COMPUTADOR");
+        $sql = $conexionDB->query("SELECT * FROM COMPUTADOR WHERE ESTADO = 'ACTIVO'");
 
         foreach($sql->fetchAll() as $computador){
-            $listaComputadores[]=new modeloComputador($computador['ID_PC'],$computador['MARCA_PC'],$computador['MODELO_PC'],$computador['SERIAL_PC'],$computador['PROCESADOR_PC'],$computador['RAM_PC'],$computador['UNIDAD_RAM_PC'],$computador['ALMACENAMIENTO_PC'],$computador['UNIDAD_ALMACENAMIENTO_PC'],$computador['TIPO_SISTEMA_PC'],$computador['SISTEMA_OPERATIVO_PC'],$computador['VERSION_SO_PC'],$computador['DISPONIBILIDAD_PC'],$computador['CREATED_AT'],$computador['UPDATED_AT']);
+            $listaComputadores[]=new modeloComputador($computador['ID_PC'],$computador['MARCA_PC'],$computador['MODELO_PC'],$computador['SERIAL_PC'],$computador['PROCESADOR_PC'],$computador['RAM_PC'],$computador['UNIDAD_RAM_PC'],$computador['ALMACENAMIENTO_PC'],$computador['UNIDAD_ALMACENAMIENTO_PC'],$computador['TIPO_SISTEMA_PC'],$computador['SISTEMA_OPERATIVO_PC'],$computador['VERSION_SO_PC'],$computador['DISPONIBILIDAD_PC'],$computador['ESTADO'] ,$computador['CREATED_AT'],$computador['UPDATED_AT']);
         };
 
         return $listaComputadores;

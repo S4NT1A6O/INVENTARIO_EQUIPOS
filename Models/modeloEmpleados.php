@@ -26,6 +26,7 @@ class modeloEmpleados{
 		$FECHA_NACIMIENTO_EMPLEADO,
 		$NUMERO_CELULAR_EMPLEADO,
 		$NUMERO_FIJO_EMPLEADO,
+        $ESTADO,
 		$CREATED_AT,
 		$UPDATED_AT
         ){
@@ -38,6 +39,7 @@ class modeloEmpleados{
         $this->FECHA_NACIMIENTO_EMPLEADO=$FECHA_NACIMIENTO_EMPLEADO;
         $this->NUMERO_CELULAR_EMPLEADO=$NUMERO_CELULAR_EMPLEADO;
         $this->NUMERO_FIJO_EMPLEADO=$NUMERO_FIJO_EMPLEADO;
+        $this->ESTADO=$ESTADO;
         $this->CREATED_AT=$CREATED_AT;
         $this->UPDATED_AT=$UPDATED_AT;
     }

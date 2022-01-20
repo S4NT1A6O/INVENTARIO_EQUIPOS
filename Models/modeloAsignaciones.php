@@ -19,6 +19,7 @@ class modeloAsignaciones{
         $ID_PC_FK,
         $FECHA_INICIO_PRESTAMO,
         $FECHA_FIN_PRESTAMO,
+        $ESTADO,
         $CREATED_AT,
         $UPDATED_AT
     ){
@@ -27,6 +28,7 @@ class modeloAsignaciones{
         $this->ID_PC_FK=$ID_PC_FK;
         $this->FECHA_INICIO_PRESTAMO=$FECHA_INICIO_PRESTAMO;
         $this->FECHA_FIN_PRESTAMO=$FECHA_FIN_PRESTAMO;
+        $this->ESTADO=$ESTADO;
         $this->CREATED_AT=$CREATED_AT;
         $this->UPDATED_AT=$UPDATED_AT;
     }
@@ -35,7 +37,7 @@ class modeloAsignaciones{
 
         $listaAsignaciones=[];
         $conexionDB=connectionDB::crearInstancia();
-        $sql = $conexionDB->query("SELECT * FROM PRESTAMO");
+        $sql = $conexionDB->query("SELECT * FROM PRESTAMO WHERE ESTADO = 'ACTIVO'");
 
         foreach($sql->fetchAll() as $computador){
             $listaAsignaciones[]=new modeloAsignaciones($computador['ID_PRESTAMO'],$computador['ID_EMPLEADO_FK'],$computador['ID_PC_FK'],$computador['FECHA_INICIO_PRESTAMO'],$computador['FECHA_FIN_PRESTAMO'],$computador['CREATED_AT'],$computador['UPDATED_AT']);
