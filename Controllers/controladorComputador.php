@@ -43,11 +43,12 @@ class controladorComputador{
     }
 
     public function BorrarComputador(){
-        $ID_PC=$_GET['ID'];
 
-        modeloComputador::deleteComputador($ID_PC);
+        $ID_PC=$_POST['ID_PC'];
 
-        header("Location:./?controlador=Computador&accion=Computadores");
+        $modeloComputador=modeloComputador::deleteComputador($ID_PC);
+
+        // header("Location:./?controlador=Computador&accion=Computadores");
     }
 }
 ?>

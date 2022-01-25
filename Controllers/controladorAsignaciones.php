@@ -38,13 +38,12 @@ class controladorAsignaciones{
     }
 
     public function BorrarAsignacion(){
-        if ($_GET) {
-            $ID_PRESTAMO= $_GET['ID'];
 
-            modeloAsignaciones::deleteAsignacion($ID_PRESTAMO);
+            $ID_PRESTAMO= $_POST['ID_PRESTAMO'];
 
-            header("Location:./?controlador=Asignaciones&accion=HistorialAsignaciones");
-        }
+            $modeloAsignaciones=modeloAsignaciones::deleteAsignacion($ID_PRESTAMO);
+
+            // header("Location:./?controlador=Asignaciones&accion=HistorialAsignaciones");
     }
 
 }

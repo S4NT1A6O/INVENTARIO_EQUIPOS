@@ -13,7 +13,7 @@ $(function(){
     */
     $("#employeesTable").find('a[class="btn btn-danger"]').click(function(){
 
-        let ID = $(this).find('input[type="hidden"]').val();
+        let ID_EMPLOYEE = $(this).find('input[type="hidden"]').val();
 
         Swal.fire({
             title: 'Esta Seguro?',
@@ -25,11 +25,6 @@ $(function(){
             confirmButtonText: 'Si, eliminar!'
             }).then((result) => {
             if (result.isConfirmed) {
-                // Swal.fire(
-                // 'Eliminado!',
-                // 'El registro a sido eliminado correctamente',
-                // 'success'
-                // )
 
                 $.ajax({
 
@@ -37,13 +32,30 @@ $(function(){
                     type: "POST",
                     dataType:"json",
                     data: {
-                        ID_EMPLEADO:ID
+                        ID_EMPLEADO:ID_EMPLOYEE
                     },
-                    success:function(data){
-                        location.reload();
-                    }
+                    // success:function( data){
 
+                    // Swal.fire('Eliminado!','El registro a sido eliminado correctamente','success')
+
+                    // }
+                    success:setTimeout(function(){
+                        Swal.fire({
+                            title: 'El registro a sido eliminado correctamente',
+                            icon: 'success',
+                            showConfirmButton: false,
+                            timer: 1500
+                        })
+                        // let URL = "http://localhost/inventario_equipos/?controlador=Empleados&accion=Empleados";
+                        // window.location.href=URL;
+                    }),
+                    success:setTimeout(function(){
+                        let URL = "http://localhost/inventario_equipos/?controlador=Empleados&accion=Empleados";
+                        window.location.href=URL;
+                    },1000)
                 })
+
+                
                 // window.location.href = `http://localhost/inventario_equipos/?controlador=Empleados&accion=BorrarEmpleados&ID=`+ID;
 
             }
@@ -57,7 +69,7 @@ $(function(){
     */
     $("#companyTable").find('a[class="btn btn-danger"]').click(function(){
 
-        let ID = $(this).find('input[type="hidden"]').val();
+        let ID_COMPANY = $(this).find('input[type="hidden"]').val();
 
         Swal.fire({
             title: 'Esta Seguro?',
@@ -69,13 +81,21 @@ $(function(){
             confirmButtonText: 'Si, eliminar!'
             }).then((result) => {
             if (result.isConfirmed) {
-                Swal.fire(
-                'Eliminado!',
-                'El registro a sido eliminado correctamente',
-                'success'
-                )
 
-                window.location.href = `http://localhost/inventario_equipos/?controlador=Empresas&accion=BorrarEmpresa&ID=`+ID;
+                $.ajax({
+
+                    url: "http://localhost/inventario_equipos/?controlador=Empresas&accion=BorrarEmpresa",
+                    type: "POST",
+                    dataType:"json",
+                    data: {
+                        ID_EMPRESA:ID_COMPANY
+                    }
+                    // ,
+                    // success:function(data){
+                    //     location.reload();
+                    // }
+
+                })
 
             }
         });
@@ -88,7 +108,7 @@ $(function(){
     */
     $("#computersTable").find('a[class="btn btn-danger"]').click(function(){
 
-        let ID = $(this).find('input[type="hidden"]').val();
+        let ID_COMPUTER = $(this).find('input[type="hidden"]').val();
 
         Swal.fire({
             title: 'Esta Seguro?',
@@ -100,13 +120,23 @@ $(function(){
             confirmButtonText: 'Si, eliminar!'
             }).then((result) => {
             if (result.isConfirmed) {
-                Swal.fire(
-                'Eliminado!',
-                'El registro a sido eliminado correctamente',
-                'success'
-                )
 
-                window.location.href = `http://localhost/inventario_equipos/?controlador=Computador&accion=BorrarComputador&ID=`+ID;
+                $.ajax({
+
+                    url: "http://localhost/inventario_equipos/?controlador=Computador&accion=BorrarComputador",
+                    type: "POST",
+                    dataType:"json",
+                    data: {
+                        ID_PC:ID_COMPUTER
+                    }
+                    // ,
+                    // success:function(data){
+                    //     location.reload();
+                    // }
+
+                })
+
+                // window.location.href = `http://localhost/inventario_equipos/?controlador=Computador&accion=BorrarComputador`+ID;
 
             }
         });
@@ -119,7 +149,7 @@ $(function(){
     */
     $("#assingmentTable").find('a[class="btn btn-danger"]').click(function(){
 
-        let ID = $(this).find('input[type="hidden"]').val();
+        let ID_ASSIGMENT = $(this).find('input[type="hidden"]').val();
 
         Swal.fire({
             title: 'Esta Seguro?',
@@ -131,18 +161,27 @@ $(function(){
             confirmButtonText: 'Si, eliminar!'
             }).then((result) => {
             if (result.isConfirmed) {
-                Swal.fire(
-                'Eliminado!',
-                'El registro a sido eliminado correctamente',
-                'success'
-                )
 
-                window.location.href = `http://localhost/inventario_equipos/?controlador=Asignaciones&accion=BorrarAsignacion&ID=`+ID;
+                $.ajax({
+
+                    url: "http://localhost/inventario_equipos/?controlador=Asignaciones&accion=BorrarAsignacion",
+                    type: "POST",
+                    dataType:"json",
+                    data: {
+                        ID_PRESTAMO:ID_ASSIGMENT
+                    }
+                    // ,
+                    // success:function(data){
+                    //     location.reload();
+                    // }
+
+                })
+
+                // window.location.href = `http://localhost/inventario_equipos/?controlador=Asignaciones&accion=BorrarAsignacion&ID=`+ID;
 
             }
         });
     });
-
 
 
 });

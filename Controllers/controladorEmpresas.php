@@ -34,11 +34,9 @@ class controladorEmpresas{
 
     public function BorrarEmpresa(){
 
-        $ID_EMPRESA=$_GET['ID'];
+        $ID_EMPRESA=$_POST['ID_EMPRESA'];
 
-        modeloEmpresas::deleteEmpresa($ID_EMPRESA);
-
-        header("Location:./?controlador=Empresas&accion=Empresas");
+        $modeloEmpresas=modeloEmpresas::deleteEmpresa($ID_EMPRESA);
 
     }
 

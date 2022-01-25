@@ -62,8 +62,10 @@ class modeloEmpresas{
     public static function deleteEmpresa($ID_EMPRESA){
 
         $conexionDB=connectionDB::crearInstancia();
-        $sql=$conexionDB->prepare("DELETE FROM EMPRESA WHERE ID_EMPRESA = ?;");
-        $sql->execute(array($ID_EMPRESA));
+        $sql=$conexionDB->prepare("UPDATE EMPRESA SET ESTADO = 'INACTIVO' WHERE ID_EMPRESA = ?;");
+        $resultadoSql= $sql->execute(array($ID_EMPRESA));
+
+        return $resultadoSql;
 
     }
 }

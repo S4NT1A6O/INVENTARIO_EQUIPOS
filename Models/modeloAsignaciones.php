@@ -73,8 +73,10 @@ class modeloAsignaciones{
     public static function deleteAsignacion ($ID_PRESTAMO){
 
         $conexionDB=connectionDB::crearInstancia();
-        $sql=$conexionDB->prepare("DELETE FROM PRESTAMO WHERE ID_PRESTAMO = ?;");
-        $sql->execute(array($ID_PRESTAMO));
+        $sql=$conexionDB->prepare("UPDATE PRESTAMO SET ESTADO = 'INACTIVO' WHERE ID_PRESTAMO = ?;");
+        $resultadoSql=$sql->execute(array($ID_PRESTAMO));
+
+        return $resultadoSql;
 
     }
 
@@ -111,6 +113,5 @@ class modeloAsignaciones{
     }
 
 }
-
 
 ?>

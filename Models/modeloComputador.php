@@ -100,8 +100,10 @@ class modeloComputador{
     public static function deleteComputador($ID_PC){
 
         $conexionDB=connectionDB::crearInstancia();
-        $sql=$conexionDB->prepare("DELETE FROM COMPUTADOR WHERE ID_PC = ?;");
-        $sql->execute(array($ID_PC));
+        $sql=$conexionDB->prepare("UPDATE COMPUTADOR SET ESTADO = 'INACTIVO' WHERE ID_PC = ?;");
+        $resultadoSql=$sql->execute(array($ID_PC));
+
+        return $resultadoSql;
 
     }
 
