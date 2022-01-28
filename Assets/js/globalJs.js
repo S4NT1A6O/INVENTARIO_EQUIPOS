@@ -6,6 +6,13 @@
 
 $(function(){
 
+    $(document).ready(function() {
+        $('#computersTable').DataTable();
+        $('#assingmentTable').DataTable();
+        $('#employeesTable').DataTable();
+        $('#companyTable').DataTable();
+    } );
+
     /*  Permite la validacion por medio de JQuery para los registros de empleados
         al realizar click en el boton correspondiente a "a[class="btn btn-danger"]"
         dposteriormente se extrae el "ID" del registro, logrando un correcto borrado
@@ -34,7 +41,7 @@ $(function(){
                     data: {
                         ID_EMPLEADO:ID_EMPLOYEE
                     },
-                    // success:function( data){
+                    // success:function(data){
 
                     // Swal.fire('Eliminado!','El registro a sido eliminado correctamente','success')
 
