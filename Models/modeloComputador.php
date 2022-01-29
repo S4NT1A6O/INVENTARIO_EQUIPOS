@@ -16,7 +16,6 @@ class modeloComputador{
     public $UNIDAD_ALMACENAMIENTO_PC;
     public $TIPO_SISTEMA_PC;
     public $SISTEMA_OPERATIVO_PC;
-    public $VERSION_SO_PC;
     public $DISPONIBILIDAD_PC;
     public $ESTADO;
     public $CREATED_AT;
@@ -37,7 +36,6 @@ class modeloComputador{
         $UNIDAD_ALMACENAMIENTO_PC,
         $TIPO_SISTEMA_PC,
         $SISTEMA_OPERATIVO_PC,
-        $VERSION_SO_PC,
         $DISPONIBILIDAD_PC,
         $ESTADO,
         $CREATED_AT,
@@ -54,7 +52,6 @@ class modeloComputador{
         $this->UNIDAD_ALMACENAMIENTO_PC=$UNIDAD_ALMACENAMIENTO_PC;
         $this->TIPO_SISTEMA_PC=$TIPO_SISTEMA_PC;
         $this->SISTEMA_OPERATIVO_PC=$SISTEMA_OPERATIVO_PC;
-        $this->VERSION_SO_PC=$VERSION_SO_PC;
         $this->DISPONIBILIDAD_PC=$DISPONIBILIDAD_PC;
         $this->ESTADO=$ESTADO;
         $this->CREATED_AT=$CREATED_AT;
@@ -68,7 +65,7 @@ class modeloComputador{
         $sql = $conexionDB->query("SELECT * FROM COMPUTADOR WHERE ESTADO = 'ACTIVO'");
 
         foreach($sql->fetchAll() as $computador){
-            $listaComputadores[]=new modeloComputador($computador['ID_PC'],$computador['MARCA_PC'],$computador['MODELO_PC'],$computador['SERIAL_PC'],$computador['PROCESADOR_PC'],$computador['RAM_PC'],$computador['UNIDAD_RAM_PC'],$computador['ALMACENAMIENTO_PC'],$computador['UNIDAD_ALMACENAMIENTO_PC'],$computador['TIPO_SISTEMA_PC'],$computador['SISTEMA_OPERATIVO_PC'],$computador['VERSION_SO_PC'],$computador['DISPONIBILIDAD_PC'],$computador['ESTADO'] ,$computador['CREATED_AT'],$computador['UPDATED_AT']);
+            $listaComputadores[]=new modeloComputador($computador['ID_PC'],$computador['MARCA_PC'],$computador['MODELO_PC'],$computador['SERIAL_PC'],$computador['PROCESADOR_PC'],$computador['RAM_PC'],$computador['UNIDAD_RAM_PC'],$computador['ALMACENAMIENTO_PC'],$computador['UNIDAD_ALMACENAMIENTO_PC'],$computador['TIPO_SISTEMA_PC'],$computador['SISTEMA_OPERATIVO_PC'],$computador['DISPONIBILIDAD_PC'],$computador['ESTADO'] ,$computador['CREATED_AT'],$computador['UPDATED_AT']);
         };
 
         return $listaComputadores;
@@ -86,15 +83,14 @@ class modeloComputador{
         $UNIDAD_ALMACENAMIENTO_PC,
         $TIPO_SISTEMA_PC,
         $SISTEMA_OPERATIVO_PC,
-        $VERSION_SO_PC,
         $DISPONIBILIDAD_PC,
         $ESTADO,
         $CREATED_AT,
         $UPDATED_AT
         ){
         $conexionDB=connectionDB::crearInstancia();
-        $sql=$conexionDB->prepare("INSERT INTO COMPUTADOR (MARCA_PC, MODELO_PC, SERIAL_PC, PROCESADOR_PC, RAM_PC, UNIDAD_RAM_PC, ALMACENAMIENTO_PC, UNIDAD_ALMACENAMIENTO_PC, TIPO_SISTEMA_PC, SISTEMA_OPERATIVO_PC, VERSION_SO_PC, DISPONIBILIDAD_PC, ESTADO, CREATED_AT, UPDATED_AT) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
-        $sql->execute(array($MARCA_PC,$MODELO_PC,$SERIAL_PC,$PROCESADOR_PC,$RAM_PC,$UNIDAD_RAM_PC,$ALMACENAMIENTO_PC,$UNIDAD_ALMACENAMIENTO_PC,$TIPO_SISTEMA_PC,$SISTEMA_OPERATIVO_PC,$VERSION_SO_PC,$DISPONIBILIDAD_PC,$ESTADO,$CREATED_AT,$UPDATED_AT));
+        $sql=$conexionDB->prepare("INSERT INTO COMPUTADOR (MARCA_PC, MODELO_PC, SERIAL_PC, PROCESADOR_PC, RAM_PC, UNIDAD_RAM_PC, ALMACENAMIENTO_PC, UNIDAD_ALMACENAMIENTO_PC, TIPO_SISTEMA_PC, SISTEMA_OPERATIVO_PC, DISPONIBILIDAD_PC, ESTADO, CREATED_AT, UPDATED_AT) VALUES (?,??,?,?,?,?,?,?,?,?,?,?,?)");
+        $sql->execute(array($MARCA_PC,$MODELO_PC,$SERIAL_PC,$PROCESADOR_PC,$RAM_PC,$UNIDAD_RAM_PC,$ALMACENAMIENTO_PC,$UNIDAD_ALMACENAMIENTO_PC,$TIPO_SISTEMA_PC,$SISTEMA_OPERATIVO_PC,$DISPONIBILIDAD_PC,$ESTADO,$CREATED_AT,$UPDATED_AT));
     }
 
     public static function deleteComputador($ID_PC){

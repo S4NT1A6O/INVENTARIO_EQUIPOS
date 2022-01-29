@@ -20,7 +20,6 @@ class controladorComputador{
             $UNIDAD_ALMACENAMIENTO_PC = $_POST['UNIDAD_ALMACENAMIENTO_PC'];
             $TIPO_SISTEMA_PC = $_POST['TIPO_SISTEMA_PC'];
             $SISTEMA_OPERATIVO_PC = $_POST['SISTEMA_OPERATIVO_PC'];
-            $VERSION_SO_PC = $_POST['VERSION_SO_PC'];
             $DISPONIBILIDAD_PC = $_POST['DISPONIBILIDAD_PC'];
             $ESTADO = "ACTIVO";
             $time = new DateTime();
