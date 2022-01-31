@@ -50,10 +50,10 @@
                                     <input type="datetime-local" class="form-control" name="FECHA_INICIO_PRESTAMO" id="FECHA_INICIO_PRESTAMO">
                                 </div>
 
-                                <div class="mb-3">
+                                <!-- <div class="mb-3">
                                     <label for="FECHA_FIN_PRESTAMO" class="form-label">Fecha Fin Prestado</label>
                                     <input type="datetime-local" class="form-control" name="FECHA_FIN_PRESTAMO" id="FECHA_FIN_PRESTAMO">
-                                </div>
+                                </div> -->
 
                                 <div class="d-grid gap-2 col-6 mx-auto">
                                     <button class="btn btn-danger" type="submit" id="btn_set_loan" >Registrar</button>

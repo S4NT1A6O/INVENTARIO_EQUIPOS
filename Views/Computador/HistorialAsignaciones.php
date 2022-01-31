@@ -11,57 +11,51 @@
     </head>
     <body>
         <!-- Page Content -->
-        <div class="container-sm">
-            <br>
-            <div class="card text-dark bg-light">
-                <div class="card-header" style="background-color:#317EB5; color:#FFFFFF;">
-                    <h3 class="card-title">Asignaciones</h3>
-                </div>
-                <div class="card-body">
-                    <div class="container">
-                        <br>
-                        <h3>Lista de Asignaciones</h3>
-                        <div class="container">
-                            <br>
-                            <a name="" id="" class="btn btn-warning" href="?controlador=Asignaciones&accion=AsignarComputador" role="button">Asignar Equipos</a>
-                            <br>
-
-                            <table id="assingmentTable" class="table table-striped table-hover">
-                                <thead>
+        <br>
+        <div class="card text-dark bg-light">
+            <div class="card-header" style="background-color:#317EB5; color:#FFFFFF;">
+                <h3 class="card-title">Lista de Asignaciones</h3>
+            </div>
+            <div class="card-body">
+                <a name="" id="" class="btn btn-warning" href="?controlador=Asignaciones&accion=AsignarComputador" role="button">Asignar Equipos</a>
+                <div class="container">
+                    <br>
+                    <div class="container-sm">
+                        <table id="assingmentTable" class="table table-striped table-hover">
+                            <thead>
+                                <tr>
+                                    <th scope="col" style="font-size: small;"> ID</th>
+                                    <th scope="col" style="font-size: small;"> Empleado</th>
+                                    <th scope="col" style="font-size: small;"> Computador</th>
+                                    <th scope="col" style="font-size: small;"> Inicio Prestamo</th>
+                                    <th scope="col" style="font-size: small;"> Fin Prestamo</th>
+                                    <!-- <th scope="col" style="font-size: small;"> Registrado</th>
+                                    <th scope="col" style="font-size: small;"> Modificado</th> -->
+                                    <th scope="col" style="font-size: small;"> </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php foreach($asignaciones as $asignacion){?>
                                     <tr>
-                                        <th scope="col" style="font-size: small;"> ID</th>
-                                        <th scope="col" style="font-size: small;"> Empleado</th>
-                                        <th scope="col" style="font-size: small;"> Computador</th>
-                                        <th scope="col" style="font-size: small;"> Inicio Prestamo</th>
-                                        <th scope="col" style="font-size: small;"> Fin Prestamo</th>
-                                        <th scope="col" style="font-size: small;"> Registrado</th>
-                                        <th scope="col" style="font-size: small;"> Actualizado</th>
-                                        <th scope="col" style="font-size: small;"> </th>
+                                        <th scope="row" style="font-size: small;"><?php echo $asignacion->ID_PRESTAMO; ?></th>
+                                        <td style="font-size: small;"><?php echo $asignacion->ID_EMPLEADO_FK; ?></td>
+                                        <td style="font-size: small;"><?php echo $asignacion->ID_PC_FK; ?></td>
+                                        <td style="font-size: small;"><?php echo $asignacion->FECHA_INICIO_PRESTAMO; ?></td>
+                                        <td style="font-size: small;"><?php echo $asignacion->FECHA_FIN_PRESTAMO; ?></td>
+                                        <!-- <td style="font-size: small;"><?php echo $asignacion->CREATED_AT; ?></td>
+                                        <td style="font-size: small;"><?php echo $asignacion->UPDATED_AT; ?></td> -->
+                                        <!-- btn's acciones -->
+                                        <td>
+                                            <div class="btn-group" role="group" aria-label="">
+                                                <a href="#" class="btn btn-info" style="font-size: small;"> <i class="fas fa-pen" style="color:#ffffff;"></i> </a>
+                                                <a class="btn btn-danger"style="font-size: small;"> <i class="fas fa-trash-alt" style="color:#ffffff;"></i> <input class="btn val" type="hidden" value="<?php echo $asignacion->ID_EMPLEADO_FK; ?>"></a>
+                                            </div>
+                                        </td>                                      
                                     </tr>
-                                </thead>
-                                <tbody>
-                                    <?php foreach($asignaciones as $asignacion){?>
-                                        <tr>
-                                            <th scope="row" style="font-size: small;"><?php echo $asignacion->ID_PRESTAMO; ?></th>
-                                            <td style="font-size: small;"><?php echo $asignacion->ID_EMPLEADO_FK; ?></td>
-                                            <td style="font-size: small;"><?php echo $asignacion->ID_PC_FK; ?></td>
-                                            <td style="font-size: small;"><?php echo $asignacion->FECHA_INICIO_PRESTAMO; ?></td>
-                                            <td style="font-size: small;"><?php echo $asignacion->FECHA_FIN_PRESTAMO; ?></td>
-                                            <td style="font-size: small;"><?php echo $asignacion->CREATED_AT; ?></td>
-                                            <td style="font-size: small;"><?php echo $asignacion->UPDATED_AT; ?></td>
-                                            <!-- btn's acciones -->
-                                            <td>
-                                                <div class="btn-group" role="group" aria-label="">
-                                                    <a href="#" class="btn btn-info" style="font-size: small;"> <i class="fas fa-pen" style="color:#ffffff;"></i> </a>
-                                                    <a class="btn btn-danger"style="font-size: small;"> <i class="fas fa-trash-alt" style="color:#ffffff;"></i> <input class="btn val" type="hidden" value="<?php echo $asignacion->ID_EMPLEADO_FK; ?>"></a>
-                                                </div>
-                                            </td>                                      
-                                        </tr>
-                                    <?php } ?>
-                                </tbody>
-                            </table>
+                                <?php } ?>
+                            </tbody>
+                        </table>
 
-                        </div>
                     </div>
                 </div>
             </div>

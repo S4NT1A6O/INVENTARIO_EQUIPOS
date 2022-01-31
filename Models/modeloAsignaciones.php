@@ -60,14 +60,13 @@ class modeloAsignaciones{
         $ID_EMPLEADO_FK,
         $ID_PC_FK,
         $FECHA_INICIO_PRESTAMO,
-        $FECHA_FIN_PRESTAMO,
         $ESTADO,
         $CREATED_AT,
         $UPDATED_AT
         ){
         $conexionDB=connectionDB::crearInstancia();
-        $sql=$conexionDB->prepare("INSERT INTO PRESTAMO (ID_EMPLEADO_FK, ID_PC_FK, FECHA_INICIO_PRESTAMO, FECHA_FIN_PRESTAMO, ESTADO, CREATED_AT, UPDATED_AT) VALUES (?,?,?,?,?,?,?)");
-        $sql->execute(array($ID_EMPLEADO_FK,$ID_PC_FK,$FECHA_INICIO_PRESTAMO,$FECHA_FIN_PRESTAMO,$ESTADO,$CREATED_AT,$UPDATED_AT));
+        $sql=$conexionDB->prepare("INSERT INTO PRESTAMO (ID_EMPLEADO_FK, ID_PC_FK, FECHA_INICIO_PRESTAMO, ESTADO, CREATED_AT, UPDATED_AT) VALUES (?,?,?,?,?,?)");
+        $sql->execute(array($ID_EMPLEADO_FK,$ID_PC_FK,$FECHA_INICIO_PRESTAMO,$ESTADO,$CREATED_AT,$UPDATED_AT));
     }
 
     public static function deleteAsignacion ($ID_PRESTAMO){

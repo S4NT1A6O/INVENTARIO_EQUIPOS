@@ -16,14 +16,13 @@ class controladorAsignaciones{
             $ID_EMPLEADO_FK=$_POST['ID_EMPLEADO_FK'];
             $ID_PC_FK=$_POST['ID_PC_FK'];
             $FECHA_INICIO_PRESTAMO=$_POST['FECHA_INICIO_PRESTAMO'];
-            $FECHA_FIN_PRESTAMO=$_POST['FECHA_FIN_PRESTAMO'];
             $ESTADO = "ACTIVO";
             $time = new DateTime();
             $time->setTimezone(new DateTimeZone('America/Bogota'));
             $CREATED_AT = $time->format("Y-m-d h:i:s");
             $UPDATED_AT = $time->format("Y-m-d h:i:s");
 
-            modeloAsignaciones::setAsignacion($ID_EMPLEADO_FK,$ID_PC_FK,$FECHA_INICIO_PRESTAMO,$FECHA_FIN_PRESTAMO,$ESTADO,$CREATED_AT,$UPDATED_AT);
+            modeloAsignaciones::setAsignacion($ID_EMPLEADO_FK,$ID_PC_FK,$FECHA_INICIO_PRESTAMO,$ESTADO,$CREATED_AT,$UPDATED_AT);
 
             modeloAsignaciones::updateStateComputador($ID_PC_FK);
 
