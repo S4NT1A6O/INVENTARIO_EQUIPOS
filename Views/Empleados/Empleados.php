@@ -20,7 +20,7 @@
                 <a name="" id="" class="btn btn-warning" href="?controlador=Empleados&accion=RegistroEmpleado" role="button">Registrar Empleado</a>
                 <div class="container">
                     <br>
-                    <div class="container-sm">
+                    <div class="container">
                         <table id="employeesTable" class="table table-striped table-hover">
                             <thead>
                                 <tr>

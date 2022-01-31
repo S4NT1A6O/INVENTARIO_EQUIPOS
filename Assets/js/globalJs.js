@@ -7,10 +7,26 @@
 $(function(){
 
     $(document).ready(function() {
-        $('#computersTable').DataTable();
-        $('#assingmentTable').DataTable();
-        $('#employeesTable').DataTable();
-        $('#companyTable').DataTable();
+        $('#computersTable').DataTable({
+            "language": {
+                "url": "//cdn.datatables.net/plug-ins/1.11.4/i18n/es_es.json"
+            },
+        });
+        $('#assingmentTable').DataTable({
+            "language": {
+                "url": "//cdn.datatables.net/plug-ins/1.11.4/i18n/es_es.json"
+            },
+        });
+        $('#employeesTable').DataTable({
+            "language": {
+                "url": "//cdn.datatables.net/plug-ins/1.11.4/i18n/es_es.json"
+            },
+        });
+        $('#companyTable').DataTable({
+            "language": {
+                "url": "//cdn.datatables.net/plug-ins/1.11.4/i18n/es_es.json"
+            },
+        });
     } );
 
     /*  Permite la validacion por medio de JQuery para los registros de empleados
