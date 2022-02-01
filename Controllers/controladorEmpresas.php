@@ -16,9 +16,9 @@ class controladorEmpresas{
             print_r($_POST);
 
             $RAZON_SOCIAL_EMPRESA = $_POST['RAZON_SOCIAL_EMPRESA'];
-            $NIT_EMPRESA = $_POST['NIT_EMPRESA'];
-            $DIRECCION_EMPRESA = $_POST['DIRECCION_EMPRESA'];
-            $CODIGO_POSTAL_EMPRESA = $_POST['CODIGO_POSTAL_EMPRESA'];
+            // $NIT_EMPRESA = $_POST['NIT_EMPRESA'];
+            // $DIRECCION_EMPRESA = $_POST['DIRECCION_EMPRESA'];
+            // $CODIGO_POSTAL_EMPRESA = $_POST['CODIGO_POSTAL_EMPRESA'];
             $ESTADO = "ACTIVO";
             $time = new DateTime();
             $time->setTimezone(new DateTimeZone('America/Bogota'));

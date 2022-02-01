@@ -12,27 +12,34 @@
 
                 <li class="nav-item">
                     <a class="nav-link active" href="<?= URL ?>?controlador=Empresas&accion=Empresas">
-                    <i class="far fa-building"></i>  Empresas
+                        <i class="far fa-building"></i>  Empresas
                     </a>
                 </li>
 
                 <li class="nav-item">
                     <a class="nav-link active" href="<?= URL ?>?controlador=Empleados&accion=Empleados">
-                    <i class="fas fa-users"></i>  Empleados
-                </a>
+                        <i class="fas fa-users"></i>  Empleados
+                    </a>
                 </li>
 
                 <li class="nav-item">
                     <a class="nav-link active" href="<?= URL ?>?controlador=Computador&accion=Computadores">
-                    <i class="fas fa-laptop"></i>  Equipos
-                </a>
+                        <i class="fas fa-laptop"></i>  Equipos
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link active" href="<?= URL ?>?controlador=Mantenimiento&accion=Mantenimientos">
+                        <i class="fas fa-tools"></i>  Mantenimientos
+                    </a>
                 </li>
 
                 <li class="nav-item">
                     <a class="nav-link active" href="<?= URL ?>?controlador=Asignaciones&accion=HistorialAsignaciones">
-                    <i class="fas fa-clipboard-list"></i> Asignaciones
+                        <i class="fas fa-clipboard-list"></i> Asignaciones
                     </a>
                 </li>
+
             </ul>
         </div>
     </div>

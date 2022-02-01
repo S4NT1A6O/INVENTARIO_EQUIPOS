@@ -17,33 +17,33 @@
                 <h3 class="card-title">Lista de Empresas</h3>
             </div>
             <div class="card-body">
-                <a name="" id="" class="btn btn-warning" href="?controlador=Empresas&accion=RegistroEmpresa" role="button">Registrar Area</a>
+                <a name="" id="" class="btn btn-warning" href="?controlador=Empresas&accion=RegistroEmpresa" role="button">Registrar Empresa</a>
                 <div class="container">
                     <br>
-                    <div class="container-sm" style="max-width: 700px;">
-                        <table id="companyTable" class="table table-striped table-hover" >
+                    <div class="container-sm">
+                        <table id="companyTable" class="table table-striped table-hover">
                             <thead>
                                 <tr>
                                     <th scope="col" style="font-size: small;"> ID </th>
-                                    <th scope="col" style="font-size: small;"> Area </th>
-                                    <!-- <th scope="col" style="font-size: small;"> NIT </th>
+                                    <th scope="col" style="font-size: small;"> Nombre </th>
+                                    <th scope="col" style="font-size: small;"> NIT </th>
                                     <th scope="col" style="font-size: small;"> Dirección </th>
                                     <th scope="col" style="font-size: small;"> # Postal </th>
-                                    <th scope="col" style="font-size: small;"> Creado </th>
+                                    <!-- <th scope="col" style="font-size: small;"> Creado </th>
                                     <th scope="col" style="font-size: small;"> Modificado </th> -->
                                     <th scope="col" style="font-size: small;">  </th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php foreach($empresas as $empresa){?>
+                                <?php foreach($mantenimientos as $mantenimiento){?>
                                     <tr>
                                         <!-- datos -->
-                                        <th scope="row" style="font-size: small;"><?php echo $empresa->ID_AREA_EMPRESA; ?></th>
-                                        <td style="font-size: small;"><?php echo $empresa->NOMBRE_AREA_EMPRESA; ?></td>
-                                        <!-- <td style="font-size: small;"><?php echo $empresa->NIT_EMPRESA; ?></td>
+                                        <th scope="row" style="font-size: small;"><?php echo $empresa->ID_EMPRESA; ?></th>
+                                        <td style="font-size: small;"><?php echo $empresa->RAZON_SOCIAL_EMPRESA; ?></td>
+                                        <td style="font-size: small;"><?php echo $empresa->NIT_EMPRESA; ?></td>
                                         <td style="font-size: small;"><?php echo $empresa->DIRECCION_EMPRESA; ?></td>
                                         <td style="font-size: small;"><?php echo $empresa->CODIGO_POSTAL_EMPRESA; ?></td>
-                                        <td style="font-size: small;"><?php echo $empresa->CREATED_AT; ?></td>
+                                        <!-- <td style="font-size: small;"><?php echo $empresa->CREATED_AT; ?></td>
                                         <td style="font-size: small;"><?php echo $empresa->UPDATED_AT; ?></td> -->
 
                                         <!-- btn's acciones -->

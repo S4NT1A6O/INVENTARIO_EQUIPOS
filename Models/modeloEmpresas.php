@@ -3,31 +3,32 @@
 class modeloEmpresas{
 
     // Atributos
-    public $ID_EMPRESA;
-    public $RAZON_SOCIAL_EMPRESA;
-    public $NIT_EMPRESA;
-    public $DIRECCION_EMPRESA;
-    public $CODIGO_POSTAL_EMPRESA;
+    public $ID_AREA_EMPRESA;
+    public $NOMBRE_AREA_EMPRESA;
+    // public $NIT_EMPRESA;
+    // public $DIRECCION_EMPRESA;
+    // public $CODIGO_POSTAL_EMPRESA;
+    public $ESTADO;
     public $CREATED_AT;
     public $UPDATED_AT;
 
     // Metodos
 
     public function __construct(
-        $ID_EMPRESA,
-        $RAZON_SOCIAL_EMPRESA,
-        $NIT_EMPRESA,
-        $DIRECCION_EMPRESA,
-        $CODIGO_POSTAL_EMPRESA,
+        $ID_AREA_EMPRESA,
+        $NOMBRE_AREA_EMPRESA,
+        // $NIT_EMPRESA,
+        // $DIRECCION_EMPRESA,
+        // $CODIGO_POSTAL_EMPRESA,
         $ESTADO,
         $CREATED_AT,
         $UPDATED_AT
         ){
-        $this->ID_EMPRESA=$ID_EMPRESA;
-        $this->RAZON_SOCIAL_EMPRESA=$RAZON_SOCIAL_EMPRESA;
-        $this->NIT_EMPRESA=$NIT_EMPRESA;
-        $this->DIRECCION_EMPRESA=$DIRECCION_EMPRESA;
-        $this->CODIGO_POSTAL_EMPRESA=$CODIGO_POSTAL_EMPRESA;
+        $this->ID_AREA_EMPRESA=$ID_AREA_EMPRESA;
+        $this->NOMBRE_AREA_EMPRESA=$NOMBRE_AREA_EMPRESA;
+        // $this->NIT_EMPRESA=$NIT_EMPRESA;
+        // $this->DIRECCION_EMPRESA=$DIRECCION_EMPRESA;
+        // $this->CODIGO_POSTAL_EMPRESA=$CODIGO_POSTAL_EMPRESA;
         $this->ESTADO=$ESTADO;
         $this->CREATED_AT=$CREATED_AT;
         $this->UPDATED_AT=$UPDATED_AT;
@@ -36,10 +37,10 @@ class modeloEmpresas{
     public static function selectEmpresas(){
         $listaEmpresas=[];
         $conexionDB=connectionDB::crearInstancia();
-        $sql = $conexionDB->query("SELECT * FROM EMPRESA  WHERE ESTADO = 'ACTIVO'");
+        $sql = $conexionDB->query("SELECT * FROM AREA_EMPRESA  WHERE ESTADO = 'ACTIVO'");
 
         foreach($sql->fetchAll() as $empresa){
-            $listaEmpresas[]=new modeloEmpresas($empresa['ID_EMPRESA'],$empresa['RAZON_SOCIAL_EMPRESA'],$empresa['NIT_EMPRESA'],$empresa['DIRECCION_EMPRESA'],$empresa['CODIGO_POSTAL_EMPRESA'],$empresa['ESTADO'],$empresa['CREATED_AT'],$empresa['UPDATED_AT']);
+            $listaEmpresas[]=new modeloEmpresas($empresa['ID_AREA_EMPRESA'],$empresa['NOMBRE_AREA_EMPRESA'],$empresa['ESTADO'],$empresa['CREATED_AT'],$empresa['UPDATED_AT']);
         };
 
         return $listaEmpresas;
@@ -47,23 +48,20 @@ class modeloEmpresas{
     }
 
     public static function setEmpresa(
-        $RAZON_SOCIAL_EMPRESA,
-        $NIT_EMPRESA,
-        $DIRECCION_EMPRESA,
-        $CODIGO_POSTAL_EMPRESA,
+        $NOMBRE_AREA_EMPRESA,
         $ESTADO,
         $CREATED_AT,
         $UPDATED_AT){
         $conexionDB=connectionDB::crearInstancia();
-        $sql=$conexionDB->prepare("INSERT INTO EMPRESA (RAZON_SOCIAL_EMPRESA, NIT_EMPRESA, DIRECCION_EMPRESA, CODIGO_POSTAL_EMPRESA, ESTADO, CREATED_AT, UPDATED_AT) VALUES (?,?,?,?,?,?,?)");
-        $sql->execute(array($RAZON_SOCIAL_EMPRESA,$NIT_EMPRESA,$DIRECCION_EMPRESA,$CODIGO_POSTAL_EMPRESA,$ESTADO,$CREATED_AT,$UPDATED_AT));
+        $sql=$conexionDB->prepare("INSERT INTO AREA_EMPRESA (NOMBRE_AREA_EMPRESA, ESTADO, CREATED_AT, UPDATED_AT) VALUES (?,?,?,?)");
+        $sql->execute(array($NOMBRE_AREA_EMPRESA,$ESTADO,$CREATED_AT,$UPDATED_AT));
     }
 
-    public static function deleteEmpresa($ID_EMPRESA){
+    public static function deleteEmpresa($ID_AREA_EMPRESA){
 
         $conexionDB=connectionDB::crearInstancia();
-        $sql=$conexionDB->prepare("UPDATE EMPRESA SET ESTADO = 'INACTIVO' WHERE ID_EMPRESA = ?;");
-        $resultadoSql= $sql->execute(array($ID_EMPRESA));
+        $sql=$conexionDB->prepare("UPDATE AREA_EMPRESA SET ESTADO = 'INACTIVO' WHERE ID_AREA_EMPRESA = ?;");
+        $resultadoSql= $sql->execute(array($ID_AREA_EMPRESA));
 
         return $resultadoSql;
 
