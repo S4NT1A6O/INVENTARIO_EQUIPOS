@@ -20,7 +20,7 @@
                 <a name="" id="" class="btn btn-warning" href="?controlador=Empresas&accion=RegistroEmpresa" role="button">Registrar Area</a>
                 <div class="container">
                     <br>
-                    <div class="container-sm" style="max-width: 700px;">
+                    <div class="container-sm">
                         <table id="companyTable" class="table table-striped table-hover" >
                             <thead>
                                 <tr>
@@ -31,7 +31,7 @@
                                     <th scope="col" style="font-size: small;"> # Postal </th>
                                     <th scope="col" style="font-size: small;"> Creado </th>
                                     <th scope="col" style="font-size: small;"> Modificado </th> -->
-                                    <th scope="col" style="font-size: small;">  </th>
+                                    <th scope="col" style="font-size: small;"> Acciones </th>
                                 </tr>
                             </thead>
                             <tbody>

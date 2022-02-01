@@ -26,7 +26,7 @@ class modeloAsignaciones{
         $ESTADO,
         $CREATED_AT,
         $UPDATED_AT
-    ){
+        ){
         $this->ID_PRESTAMO=$ID_PRESTAMO;
         $this->ID_EMPLEADO_FK=$ID_EMPLEADO_FK;
         $this->ID_PC_FK=$ID_PC_FK;

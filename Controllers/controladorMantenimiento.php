@@ -12,7 +12,7 @@ class controladorMantenimiento{
 
     public function setMantenimiento(){
 
-        $data['list-computadores']= modeloAsignaciones::selectDataComputador();
+        $data['list-computadores']= modeloMantenimiento::selectDataComputador();
 
         include_once("Views/Mantenimientos/RegistroMantenimiento.php");
 
@@ -34,7 +34,7 @@ class controladorMantenimiento{
 
         $ID_EMPRESA=$_POST['ID_EMPRESA'];
 
-        $modeloEmpresas=modeloEmpresas::deleteEmpresa($ID_EMPRESA);
+        $modeloEmpresas=modeloMantenimiento::deleteEmpresa($ID_EMPRESA);
 
     }
 
