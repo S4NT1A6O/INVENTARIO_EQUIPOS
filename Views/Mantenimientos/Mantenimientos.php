@@ -14,7 +14,7 @@
         <br>
         <div class="card text-dark bg-light">
             <div class="card-header" style="background-color:#317EB5; color:#FFFFFF;">
-                <h3 class="card-title">Lista de Empresas</h3>
+                <h3 class="card-title">Lista de Mantenimientos</h3>
             </div>
             <div class="card-body">
                 <a name="" id="" class="btn btn-warning" href="?controlador=Empresas&accion=RegistroEmpresa" role="button">Registrar Empresa</a>
