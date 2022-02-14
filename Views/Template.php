@@ -1,21 +1,36 @@
 <!doctype html>
 <html lang="es">
     <head>
-        <title></title>
+
+        <title>Sistema de Inventario</title>
+
         <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <script src="https://kit.fontawesome.com/ff77c957bf.js" crossorigin="anonymous"></script>
+
+        <!-- Custom fonts for this template-->
+        <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+        <!-- Custom styles for this template-->
+        <link href="http://localhost/inventario_equipos/Assets/css/sb-admin-2.min.css" rel="stylesheet">
+
         <!-- Styles DataTables -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://cdn.datatables.net/1.11.4/css/dataTables.bootstrap5.min.css">
+
         <!-- Bootstrap CSS v5.0.2 -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"  integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
         <!-- Sweet Alert 2 -->
         <link rel="stylesheet" href="http://localhost/inventario_equipos/Assets/plugins/SweetAlert/dist/sweetalert2.min.css">
 
     </head>
-    <body>
+    <body id="page-top">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
         <!-- Menu de Navegación -->
         <?php
             require_once('./Views/Components/NavbarGeneral.php');
