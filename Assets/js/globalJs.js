@@ -204,7 +204,55 @@ $(function(){
 
             }
         });
-    });
+    }); 
 
+    $("#form-login").find('input[id="btn_set_login"]').click(function () {
+
+        event.preventDefault();
+
+            let CORREO_USUARIO = $("#form-login").find('input[type="email"]').val();
+            let PASSWORD_USUARIO = $("#form-login").find('input[type="password"]').val();
+
+            console.log(CORREO_USUARIO,PASSWORD_USUARIO);
+
+            if(
+                CORREO_USUARIO == "" ||
+                PASSWORD_USUARIO == ""
+                ) {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'Todos los datos son obligatorios!',
+                    });
+            }
+            else{
+                tryLogin();
+            }
+
+        function tryLogin(){
+
+            $.ajax({
+                dataType:"json",
+                url:"http://localhost/inventario_equipos/?controlador=Login&accion=tryLogin",
+                type: "POST",
+                data:{user:CORREO_USUARIO, pass:PASSWORD_USUARIO},
+                success: function(data){
+                    if (data.success==false) {
+                        sweetAlert(
+                            "Ha ocurrido un error",
+                            "Usuario o contraseña incorrectos...",
+                            "warning"
+                        );
+                    }
+                    else{
+                        window.location=data.link;
+                    }
+                }
+
+            })
+
+        }
+
+    })
 
 });

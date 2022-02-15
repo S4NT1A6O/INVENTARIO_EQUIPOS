@@ -10861,15 +10861,16 @@ a:focus {
 }
 
 .bg-login-image {
-  background: url("https://source.unsplash.com/K4mSJ7kc0As/600x800");
-  background-position: center;
+  background: url("http://localhost/inventario_equipos/Assets/img/inventario.png");
+  background-position: relative;
   background-size: cover;
+  background-size: 70em;
 }
 
 .bg-register-image {
   background: url("https://source.unsplash.com/Mv9hjnEUHR4/600x800");
   background-position: center;
-  background-size: cover;
+  max-height: 4em;
 }
 
 .bg-password-image {
