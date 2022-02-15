@@ -206,7 +206,7 @@ $(function(){
         });
     }); 
 
-    $("#form-login").find('input[id="btn_set_login"]').click(function () {
+    $("#form-login").find('input[id="btn_set_login"]').click(function (event) {
 
         event.preventDefault();
 
@@ -226,33 +226,25 @@ $(function(){
                     });
             }
             else{
-                tryLogin();
+                $.ajax({
+                    dataType:"json",
+                    url:"http://localhost/inventario_equipos/?controlador=Login&accion=tryLogin",
+                    type: "POST",
+                    data:{user:CORREO_USUARIO, pass:PASSWORD_USUARIO},
+                    success: function(data){
+                        if (data.success==true) {
+                            Swal.fire({
+                                icon: 'warning',
+                                title: 'Ha ocurrido un error...',
+                                text: 'Usuario o contraseña incorrectos!!!',
+                            });
+                        }
+                        else{
+                            window.location=`http://localhost/inventario_equipos/?controlador=Load&accion=Menu`;
+                        }
+                    }
+                });
             }
-
-        function tryLogin(){
-
-            $.ajax({
-                dataType:"json",
-                url:"http://localhost/inventario_equipos/?controlador=Login&accion=tryLogin",
-                type: "POST",
-                data:{user:CORREO_USUARIO, pass:PASSWORD_USUARIO},
-                success: function(data){
-                    if (data.success==false) {
-                        sweetAlert(
-                            "Ha ocurrido un error",
-                            "Usuario o contraseña incorrectos...",
-                            "warning"
-                        );
-                    }
-                    else{
-                        window.location=data.link;
-                    }
-                }
-
-            })
-
-        }
-
-    })
+    });
 
 });
