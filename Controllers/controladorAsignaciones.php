@@ -31,6 +31,17 @@ class controladorAsignaciones{
         include_once("Views/Computador/AsignarComputador.php");
     }
 
+    public function AsignarItem(){
+        $data['list-empleados']= modeloAsignaciones::selectDataEmpleado();
+
+        $data['list-items']= modeloAsignaciones::selectDataItem();
+
+        
+
+    }
+
+
+
     public function HistorialAsignaciones(){
         $asignaciones= modeloAsignaciones::selectAsignaciones();
         include_once("Views/Computador/HistorialAsignaciones.php");

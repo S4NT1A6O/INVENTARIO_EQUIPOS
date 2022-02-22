@@ -1,96 +1,296 @@
-<!doctype html>
-<html lang="es">
-    <head>
-        <title>Registro de Empresas</title>
-        <!-- Required meta tags -->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <script src="https://kit.fontawesome.com/ff77c957bf.js" crossorigin="anonymous"></script>
-        <!-- Bootstrap CSS v5.0.2 -->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"  integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    </head>
-    <body>        
-        <!-- Page Content -->
-        <div class="container-sm">
-            <br>
-            <div class="card text-dark bg-light">
-                <div class="card-header" style="background-color:#317EB5; color:#FFFFFF;">
-                    <h3 class="card-title">Registro para Empleados</h3>
-                </div>
-                <div class="card-body">
-                    <div class="container-sm">                        
-                        <form action="" method="POST">
-                            <div class="row row-cols-2">  
-                                <div class="container-sm">
+<!-- Header -->
+<?php include('./Views/Components/Header.php'); ?>
 
-                                    <div class="mb-3">
-                                        <label for="ID_EMPRESA_FK" class="form-label">Empresa Correspondient</label>
-                                        <select class="form-control" name="ID_EMPRESA_FK" id="ID_EMPRESA_FK">
-                                            <option disabled selected > Seleccione la Empresa </option>
-                                            <?php foreach ($data['list-empresas'] as $empresa) : ?>
-                                                <option value="<?= $empresa['ID_EMPRESA'] ?>"><?= $empresa['RAZON_SOCIAL_EMPRESA'] ?></option>
-                                            <?php endforeach ?>
-                                        </select>
-                                    </div>
+<!-- Sidebar -->
+<?php include('./Views/Components/Sidebar.php'); ?>
 
-                                    <div class="mb-3">
-                                        <label for="NOMBRE_COMPLETO_EMPLEADO" class="form-label">Nombre Completo</label>
-                                        <input type="text" class="form-control" name="NOMBRE_COMPLETO_EMPLEADO" id="NOMBRE_COMPLETO_EMPLEADO" placeholder=" Nombre Completo...">
-                                    </div>
+<!-- Topbar -->
+<nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
-                                    <div class="mb-3">
-                                        <label for="CORREO_EMPLEADO" class="form-label">Correo Empleado</label>
-                                        <input type="email" class="form-control" name="CORREO_EMPLEADO" id="CORREO_EMPLEADO" placeholder=" Example@exam.ple...">
-                                    </div>
+    <!-- Sidebar Toggle (Topbar) -->
+    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+        <i class="fa fa-bars"></i>
+    </button>
 
-                                    <div class="mb-3">
-                                        <label for="TIPO_DOCUMENTO_EMPLEADO" class="form-label">Tipo Documento Identificación</label>
-                                        <select class="form-control" name="TIPO_DOCUMENTO_EMPLEADO" id="TIPO_DOCUMENTO_EMPLEADO">
-                                            <option disabled selected > Seleccione el Tipo de Documentos </option>
-                                            <option value="TI">Tarjeta de Identidad</option>
-                                            <option value="CC">Cedula de Ciudadania</option>
-                                            <option value="CE">Cedula de Extranjeria</option>
-                                        </select>
-                                    </div>
+    <!-- Topbar Navbar -->
+    <ul class="navbar-nav ml-auto">
 
+        <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+        <li class="nav-item dropdown no-arrow d-sm-none">
+            <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-search fa-fw"></i>
+            </a>
+            <!-- Dropdown - Messages -->
+            <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
+                aria-labelledby="searchDropdown">
+                <form class="form-inline mr-auto w-100 navbar-search">
+                    <div class="input-group">
+                        <input type="text" class="form-control bg-light border-0 small"
+                            placeholder="Search for..." aria-label="Search"
+                            aria-describedby="basic-addon2">
+                        <div class="input-group-append">
+                            <button class="btn btn-primary" type="button">
+                                <i class="fas fa-search fa-sm"></i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </li>
+
+        <!-- Nav Item - Alerts -->
+        <li class="nav-item dropdown no-arrow mx-1">
+            <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-bell fa-fw"></i>
+                <!-- Counter - Alerts -->
+                <span class="badge badge-danger badge-counter">3+</span>
+            </a>
+            <!-- Dropdown - Alerts -->
+            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                aria-labelledby="alertsDropdown">
+                <h6 class="dropdown-header">
+                    Alerts Center
+                </h6>
+                <a class="dropdown-item d-flex align-items-center" href="#">
+                    <div class="mr-3">
+                        <div class="icon-circle bg-primary">
+                            <i class="fas fa-file-alt text-white"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="small text-gray-500">December 12, 2019</div>
+                        <span class="font-weight-bold">A new monthly report is ready to download!</span>
+                    </div>
+                </a>
+                <a class="dropdown-item d-flex align-items-center" href="#">
+                    <div class="mr-3">
+                        <div class="icon-circle bg-success">
+                            <i class="fas fa-donate text-white"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="small text-gray-500">December 7, 2019</div>
+                        $290.29 has been deposited into your account!
+                    </div>
+                </a>
+                <a class="dropdown-item d-flex align-items-center" href="#">
+                    <div class="mr-3">
+                        <div class="icon-circle bg-warning">
+                            <i class="fas fa-exclamation-triangle text-white"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="small text-gray-500">December 2, 2019</div>
+                        Spending Alert: We've noticed unusually high spending for your account.
+                    </div>
+                </a>
+                <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
+            </div>
+        </li>
+
+        <!-- Nav Item - Messages -->
+        <li class="nav-item dropdown no-arrow mx-1">
+            <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-envelope fa-fw"></i>
+                <!-- Counter - Messages -->
+                <span class="badge badge-danger badge-counter">7</span>
+            </a>
+            <!-- Dropdown - Messages -->
+            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                aria-labelledby="messagesDropdown">
+                <h6 class="dropdown-header">
+                    Message Center
+                </h6>
+                <a class="dropdown-item d-flex align-items-center" href="#">
+                    <div class="dropdown-list-image mr-3">
+                        <img class="rounded-circle" src="img/undraw_profile_1.svg"
+                            alt="...">
+                        <div class="status-indicator bg-success"></div>
+                    </div>
+                    <div class="font-weight-bold">
+                        <div class="text-truncate">Hi there! I am wondering if you can help me with a
+                            problem I've been having.</div>
+                        <div class="small text-gray-500">Emily Fowler · 58m</div>
+                    </div>
+                </a>
+                <a class="dropdown-item d-flex align-items-center" href="#">
+                    <div class="dropdown-list-image mr-3">
+                        <img class="rounded-circle" src="img/undraw_profile_2.svg"
+                            alt="...">
+                        <div class="status-indicator"></div>
+                    </div>
+                    <div>
+                        <div class="text-truncate">I have the photos that you ordered last month, how
+                            would you like them sent to you?</div>
+                        <div class="small text-gray-500">Jae Chun · 1d</div>
+                    </div>
+                </a>
+                <a class="dropdown-item d-flex align-items-center" href="#">
+                    <div class="dropdown-list-image mr-3">
+                        <img class="rounded-circle" src="img/undraw_profile_3.svg"
+                            alt="...">
+                        <div class="status-indicator bg-warning"></div>
+                    </div>
+                    <div>
+                        <div class="text-truncate">Last month's report looks great, I am very happy with
+                            the progress so far, keep up the good work!</div>
+                        <div class="small text-gray-500">Morgan Alvarez · 2d</div>
+                    </div>
+                </a>
+                <a class="dropdown-item d-flex align-items-center" href="#">
+                    <div class="dropdown-list-image mr-3">
+                        <img class="rounded-circle" src="https://source.unsplash.com/Mv9hjnEUHR4/60x60"
+                            alt="...">
+                        <div class="status-indicator bg-success"></div>
+                    </div>
+                    <div>
+                        <div class="text-truncate">Am I a good boy? The reason I ask is because someone
+                            told me that people say this to all dogs, even if they aren't good...</div>
+                        <div class="small text-gray-500">Chicken the Dog · 2w</div>
+                    </div>
+                </a>
+                <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
+            </div>
+        </li>
+
+        <div class="topbar-divider d-none d-sm-block"></div>
+
+        <!-- Nav Item - User Information -->
+        <li class="nav-item dropdown no-arrow">
+            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
+                <img class="img-profile rounded-circle"
+                    src="img/undraw_profile.svg">
+            </a>
+            <!-- Dropdown - User Information -->
+            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                aria-labelledby="userDropdown">
+                <a class="dropdown-item" href="#">
+                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                    Profile
+                </a>
+                <a class="dropdown-item" href="#">
+                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                    Settings
+                </a>
+                <a class="dropdown-item" href="#">
+                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+                    Activity Log
+                </a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                    Logout
+                </a>
+            </div>
+        </li>
+
+    </ul>
+
+</nav>
+
+<!-- <?php
+// include_once('./Views/Components/Topbar.php');
+?> -->
+<!-- End of Topbar -->
+
+
+<!-- Begin Page Content -->
+<div class="container-fluid">
+    
+    <!-- Page Heading -->
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800"> Areas de la Empresa</h1>
+        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
+    </div>
+
+    <div class="card shadow mb-4">
+        <!-- Card Header -->
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Registro de Areas</h6>
+        </div>
+        <!-- Card Body -->
+        <div class="card-body">
+            <div class="table-responsive">                     
+                <form action="" method="POST">
+                    <div class="p-4">
+                        <div class="row row-cols-2">  
+                            <div class="container">
+
+                                <div class="mb-3">
+                                    <label for="ID_EMPRESA_FK" class="form-label">Area Empresa Correspondiente</label>
+                                    <select class="form-control" name="ID_EMPRESA_FK" id="ID_EMPRESA_FK">
+                                        <option disabled selected > Seleccione el Area </option>
+                                        <?php foreach ($data['list-empresas'] as $empresa) : ?>
+                                            <option value="<?= $empresa['ID_AREA_EMPRESA'] ?>"><?= $empresa['NOMBRE_AREA_EMPRESA'] ?></option>
+                                        <?php endforeach ?>
+                                    </select>
                                 </div>
 
-                                <div class="container-sm">
-                                    
-                                    <div class="mb-3">
-                                        <label for="NUMERO_DOCUMENTO_EMPLEADO" class="form-label">Numero de Identificación Empleado</label>
-                                        <input type="number" class="form-control" name="NUMERO_DOCUMENTO_EMPLEADO" id="NUMERO_DOCUMENTO_EMPLEADO" placeholder=" Numero de Identificación...">
-                                    </div>
+                                <div class="mb-3">
+                                    <label for="NOMBRE_COMPLETO_EMPLEADO" class="form-label">Nombre Completo</label>
+                                    <input type="text" class="form-control" name="NOMBRE_COMPLETO_EMPLEADO" id="NOMBRE_COMPLETO_EMPLEADO" placeholder=" Nombre Completo...">
+                                </div>
 
-                                    <div class="mb-3">
-                                        <label for="FECHA_NACIMIENTO_EMPLEADO" class="form-label">Fecha de Nacimiento Empleado</label>
-                                        <input type="date" class="form-control" name="FECHA_NACIMIENTO_EMPLEADO" id="FECHA_NACIMIENTO_EMPLEADO" >
-                                    </div>
+                                <div class="mb-3">
+                                    <label for="CORREO_EMPLEADO" class="form-label">Correo Empleado</label>
+                                    <input type="email" class="form-control" name="CORREO_EMPLEADO" id="CORREO_EMPLEADO" placeholder=" Example@exam.ple...">
+                                </div>
 
-                                    <div class="mb-3">
-                                        <label for="NUMERO_CELULAR_EMPLEADO" class="form-label">Telefono Celular Empleado</label>
-                                        <input type="number" class="form-control" name="NUMERO_CELULAR_EMPLEADO" id="NUMERO_CELULAR_EMPLEADO" placeholder=" Telefono Celular...">
-                                    </div>
-
-                                    <div class="mb-3">
-                                        <label for="NUMERO_FIJO_EMPLEADO" class="form-label">Telefono Fijo Empleado</label>
-                                        <input type="number" class="form-control" name="NUMERO_FIJO_EMPLEADO" id="NUMERO_FIJO_EMPLEADO" placeholder=" Telefono Fijo...">
-                                    </div>
-
-                                </div>                                
-
-                                <div class="d-grid gap-2 col-6 mx-auto">
-                                    <input name="" id="btn_set_computer" class="btn btn-danger" type="submit" value="Registrar Equipo">
+                                <div class="mb-3">
+                                    <label for="TIPO_DOCUMENTO_EMPLEADO" class="form-label">Tipo Documento Identificación</label>
+                                    <select class="form-control" name="TIPO_DOCUMENTO_EMPLEADO" id="TIPO_DOCUMENTO_EMPLEADO">
+                                        <option disabled selected > Seleccione el Tipo de Documentos </option>
+                                        <option value="TI">Tarjeta de Identidad</option>
+                                        <option value="CC">Cedula de Ciudadania</option>
+                                        <option value="CE">Cedula de Extranjeria</option>
+                                    </select>
                                 </div>
 
                             </div>
-                        </form>
+
+                            <div class="container">
+                                
+                                <div class="mb-3">
+                                    <label for="NUMERO_DOCUMENTO_EMPLEADO" class="form-label">Numero de Identificación Empleado</label>
+                                    <input type="number" class="form-control" name="NUMERO_DOCUMENTO_EMPLEADO" id="NUMERO_DOCUMENTO_EMPLEADO" placeholder=" Numero de Identificación...">
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="FECHA_NACIMIENTO_EMPLEADO" class="form-label">Fecha de Nacimiento Empleado</label>
+                                    <input type="date" class="form-control" name="FECHA_NACIMIENTO_EMPLEADO" id="FECHA_NACIMIENTO_EMPLEADO" >
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="NUMERO_CELULAR_EMPLEADO" class="form-label">Telefono Celular Empleado</label>
+                                    <input type="number" class="form-control" name="NUMERO_CELULAR_EMPLEADO" id="NUMERO_CELULAR_EMPLEADO" placeholder=" Telefono Celular...">
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="NUMERO_FIJO_EMPLEADO" class="form-label">Telefono Fijo Empleado</label>
+                                    <input type="number" class="form-control" name="NUMERO_FIJO_EMPLEADO" id="NUMERO_FIJO_EMPLEADO" placeholder=" Telefono Fijo...">
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <input name="" id="btn_set_computer" class="btn btn-danger btn-user btn-block" type="submit" value="Registrar Equipo">
                     </div>
-                </div>
+                </form>
+
             </div>
+
         </div>
-        <!-- Bootstrap JavaScript Libraries -->
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
-    </body>
-</html>
+    </div>
+
+</div>
+<!-- /.container-fluid -->
+
+<!-- Footer -->
+<?php include('./Views/Components/Footer.php'); ?>

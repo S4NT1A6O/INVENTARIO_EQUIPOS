@@ -1,6 +1,4 @@
-<?php
-    const URL = 'http://localhost/inventario_equipos/';
-?>
+
 <!-- Sidebar -->
 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
@@ -40,8 +38,8 @@
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <!-- <h6 class="collapse-header">Custom Components:</h6> -->
-                <a class="collapse-item" href="<?= URL ?>?controlador=Empresas&accion=Empresas" >Listado de Areas</a>
-                <a class="collapse-item" href="<?= URL ?>?controlador=Empresas&accion=RegistroEmpresa">Registrar Area</a>
+                <a class="collapse-item" href="<?=URL?>?controlador=Empresas&accion=Empresas" >Listado de Areas</a>
+                <a class="collapse-item" href="<?=URL?>?controlador=Empresas&accion=RegistroEmpresa">Registrar Area</a>
             </div>
         </div>
     </li>
@@ -56,8 +54,8 @@
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
             data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="<?= URL ?>?controlador=Empleados&accion=Empleados">Listado Empleados</a>
-                <a class="collapse-item" href="<?= URL ?>?controlador=Empleados&accion=RegistroEmpleado">Registrar Empleados</a>
+                <a class="collapse-item" href="<?=URL?>?controlador=Empleados&accion=Empleados">Listado Empleados</a>
+                <a class="collapse-item" href="<?=URL?>?controlador=Empleados&accion=RegistroEmpleado">Registrar Empleados</a>
             </div>
         </div>
     </li>
@@ -72,40 +70,58 @@
         <div id="collapseUtilities_2" class="collapse" aria-labelledby="headingUtilities"
             data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="<?= URL ?>?controlador=Computador&accion=Computadores">Listado Computadores</a>
-                <a class="collapse-item" href="<?= URL ?>?controlador=Computador&accion=RegistroComputador">Registrar Computadores</a>
+                <a class="collapse-item" href="<?=URL?>?controlador=Computador&accion=Computadores">Listado Computadores</a>
+                <a class="collapse-item" href="<?=URL?>?controlador=Computador&accion=RegistroComputador">Registrar Computadores</a>
             </div>
         </div>
     </li>
 
-<!-- Nav Item - Pages Collapse Menu -->
-<li class="nav-item">
-    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities_3"
-        aria-expanded="true" aria-controls="collapseUtilities">
-        <i class="fas fa-tools"></i>
-        <span>Mantenimiento</span>
-    </a>
-    <div id="collapseUtilities_3" class="collapse" aria-labelledby="headingUtilities"
-        data-parent="#accordionSidebar">
-        <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="<?= URL ?>?controlador=Mantenimiento&accion=Mantenimientos">Listado Computadores</a>
-            <a class="collapse-item" href="<?= URL ?>?controlador=Empresas&accion=RegistroEmpresa">Registrar Computadores</a>
+    <!-- Nav Item - Pages Collapse Menu -->
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities_3"
+            aria-expanded="true" aria-controls="collapseUtilities">
+            <i class="fa-solid fa-dolly"></i>
+            <span>Items</span>
+        </a>
+        <div id="collapseUtilities_3" class="collapse" aria-labelledby="headingUtilities"
+            data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <a class="collapse-item" href="<?=URL?>?controlador=Items&accion=Items">Listado Items</a>
+                <a class="collapse-item" href="<?=URL?>?controlador=Items&accion=RegistroItem">Registrar Item</a>
+                <a class="collapse-item" href="<?=URL?>?controlador=Items&accion=ItemsAsignados">Items Asignados</a>
+            </div>
         </div>
-    </div>
-</li>
+    </li>
 
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities_4"
             aria-expanded="true" aria-controls="collapseUtilities">
-            <i class="fas fa-clipboard-list"></i>
-            <span>Prestamos</span>
+            <i class="fas fa-tools"></i>
+            <span>Mantenimiento</span>
         </a>
         <div id="collapseUtilities_4" class="collapse" aria-labelledby="headingUtilities"
             data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
+                <a class="collapse-item" href="<?= URL ?>?controlador=Mantenimiento&accion=Mantenimientos">Listado Mantenimientos</a>
+                <a class="collapse-item" href="<?= URL ?>?controlador=Mantenimiento&accion=HistorialMantenimiento">Historial de Mantenimientos</a>
+            </div>
+        </div>
+    </li>
+
+    <!-- Nav Item - Pages Collapse Menu -->
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities_5"
+            aria-expanded="true" aria-controls="collapseUtilities">
+            <i class="fas fa-clipboard-list"></i>
+            <span>Prestamos</span>
+        </a>
+        <div id="collapseUtilities_5" class="collapse" aria-labelledby="headingUtilities"
+            data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
                 <a class="collapse-item" href="<?= URL ?>?controlador=Asignaciones&accion=HistorialAsignaciones">Listado Prestamos</a>
-                <a class="collapse-item" href="<?= URL ?>?controlador=Computador&accion=RegistroComputador">Registrar Prestamos</a>
+                <a class="collapse-item" href="<?= URL ?>?controlador=Asignaciones&accion=AsignarComputador">Registrar Prestamos PC</a>
+                <a class="collapse-item" href="<?= URL ?>?controlador=Asignaciones&accion=AsignarItem">Registrar Prestamos PC</a>
             </div>
         </div>
     </li>
@@ -121,3 +137,9 @@
 
 </ul>
 <!-- End of Sidebar -->
+
+<!-- Content Wrapper -->
+<div id="content-wrapper" class="d-flex flex-column">
+
+<!-- Main Content -->
+<div id="content">

@@ -92,7 +92,7 @@ class modeloAsignaciones{
     public static function selectDataEmpleado(){
 
         $conexionDB=connectionDB::crearInstancia();
-        $sql="SELECT ID_EMPLEADO,NOMBRE_COMPLETO_EMPLEADO FROM EMPLEADO";
+        $sql="SELECT ID_USUARIO,NOMBRE_COMPLETO_USUARIO FROM USUARIO WHERE ID_ROL_FK = '2';";
         $stmt = $conexionDB->prepare($sql);
         $stmt->execute();
         $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -104,6 +104,17 @@ class modeloAsignaciones{
 
         $conexionDB=connectionDB::crearInstancia();
         $sql="SELECT ID_PC,MODELO_PC FROM COMPUTADOR WHERE DISPONIBILIDAD_PC LIKE 'DISPONIBLE';";
+        $stmt = $conexionDB->prepare($sql);
+        $stmt->execute();
+        $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        return $data;
+    }
+    
+    public static function selectDataItem(){
+
+        $conexionDB=connectionDB::crearInstancia();
+        $sql="SELECT ID_ITEM,MODELO_ITEM,CANTIDAD_DISPONIBLE_ITEM,IMAGEN_ITEM FROM ITEMS WHERE ESTADO LIKE 'ACTIVO' AND CANTIDAD_DISPONIBLE_ITEM <= '1';";
         $stmt = $conexionDB->prepare($sql);
         $stmt->execute();
         $data = $stmt->fetchAll(PDO::FETCH_ASSOC);

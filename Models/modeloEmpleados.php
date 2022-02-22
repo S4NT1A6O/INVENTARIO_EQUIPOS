@@ -42,7 +42,7 @@ class modeloEmpleados{
         $this->NUMERO_DOCUMENTO_USUARIO=$NUMERO_DOCUMENTO_USUARIO;
         $this->FECHA_NACIMIENTO_USUARIO=$FECHA_NACIMIENTO_USUARIO;
         $this->NUMERO_CELULAR_USUARIO=$NUMERO_CELULAR_USUARIO;
-        $this->NUMERO_FIJO_USUARIOO=$NUMERO_FIJO_USUARIO;
+        $this->NUMERO_FIJO_USUARIO=$NUMERO_FIJO_USUARIO;
         $this->ESTADO=$ESTADO;
         $this->CREATED_AT=$CREATED_AT;
         $this->UPDATED_AT=$UPDATED_AT;
@@ -51,7 +51,7 @@ class modeloEmpleados{
     public static function selectDataEmpresa(){
 
         $conexionDB=connectionDB::crearInstancia();
-        $sql = "SELECT ID_EMPRESA,RAZON_SOCIAL_EMPRESA FROM EMPRESA";
+        $sql = "SELECT ID_AREA_EMPRESA, NOMBRE_AREA_EMPRESA FROM AREA_EMPRESA WHERE ESTADO = 'ACTIVO';";
         $stmt = $conexionDB->prepare($sql);
         $stmt->execute();
         $data = $stmt->fetchAll(PDO::FETCH_ASSOC);

@@ -213,7 +213,7 @@ $(function(){
             let CORREO_USUARIO = $("#form-login").find('input[type="email"]').val();
             let PASSWORD_USUARIO = $("#form-login").find('input[type="password"]').val();
 
-            console.log(CORREO_USUARIO,PASSWORD_USUARIO);
+            // console.log(CORREO_USUARIO,PASSWORD_USUARIO);
 
             if(
                 CORREO_USUARIO == "" ||
@@ -227,12 +227,16 @@ $(function(){
             }
             else{
                 $.ajax({
-                    dataType:"json",
-                    url:"http://localhost/inventario_equipos/?controlador=Login&accion=tryLogin",
-                    type: "POST",
+                    // dataType:"json",
+                    // url:'http://localhost/inventario_equipos/?controlador=Login&accion=tryLogin'
+                    url: 'http://localhost/inventario_equipos/nuevo.php',
+                    type: 'POST',
+                    dataType: 'json',
                     data:{user:CORREO_USUARIO, pass:PASSWORD_USUARIO},
                     success: function(data){
-                        if (data.success==true) {
+                        console.log(data);
+                        return false;
+                        if (data.state==="nok") {
                             Swal.fire({
                                 icon: 'warning',
                                 title: 'Ha ocurrido un error...',
