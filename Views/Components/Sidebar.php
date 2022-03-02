@@ -103,8 +103,8 @@
         <div id="collapseUtilities_4" class="collapse" aria-labelledby="headingUtilities"
             data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="<?= URL ?>?controlador=Mantenimiento&accion=Mantenimientos">Listado Mantenimientos</a>
-                <a class="collapse-item" href="<?= URL ?>?controlador=Mantenimiento&accion=HistorialMantenimiento">Historial de Mantenimientos</a>
+                <a class="collapse-item" href="<?= URL ?>?controlador=Mantenimiento&accion=Mantenimientos">Mantenimientos Activos</a>
+                <a class="collapse-item" href="<?= URL ?>?controlador=Mantenimiento&accion=HistorialMantenimiento">Historial Mantenimientos</a>
             </div>
         </div>
     </li>
@@ -120,8 +120,8 @@
             data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <a class="collapse-item" href="<?= URL ?>?controlador=Asignaciones&accion=HistorialAsignaciones">Listado Prestamos</a>
-                <a class="collapse-item" href="<?= URL ?>?controlador=Asignaciones&accion=AsignarComputador">Registrar Prestamos PC</a>
-                <a class="collapse-item" href="<?= URL ?>?controlador=Asignaciones&accion=AsignarItem">Registrar Prestamos PC</a>
+                <a class="collapse-item" href="<?= URL ?>?controlador=Asignaciones&accion=AsignarComputador">Prestar PC</a>
+                <a class="collapse-item" href="<?= URL ?>?controlador=Asignaciones&accion=AsignarItem">Prestar Item</a>
             </div>
         </div>
     </li>
