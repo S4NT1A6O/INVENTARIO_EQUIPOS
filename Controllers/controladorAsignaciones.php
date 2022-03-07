@@ -36,11 +36,23 @@ class controladorAsignaciones{
 
         $data['list-items']= modeloAsignaciones::selectDataItem();
 
-        
+        if ($_POST) {
+
+            $MARCA_ITEM=$_POST['MARCA_ITEM']
+            $MODELO_ITEM=$_POST['MODELO_ITEM']
+            $TIPO_ITEM=$_POST['TIPO_ITEM']
+            $CANTIDAD_ITEM=$_POST['CANTIDAD_ITEM']
+            $CANTIDAD_DISPONIBLE_ITEM=$_POST['CANTIDAD_DISPONIBLE_ITEM']
+            $IMAGEN_ITEM=$_POST['IMAGEN_ITEM']
+            $ESTADO=$_POST['ESTADO']
+
+            modeloAsignaciones::
+
+        }
 
     }
 
-
+    // public function
 
     public function HistorialAsignaciones(){
         $asignaciones= modeloAsignaciones::selectAsignaciones();

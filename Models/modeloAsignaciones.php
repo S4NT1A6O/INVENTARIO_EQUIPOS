@@ -3,8 +3,6 @@
 class modeloAsignaciones{
 
     // Atributos
-    // Asignaciones
-
     public $ID_PRESTAMO;
     public $ID_EMPLEADO_FK;
     public $ID_PC_FK;

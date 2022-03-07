@@ -205,8 +205,8 @@
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
         <h1 class="h3 mb-0 text-gray-800">Mantenimientos</h1>
-        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
+        <!-- <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> -->
     </div>
 
     <div class="card shadow mb-4">
@@ -260,27 +260,3 @@
 
 <!-- Footer -->
 <?php include('./Views/Components/Footer.php'); ?>
-
-
-
-
-
-
-
-
-
-        <!-- Page Content -->
-        <div class="card text-dark bg-light">
-            <div class="card-header" style="background-color:#317EB5; color:#FFFFFF;">
-                <h3 class="card-title">Lista de Mantenimientos</h3>
-            </div>
-            <div class="card-body">
-                <a name="" id="" class="btn btn-warning" href="?controlador=Empresas&accion=RegistroEmpresa" role="button">Registrar Empresa</a>
-                <div class="container">
-                    <br>
-                    <div class="container-sm">
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
