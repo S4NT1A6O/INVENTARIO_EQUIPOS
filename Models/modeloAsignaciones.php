@@ -67,6 +67,18 @@ class modeloAsignaciones{
         $sql->execute(array($ID_EMPLEADO_FK,$ID_PC_FK,$FECHA_INICIO_PRESTAMO,$ESTADO,$CREATED_AT,$UPDATED_AT));
     }
 
+    public static function setAsigItem(
+        $MARCA_ITEM,
+        $MODELO_ITEM,
+        $TIPO_ITEM,
+        $CANTIDAD_ITEM,
+        $CANTIDAD_DISPONIBLE_ITEM,
+        $IMAGEN_ITEM,
+        $ESTADO
+        ){
+            
+    }
+
     public static function deleteAsignacion ($ID_PRESTAMO){
 
         $conexionDB=connectionDB::crearInstancia();
