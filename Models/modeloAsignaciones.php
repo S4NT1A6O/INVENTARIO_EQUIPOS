@@ -54,6 +54,7 @@ class modeloAsignaciones{
 
     }
 
+
     public static function setAsignacion(
         $ID_EMPLEADO_FK,
         $ID_PC_FK,

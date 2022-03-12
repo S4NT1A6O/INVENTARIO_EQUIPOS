@@ -203,11 +203,11 @@
                 class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> -->
     </div>
 
-    <!-- CARD -->
+    <!-- CARD PC -->
     <div class="card shadow mb-4">
         <!-- Card Header -->
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary"> Lista de Prestamos</h6>
+            <h6 class="m-0 font-weight-bold text-primary"> Computadores Prestados</h6>
         </div>
         <!-- Card Body -->
         <div class="card-body">
@@ -251,7 +251,7 @@
             </div>
         </div>
     </div>
-    <!-- END CARD -->
+    <!-- END CARD PC -->
 
 </div>
 <!-- /.container-fluid -->

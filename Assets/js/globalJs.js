@@ -27,6 +27,11 @@ $(function(){
                 "url": "//cdn.datatables.net/plug-ins/1.11.4/i18n/es_es.json"
             },
         });
+        $('#assingItemsTable').DataTable({
+            "language": {
+                "url": "//cdn.datatables.net/plug-ins/1.11.4/i18n/es_es.json"
+            },
+        });
     } );
 
     /*  Permite la validacion por medio de JQuery para los registros de empleados

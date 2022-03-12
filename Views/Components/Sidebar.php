@@ -89,6 +89,7 @@
                 <a class="collapse-item" href="<?=URL?>?controlador=Items&accion=Items">Listado Items</a>
                 <a class="collapse-item" href="<?=URL?>?controlador=Items&accion=RegistroItem">Registrar Item</a>
                 <a class="collapse-item" href="<?=URL?>?controlador=Items&accion=ItemsAsignados">Items Asignados</a>
+                <a class="collapse-item" href="<?=URL?>?controlador=AsignacionesItems&accion=HistorialAsiItems">Items Asignados</a>
             </div>
         </div>
     </li>
