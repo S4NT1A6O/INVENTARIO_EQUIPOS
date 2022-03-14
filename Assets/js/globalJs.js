@@ -233,14 +233,12 @@ $(function(){
             else{
                 $.ajax({
                     // dataType:"json",
-                    // url:'http://localhost/inventario_equipos/?controlador=Login&accion=tryLogin'
-                    url: 'http://localhost/inventario_equipos/nuevo.php',
+                    url:'http://localhost/inventario_equipos/?controlador=Login&accion=tryLogin',
+                    // url: 'http://localhost/inventario_equipos/nuevo.php',
                     type: 'POST',
                     dataType: 'json',
                     data:{user:CORREO_USUARIO, pass:PASSWORD_USUARIO},
                     success: function(data){
-                        console.log(data);
-                        return false;
                         if (data.state==="nok") {
                             Swal.fire({
                                 icon: 'warning',
@@ -249,7 +247,7 @@ $(function(){
                             });
                         }
                         else{
-                            window.location=`http://localhost/inventario_equipos/?controlador=Load&accion=Menu`;
+                            window.location=`http://localhost/inventario_equipos/${data.link}`;
                         }
                     }
                 });

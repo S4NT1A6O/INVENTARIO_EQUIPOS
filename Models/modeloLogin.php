@@ -55,8 +55,7 @@ class modeloLogin{
         // $datos=array();
         $listaDatos=[];
         $conexionDB=connectionDB::crearInstancia();
-        $sql=$conexionDB->query("SELECT ID_USUARIO,ID_EMPRESA_FK ,ID_ROL_FK ,NOMBRE_COMPLETO_USUARIO,CORREO_USUARIO ,TIPO_DOCUMENTO_USUARIO,NUMERO_DOCUMENTO_USUARIO ,FECHA_NACIMIENTO_USUARIO,NUMERO_CELULAR_USUARIO ,NUMERO_FIJO_USUARIO,ESTADO,CREATED_AT	,UPDATED_AT FROM USUARIO WHERE CORREO_USUARIO ='".$CORREO_USUARIO."' AND PASSWORD_USUARIO ='".$PASSWORD_USUARIO."'AND ESTADO = 'ACTIVO';");
-        
+        $sql=$conexionDB->query("SELECT ID_USUARIO,ID_EMPRESA_FK ,ID_ROL_FK ,NOMBRE_COMPLETO_USUARIO,CORREO_USUARIO ,TIPO_DOCUMENTO_USUARIO,NUMERO_DOCUMENTO_USUARIO ,FECHA_NACIMIENTO_USUARIO,NUMERO_CELULAR_USUARIO ,NUMERO_FIJO_USUARIO,ESTADO,CREATED_AT	,UPDATED_AT FROM USUARIO WHERE CORREO_USUARIO ='".$CORREO_USUARIO."' AND PASSWORD_USUARIO ='".$PASSWORD_USUARIO."' AND ESTADO = 'ACTIVO';");
         // $datos[]=$sql->fetchAll();
 
         // while ($resultado=$sql->fetch_assoc()) {
@@ -69,7 +68,6 @@ class modeloLogin{
         foreach($sql->fetchAll() as $dato){
             $listaDatos[]=new modeloLogin($dato['ID_USUARIO'],$dato['ID_EMPRESA_FK'],$dato['ID_ROL_FK'],$dato['NOMBRE_COMPLETO_USUARIO'],$dato['CORREO_USUARIO'],$dato['TIPO_DOCUMENTO_USUARIO'],$dato['NUMERO_DOCUMENTO_USUARIO'],$dato['FECHA_NACIMIENTO_USUARIO'],$dato['NUMERO_CELULAR_USUARIO'],$dato['NUMERO_FIJO_USUARIO'],$dato['ESTADO'] ,$dato['CREATED_AT'],$dato['UPDATED_AT']);
         };
-
 
         // foreach($sql->fetchAll() as $usuario){
         //     $datosUsuario[]=new modeloLogin($usuario['ID_USUARIO'],$usuario['ID_EMPRESA_FK'],$usuario['ID_ROL_FK'],$usuario['NOMBRE_COMPLETO_USUARIO'],$usuario['CORREO_USUARIO'],$usuario['TIPO_DOCUMENTO_USUARIO'],$usuario['NUMERO_DOCUMENTO_USUARIO'],$usuario['FECHA_NACIMIENTO_USUARIO'],$usuario['NUMERO_CELULAR_USUARIO'],$usuario['NUMERO_FIJO_USUARIO'],$usuario['ESTADO'],$usuario['CREATED_AT'],$usuario['UPDATED_AT']);
