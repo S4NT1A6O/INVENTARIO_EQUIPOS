@@ -247,7 +247,14 @@ $(function(){
                             });
                         }
                         else{
-                            window.location=`http://localhost/inventario_equipos/${data.link}`;
+                            Swal.fire({
+                                title: 'Inicio de sesión exitoso',
+                                confirmButtonText: 'Ok',
+                                }).then((result) => {
+                                if (result.isConfirmed) {
+                                    window.location=`http://localhost/inventario_equipos/${data.link}`;
+                                }
+                            })
                         }
                     }
                 });

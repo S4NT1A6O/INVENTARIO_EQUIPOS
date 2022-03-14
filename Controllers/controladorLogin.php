@@ -11,6 +11,13 @@ class controladorLogin
         session_start();
     }
 
+    public function logOut(){
+        session_start();
+        session_unset();
+        session_destroy();
+        header('Location:' . URL . '?controlador=Login&accion=Login');
+    }
+
     public function Login()
     {
         include_once("Views/Login/Login.php");
