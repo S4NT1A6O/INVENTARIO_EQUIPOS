@@ -203,8 +203,6 @@
                 class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> -->
     </div>
 
-    <?php echo $asignacionesItems ?>
-
     <!-- CARD ITEMS-->
     <div class="card shadow mb-4">
         <!-- Card Header -->
@@ -241,7 +239,7 @@
                                 <td>
                                     <div class="btn-group" role="group" aria-label="">
                                         <a href="#" class="btn btn-info" style="font-size: small;"> <i class="fas fa-pen" style="color:#ffffff;"></i> </a>
-                                        <a class="btn btn-danger"style="font-size: small;"> <i class="fas fa-trash-alt" style="color:#ffffff;"></i> <input class="btn val" type="hidden" value="<?php echo $asignacion->ID_EMPLEADO_FK; ?>"></a>
+                                        <a class="btn btn-danger"style="font-size: small;"> <i class="fas fa-trash-alt" style="color:#ffffff;"></i> <input class="btn val" type="hidden" value="<?php echo $asignacionI->ID_PRESTAMO; ?>"></a>
                                     </div>
                                 </td>
                             </tr>

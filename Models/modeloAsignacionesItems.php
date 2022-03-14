@@ -53,6 +53,8 @@ class modeloAsignacionesItems{
             $listaAsigItems[]=new modeloAsignacionesItems($item['ID_PRESTAMO'],$item['NOMBRE_COMPLETO_USUARIO'],$item['MODELO_ITEM'],$item['TIPO_ITEM'],$item['FECHA_INICIO_PRESTAMO'],$item['FECHA_FIN_PRESTAMO'],$item['ESTADO'],$item['CREATED_AT'],$item['UPDATED_AT']);
         };
 
+        return $listaAsigItems;
+
     }
 
     // public static function setAsigItem(
