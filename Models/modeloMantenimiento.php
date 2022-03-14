@@ -44,6 +44,15 @@ class modeloMantenimiento{
         return $listaMantenimientos;
 
     }
+
+    public static function selectDataComputador(){
+
+    }
+
+    public static function closeMaintenance(){
+        
+    }
+
 }
 
 ?>

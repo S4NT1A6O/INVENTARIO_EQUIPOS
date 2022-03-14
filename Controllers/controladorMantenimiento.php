@@ -5,6 +5,19 @@ include_once("Connection.php");
 
 class controladorMantenimiento{
 
+    public function __construct()
+    {
+        session_start();
+        if (!isset($_SESSION['user-data'])) {
+            header('Location: ' . URL . '?controlador=Login&accion=Login');
+        }
+    }
+
+    public function HistorialMantenimiento(){
+
+        include_once("Views/Mantenimientos/HistorialMantenimientos.php");
+    }
+
     public function Mantenimientos(){
         $mantenimientos= modeloMantenimiento::selectMantenimientos();
         include_once("Views/Mantenimientos/Mantenimientos.php");
@@ -30,11 +43,11 @@ class controladorMantenimiento{
         }
     }
 
-    public function BorrarEmpresa(){
+    public function closeMaintenance(){
 
         $ID_EMPRESA=$_POST['ID_EMPRESA'];
 
-        $modeloEmpresas=modeloMantenimiento::deleteEmpresa($ID_EMPRESA);
+        $modeloEmpresas=modeloMantenimiento::closeMaintenance($ID_EMPRESA);
 
     }
 

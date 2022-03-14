@@ -5,6 +5,14 @@ include_once("Connection.php");
 
 class controladorAsignaciones{
 
+    public function __construct()
+    {
+        session_start();
+        if (!isset($_SESSION['user-data'])) {
+            header('Location: ' . URL . '?controlador=Login&accion=Login');
+        }
+    }
+
     public function AsignarComputador(){
 
         $data['list-empleados']= modeloAsignaciones::selectDataEmpleado();

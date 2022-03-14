@@ -6,6 +6,14 @@ include_once("Connection.php");
 
 class controladorEmpresas{
 
+    public function __construct()
+    {
+        session_start();
+        if (!isset($_SESSION['user-data'])) {
+            header('Location: ' . URL . '?controlador=Login&accion=Login');
+        }
+    }
+
     public function Empresas(){
         $empresas= modeloEmpresas::selectEmpresas();
         include_once("Views/Empresas/Empresas.php");
@@ -25,7 +33,7 @@ class controladorEmpresas{
             $CREATED_AT = $time->format("Y-m-d h:i:s");
             $UPDATED_AT = $time->format("Y-m-d h:i:s");
 
-            modeloEmpresas::setEmpresa($RAZON_SOCIAL_EMPRESA,$NIT_EMPRESA,$DIRECCION_EMPRESA,$CODIGO_POSTAL_EMPRESA,$ESTADO,$CREATED_AT,$UPDATED_AT);
+            modeloEmpresas::setEmpresa($RAZON_SOCIAL_EMPRESA,$ESTADO,$CREATED_AT,$UPDATED_AT);
 
             header("Location:./?controlador=Empresas&accion=Empresas");
         }

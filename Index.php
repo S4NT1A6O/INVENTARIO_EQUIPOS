@@ -8,18 +8,16 @@
 
 // }
 
-$controlador="Login";
-$accion="Login";
+$controlador = "Login";
+$accion = "Login";
 
-if(isset($_GET['controlador']) && isset($_GET['accion'])){
-    
-    if (($_GET['controlador']!="") && ($_GET['accion']!="") ) {
+if (isset($_GET['controlador']) && isset($_GET['accion'])) {
+
+    if (($_GET['controlador'] != "") && ($_GET['accion'] != "")) {
         $controlador = $_GET['controlador'];
 
         $accion = $_GET['accion'];
-        }
+    }
 }
 
-    require_once("Views/Template.php");
-
-?>
+require_once("Views/Template.php");

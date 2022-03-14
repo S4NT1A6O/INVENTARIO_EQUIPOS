@@ -5,14 +5,13 @@ include_once("Connection.php");
 
 class controladorLogin
 {
-
     public function __construct()
     {
         session_start();
     }
 
-    public function logOut(){
-        session_start();
+    public function logOut()
+    {
         session_unset();
         session_destroy();
         header('Location:' . URL . '?controlador=Login&accion=Login');

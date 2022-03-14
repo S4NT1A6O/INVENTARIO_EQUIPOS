@@ -30,12 +30,6 @@
                                         <input type="password" class="form-control form-control-user"
                                             name="pass" id="pass" placeholder="Contraseña">
                                     </div>
-                                    <!-- <div class="form-group">
-                                        <div class="custom-control custom-checkbox small">
-                                            <input type="checkbox" class="custom-control-input" id="customCheck">
-                                            <label class="custom-control-label" for="customCheck">Recuérdame</label>
-                                        </div>
-                                    </div> -->
                                     <input name="" id="btn_set_login" class="btn btn-primary btn-user btn-block" type="submit" value="Ingresar">
                                     </input>
 

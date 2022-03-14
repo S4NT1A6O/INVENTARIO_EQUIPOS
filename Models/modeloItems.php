@@ -43,6 +43,14 @@ class modeloItem{
         $this->UPDATED_AT=$UPDATED_AT;
     }
 
+    public static function setItem(){
+
+    }
+
+    public static function deleteItem(){
+
+    }
+
     public static function selectItems(){
     $listaItems=[];
     $conexionDB=connectionDB::crearInstancia();
