@@ -45,6 +45,23 @@ class modeloMantenimiento{
 
     }
 
+    public static function selectHistorialMantenimientos(){
+
+        $listaHistorialMantenimientos=[];
+        $conexionDB=connectionDB::crearInstancia();
+        $sql = $conexionDB->query( "SELECT MANTENIMIENTOS.ID_MANTENIMIENTO, COMPUTADOR.SERIAL_PC, MANTENIMIENTOS.DESCRIPCION_MANTENIMIENTO, MANTENIMIENTOS.ESTADO, MANTENIMIENTOS.CREATED_AT, MANTENIMIENTOS.UPDATED_AT
+                                    FROM MANTENIMIENTOS INNER JOIN COMPUTADOR
+                                    ON MANTENIMIENTOS.ID_PC_FK = COMPUTADOR.ID_PC
+                                    WHERE MANTENIMIENTOS.ESTADO <> 'ACTIVO' ;" );
+
+        foreach($sql->fetchAll() as $mantenimiento){
+            $listaHistorialMantenimientos[]=new modeloMantenimiento($mantenimiento['ID_MANTENIMIENTO'],$mantenimiento['SERIAL_PC'],$mantenimiento['DESCRIPCION_MANTENIMIENTO'],$mantenimiento['ESTADO'],$mantenimiento['CREATED_AT'],$mantenimiento['UPDATED_AT']);
+        };
+
+        return $listaHistorialMantenimientos;
+
+    }
+
     public static function selectDataComputador(){
 
     }

@@ -3,7 +3,8 @@
 include_once("Models/modeloEmpleados.php");
 include_once("Connection.php");
 
-class controladorEmpleados{
+class controladorEmpleados
+{
 
     public function __construct()
     {
@@ -13,14 +14,16 @@ class controladorEmpleados{
         }
     }
 
-    public function Empleados(){
-        $empleados= modeloEmpleados::selectEmpleados();
+    public function Empleados()
+    {
+        $empleados = modeloEmpleados::selectEmpleados();
         include_once("Views/Empleados/Empleados.php");
     }
 
-    public function RegistroEmpleado(){ 
+    public function RegistroEmpleado()
+    {
 
-        $data['list-empresas']= modeloEmpleados::selectDataEmpresa();
+        $data['list-empresas'] = modeloEmpleados::selectDataEmpresa();
         if ($_POST) {
 
             $ID_EMPRESA_FK = $_POST['ID_EMPRESA_FK'];
@@ -37,23 +40,31 @@ class controladorEmpleados{
             $CREATED_AT = $time->format("Y-m-d h:i:s");
             $UPDATED_AT = $time->format("Y-m-d h:i:s");
 
-            modeloEmpleados::setEmpleado($ID_EMPRESA_FK,$NOMBRE_COMPLETO_EMPLEADO,$CORREO_EMPLEADO,$TIPO_DOCUMENTO_EMPLEADO,$NUMERO_DOCUMENTO_EMPLEADO,$FECHA_NACIMIENTO_EMPLEADO,$NUMERO_CELULAR_EMPLEADO,$NUMERO_FIJO_EMPLEADO,$ESTADO,$CREATED_AT,$UPDATED_AT);
+            modeloEmpleados::setEmpleado($ID_EMPRESA_FK, $NOMBRE_COMPLETO_EMPLEADO, $CORREO_EMPLEADO, $TIPO_DOCUMENTO_EMPLEADO, $NUMERO_DOCUMENTO_EMPLEADO, $FECHA_NACIMIENTO_EMPLEADO, $NUMERO_CELULAR_EMPLEADO, $NUMERO_FIJO_EMPLEADO, $ESTADO, $CREATED_AT, $UPDATED_AT);
 
             header("Location:./?controlador=Empleados&accion=Empleados");
         }
         include_once("Views/Empleados/RegistroEmpleado.php");
     }
 
-    public function BorrarEmpleados(){
+    public function BorrarEmpleados()
+    {
 
-        $ID_EMPLEADO= $_POST['ID_EMPLEADO'];
+        $ID_EMPLEADO = $_POST['ID_EMPLEADO'];
+        $modeloEmpleados = modeloEmpleados::deleteEmpleado($ID_EMPLEADO);
 
-        $modeloEmpleados= modeloEmpleados::deleteEmpleado($ID_EMPLEADO);
+        if (isset($modeloEmpleados)) {
 
-        // echo json_encode($modeloEmpleados);
+            $info = array();
 
-        // header("Location:./?controlador=Empleados&accion=Empleados");
+            
 
+            http_response_code(200);
+            header('Cache-Control: no-store, no-cache, must-revalidate, max-age=0');
+            header('Cache-Control: post-check=0, pre-check=0', false);
+            header('Pragma: no-cache');
+            header('Content-type: application/json; charset=UTF-8');
+            echo json_encode($info);
+        }
     }
 }
-?>

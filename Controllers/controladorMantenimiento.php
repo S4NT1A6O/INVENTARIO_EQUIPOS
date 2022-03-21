@@ -15,6 +15,7 @@ class controladorMantenimiento{
 
     public function HistorialMantenimiento(){
 
+        $historialMantenimientos=modeloMantenimiento::selectHistorialMantenimientos();
         include_once("Views/Mantenimientos/HistorialMantenimientos.php");
     }
 

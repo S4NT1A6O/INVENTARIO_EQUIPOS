@@ -47,7 +47,13 @@ class modeloItem{
 
     }
 
-    public static function deleteItem(){
+    public static function deleteItem($ID_ITEM){
+
+        $conexionDB=connectionDB::crearInstancia();
+        $sql=$conexionDB->prepare("UPDATE ITEMS SET ESTADO = 'INACTIVO' WHERE ID_ITEM = ?;");
+        $resultadoSql= $sql->execute(array($ID_ITEM));
+
+        return $resultadoSql;
 
     }
 

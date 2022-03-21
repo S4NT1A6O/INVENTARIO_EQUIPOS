@@ -7,11 +7,9 @@
 <!-- Topbar -->
 <?php include('./Views/Components/Topbar.php'); ?>
 
-
-
 <!-- Begin Page Content -->
 <div class="container-fluid">
-    
+
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
         <h1 class="h3 mb-0 text-gray-800"> Computadores</h1>
@@ -29,7 +27,7 @@
             <div class="table-responsive">
                 <form action="" method="POST">
                     <div class="p-3">
-                        <div class="row row-cols-2">  
+                        <div class="row row-cols-2">
                             <div class="container-sm">
 
                                 <div class="mb-3">
@@ -64,7 +62,7 @@
                                         <div class="mb-3">
                                             <label for="UNIDAD_RAM_PC" class="form-label">Unidad de RAM </label>
                                             <select class="form-control" name="UNIDAD_RAM_PC" id="UNIDAD_RAM_PC">
-                                                <option disabled selected > Unidad RAM </option>
+                                                <option disabled selected> Unidad RAM </option>
                                                 <option value="MB">MB</option>
                                                 <option value="GB">GB</option>
                                                 <option value="TB">TB</option>
@@ -87,46 +85,34 @@
                                 </div>
 
                                 <div class="mb-3">
-                                    <label for="VERSION_SO_PC" class="form-label">Version Sistema Operativo</label>
-                                    <input type="text" class="form-control" name="VERSION_SO_PC" id="VERSION_SO_PC" placeholder=" Version...">
-                                </div>
-
-                                <div class="mb-3">
                                     <label for="DISPONIBILIDAD_PC" class="form-label">Disponibilidad Equipo</label>
                                     <select class="form-control" name="DISPONIBILIDAD_PC" id="DISPONIBILIDAD_PC">
-                                        <option disabled selected > Seleccione el Estado </option>
+                                        <option disabled selected> Seleccione el Estado </option>
                                         <option value="Disponible">Disponible</option>
                                         <option value="Asignado">Asignado</option>
                                         <option value="Mantenimiento">Mantenimiento</option>
                                     </select>
                                 </div>
 
-                                <div class="form-group row">
-                                    <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <div class="mb-3">
-                                            <label for="SISTEMA_OPERATIVO_PC" class="form-label">Sistema Operativo</label>
-                                            <input type="text" class="form-control" name="SISTEMA_OPERATIVO_PC" id="SISTEMA_OPERATIVO_PC" placeholder=" Sistema Operativo...">
-                                        </div>
-                                    </div>
+                                <div class="mb-3">
+                                    <label for="SISTEMA_OPERATIVO_PC" class="form-label">Sistema Operativo</label>
+                                    <input type="text" class="form-control" name="SISTEMA_OPERATIVO_PC" id="SISTEMA_OPERATIVO_PC" placeholder=" Sistema Operativo...">
+                                </div>
 
-                                    <div class="col-sm-6">
-                                        <div class="mb-3">
-                                            <label for="TIPO_SISTEMA_PC" class="form-label">Tipo de Sistema</label>
-                                            <select class="form-control" name="TIPO_SISTEMA_PC" id="TIPO_SISTEMA_PC">
-                                                <option disabled selected > Tipo de Sistema </option>
-                                                <option value="32">x32</option>
-                                                <option value="64">x64</option>
-                                            </select>
-                                        </div>
-                                    </div>
+                                <div class="mb-3">
+                                    <label for="TIPO_SISTEMA_PC" class="form-label">Tipo de Sistema</label>
+                                    <select class="form-control" name="TIPO_SISTEMA_PC" id="TIPO_SISTEMA_PC">
+                                        <option disabled selected> Tipo de Sistema </option>
+                                        <option value="32">x32</option>
+                                        <option value="64">x64</option>
+                                    </select>
                                 </div>
                             </div>
 
                         </div>
-                    <input name="" id="btn_set_computer" class="btn btn-danger btn-user btn-block" type="submit" value="Registrar Equipo">
+                        <input name="" id="btn_set_computer" class="btn btn-danger btn-user btn-block" type="submit" value="Registrar Equipo">
 
                     </div>
-
 
                 </form>
 
@@ -138,7 +124,6 @@
 
 </div>
 <!-- /.container-fluid -->
-
 
 <!-- Footer -->
 <?php include('./Views/Components/Footer.php'); ?>

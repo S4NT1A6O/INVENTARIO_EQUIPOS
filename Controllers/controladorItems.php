@@ -58,9 +58,26 @@ class controladorItems{
 
         $ID_ITEM=$_POST['ID_ITEM'];
 
-        $modeloComputador=modeloItem::deleteItem($ID_ITEM);
+        $modeloItem=modeloItem::deleteItem($ID_ITEM);
 
-        // header("Location:./?controlador=Computador&accion=Computadores");
+        if (isset($modeloItem)) {
+
+            $info = array();
+
+            if (count($modeloItem) == 0) {
+                $info['state'] = 'nok';
+                $info['msg'] = 'No se pudo realizar la operación';
+            }else{
+                $info['state'] = 'ok';
+                $info['msg'] = 'Se ha inhabilitado el registro';
+            }
+
+            http_response_code(200);
+            header('Cache-Control: no-store, no-cache, must-revalidate, max-age=0');
+            header('Cache-Control: post-check=0, pre-check=0', false);
+            header('Pragma: no-cache');
+            header('Content-type: application/json; charset=UTF-8');
+            echo json_encode($info);
+        }
     }
 }
-?>

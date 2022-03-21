@@ -34,22 +34,22 @@
                     <table id="companyTable" class="table table-striped table-hover" width="100%" cellspacing="0">
                         <thead>
                             <tr>
-                                <th scope="col"> ID </th>
-                                <th scope="col"> Area </th>
+                                <th scope="col" style="font-size: small;"> ID </th>
+                                <th scope="col" style="font-size: small;"> Area </th>
                                 <!-- <th scope="col" style="font-size: small;"> NIT </th>
                                 <th scope="col" style="font-size: small;"> Dirección </th>
                                 <th scope="col" style="font-size: small;"> # Postal </th>
                                 <th scope="col" style="font-size: small;"> Creado </th>
                                 <th scope="col" style="font-size: small;"> Modificado </th> -->
-                                <th scope="col""> Acciones </th>
+                                <th scope="col"> Acciones </th>
                             </tr>
                         </thead>
                         <tbody>
                             <?php foreach($empresas as $empresa){?>
                                 <tr>
                                     <!-- datos -->
-                                    <th scope="row" ><?php echo $empresa->ID_AREA_EMPRESA; ?></th>
-                                    <td ><?php echo $empresa->NOMBRE_AREA_EMPRESA; ?></td>
+                                    <th scope="row"style="font-size: small;"><?php echo $empresa->ID_AREA_EMPRESA; ?></th>
+                                    <td style="font-size: small;"><?php echo $empresa->NOMBRE_AREA_EMPRESA; ?></td>
                                     <!-- <td style="font-size: small;"><?php echo $empresa->NIT_EMPRESA; ?></td>
                                     <td style="font-size: small;"><?php echo $empresa->DIRECCION_EMPRESA; ?></td>
                                     <td style="font-size: small;"><?php echo $empresa->CODIGO_POSTAL_EMPRESA; ?></td>
@@ -57,10 +57,10 @@
                                     <td style="font-size: small;"><?php echo $empresa->UPDATED_AT; ?></td> -->
                                     <!-- btn's acciones -->
                                     <td>
-                                        <!-- <div class="btn-group" role="group" aria-label=""> -->
-                                            <a class="btn btn-info btn-circle btn-sm" style="font-size: small;"> <i class="fas fa-pen" style="color:#ffffff;"></i> </a>
-                                            <a class="btn btn-danger btn-circle btn-sm" style="font-size: small;"> <i class="fas fa-trash-alt" style="color:#ffffff;"></i> <input class="btn val" type="hidden" value="<?php echo $empresa->ID_EMPRESA; ?>"></a>
-                                        <!-- </div> -->
+                                        <div class="btn-group" role="group" aria-label="">
+                                            <a class="btn btn-info" style="font-size: small;"> <i class="fas fa-pen" style="color:#ffffff;"></i> </a>
+                                            <a class="btn btn-danger" style="font-size: small;"> <i class="fas fa-trash-alt" style="color:#ffffff;"></i> <input class="btn val" type="hidden" value="<?php echo $empresa->ID_AREA_EMPRESA; ?>"></a>
+                                        </div>
                                     </td> 
                                 </tr>
                             <?php } ?>

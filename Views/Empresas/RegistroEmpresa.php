@@ -26,7 +26,8 @@
         <div class="card-body">
             <div class="table-responsive">
                 <div class="p-3">
-                    <form action="" method="POST">
+                    <form id="formArea" action="" method="POST">
+
                         <div class="form-group">
                             <label for="RAZON_SOCIAL_EMPRESA" class="form-label">Razon Social</label>
                             <input type="text" class="form-control form-control-user"
@@ -34,19 +35,7 @@
                                 placeholder="Nombre Area Empresa...">
                         </div>
 
-                        <div class="form-group">
-                            <label for="ESTADO" class="form-label">Estado Area</label>
-                            <select class="form-control" name="ESTADO" id="ESTADO">
-                                <option disabled selected > Seleccione el Estado </option>
-                                <option value="TI">Tarjeta de Identidad</option>
-                                <option value="CC">Cedula de Ciudadania</option>
-                                <option value="CE">Cedula de Extranjeria</option>
-                            </select>
-                        </div>
-                        <!-- <div class="d-grid gap-2 col-6 mx-auto"> -->
-                            <!-- <input name="" id="btn_set_company" class="btn btn-danger" type="submit" value="Registrar Empresa"> -->
-                        <!-- </div> -->
-                        <input name="" id="btn_set_company" class="btn btn-danger btn-user btn-block" type="submit" value="Registrar Empresa">
+                        <input name="" id="btn_set_company" class="btn btn-danger btn-user btn-block" value="Registrar Empresa">
 
                     </form>
 

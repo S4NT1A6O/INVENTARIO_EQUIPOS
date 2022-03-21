@@ -3,7 +3,6 @@
     en este caso es para las eliminaciones de registros, apoyado en las 
     librerias de JQuery y Sweet Alert...
 */
-
 $(function () {
   $(document).ready(function () {
     $("#computersTable").DataTable({
@@ -27,6 +26,11 @@ $(function () {
       },
     });
     $("#assingItemsTable").DataTable({
+      language: {
+        url: "//cdn.datatables.net/plug-ins/1.11.4/i18n/es_es.json",
+      },
+    });
+    $("#itemsTable").DataTable({
       language: {
         url: "//cdn.datatables.net/plug-ins/1.11.4/i18n/es_es.json",
       },
@@ -60,11 +64,6 @@ $(function () {
             data: {
               ID_EMPLEADO: ID_EMPLOYEE,
             },
-            // success:function(data){
-
-            // Swal.fire('Eliminado!','El registro a sido eliminado correctamente','success')
-
-            // }
             success: setTimeout(function () {
               Swal.fire({
                 title: "El registro a sido eliminado correctamente",
@@ -72,17 +71,13 @@ $(function () {
                 showConfirmButton: false,
                 timer: 1500,
               });
-              // let URL = "http://localhost/inventario_equipos/?controlador=Empleados&accion=Empleados";
-              // window.location.href=URL;
             }),
             success: setTimeout(function () {
               let URL =
                 "http://localhost/inventario_equipos/?controlador=Empleados&accion=Empleados";
               window.location.href = URL;
-            }, 1000),
+            }, 0),
           });
-
-          // window.location.href = `http://localhost/inventario_equipos/?controlador=Empleados&accion=BorrarEmpleados&ID=`+ID;
         }
       });
     });
@@ -114,10 +109,21 @@ $(function () {
             data: {
               ID_EMPRESA: ID_COMPANY,
             },
-            // ,
-            // success:function(data){
-            //     location.reload();
-            // }
+            success: function (data) {
+              if (data.state == "ok") {
+                Swal.fire({
+                  title: data.msg,
+                  icon: "success",
+                  showConfirmButton: false,
+                  timer: 1500,
+                });
+              }
+            },
+            success: setTimeout(function () {
+              let URL =
+                "http://localhost/inventario_equipos/?controlador=Empresas&accion=Empresas";
+              window.location.href = URL;
+            }, 0),
           });
         }
       });
@@ -150,13 +156,22 @@ $(function () {
             data: {
               ID_PC: ID_COMPUTER,
             },
-            // ,
-            // success:function(data){
-            //     location.reload();
-            // }
+            success: function (data) {
+              if (data.state == "ok") {
+                Swal.fire({
+                  title: data.msg,
+                  icon: "success",
+                  showConfirmButton: false,
+                  timer: 1500,
+                });
+              }
+            },
+            success: setTimeout(function () {
+              let URL =
+                "http://localhost/inventario_equipos/?controlador=Computador&accion=Computadores";
+              window.location.href = URL;
+            }, 0),
           });
-
-          // window.location.href = `http://localhost/inventario_equipos/?controlador=Computador&accion=BorrarComputador`+ID;
         }
       });
     });
@@ -182,19 +197,122 @@ $(function () {
       }).then((result) => {
         if (result.isConfirmed) {
           $.ajax({
-            url: "http://localhost/inventario_equipos/?controlador=Asignaciones&accion=BorrarAsignacion",
+            url: "http://localhost/inventario_equipos/?controlador=AsignacionesItems&accion=BorrarItem",
             type: "POST",
             dataType: "json",
             data: {
               ID_PRESTAMO: ID_ASSIGMENT,
             },
-            // ,
-            // success:function(data){
-            //     location.reload();
-            // }
+            success: function (data) {
+              if (data.state == "ok") {
+                Swal.fire({
+                  title: data.msg,
+                  icon: "success",
+                  showConfirmButton: false,
+                  timer: 1500,
+                });
+              }
+            },
+            success: setTimeout(function () {
+              let URL =
+                "http://localhost/inventario_equipos/?controlador=Items&accion=Items";
+              window.location.href = URL;
+            }, 0),
           });
+        }
+      });
+    });
 
-          // window.location.href = `http://localhost/inventario_equipos/?controlador=Asignaciones&accion=BorrarAsignacion&ID=`+ID;
+  /*  Permite la validacion por medio de JQuery para los registros de asignaciones
+        al realizar click en el boton correspondiente a "a[class="btn btn-danger"]"
+        dposteriormente se extrae el "ID" del registro, logrando un correcto borrado
+        del objeto-informacion...
+    */
+  $("#assingItemsTable")
+    .find('a[class="btn btn-danger"]')
+    .click(function () {
+      let ID_ASSIGMENT = $(this).find('input[type="hidden"]').val();
+
+      Swal.fire({
+        title: "Esta Seguro?",
+        text: "No podra revertir o recuperar la informacion del registro!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Si, eliminar!",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          $.ajax({
+            url: "http://localhost/inventario_equipos/?controlador=AsignacionesItems&accion=BorrarAsignacion",
+            type: "POST",
+            dataType: "json",
+            data: {
+              ID_PRESTAMO: ID_ASSIGMENT,
+            },
+            success: function (data) {
+              if (data.state == "ok") {
+                Swal.fire({
+                  title: data.msg,
+                  icon: "success",
+                  showConfirmButton: false,
+                  timer: 1500,
+                });
+              }
+            },
+            success: setTimeout(function () {
+              let URL =
+                "http://localhost/inventario_equipos/?controlador=Items&accion=Items";
+              window.location.href = URL;
+            }, 0),
+          });
+        }
+      });
+    });
+
+  /*  Permite la validacion por medio de JQuery para los registros de asignaciones
+        al realizar click en el boton correspondiente a "a[class="btn btn-danger"]"
+        dposteriormente se extrae el "ID" del registro, logrando un correcto borrado
+        del objeto-informacion...
+    */
+  $("#itemsTable")
+    .find('a[class="btn btn-danger"]')
+    .click(function () {
+      let ID_ITEM = $(this).find('input[type="hidden"]').val();
+
+      Swal.fire({
+        title: "Esta Seguro?",
+        text: "No podra revertir o recuperar la informacion del registro!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Si, eliminar!",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          $.ajax({
+            url: "http://localhost/inventario_equipos/?controlador=Items&accion=BorrarItem",
+            type: "POST",
+            dataType: "json",
+            data: {
+              ID_ITEM: ID_ITEM,
+            },
+            success: function (data) {
+              if (data.state == "ok") {
+                Swal.fire({
+                  title: data.msg,
+                  icon: "success",
+                  showConfirmButton: false,
+                  timer: 1500,
+                });
+              }
+            },
+            success: setTimeout(function () {
+              let URL =
+                "http://localhost/inventario_equipos/?controlador=Items&accion=Items";
+              window.location.href = URL;
+            }),
+          });
         }
       });
     });
@@ -219,9 +337,7 @@ $(function () {
         });
       } else {
         $.ajax({
-          // dataType:"json",
           url: "http://localhost/inventario_equipos/?controlador=Login&accion=tryLogin",
-          // url: 'http://localhost/inventario_equipos/nuevo.php',
           type: "POST",
           dataType: "json",
           data: { user: CORREO_USUARIO, pass: PASSWORD_USUARIO },
@@ -230,10 +346,47 @@ $(function () {
               Swal.fire({
                 icon: "warning",
                 title: "Ha ocurrido un error...",
-                text: "Usuario o contraseña incorrectos!!!",
+                text: "Usuario o contraseña incorrectos!",
               });
             } else {
-                window.location.href=`http://localhost/inventario_equipos/${data.link}`;
+              window.location.href = `http://localhost/inventario_equipos/${data.link}`;
+            }
+          },
+        });
+      }
+    });
+
+  // VALIDACIONES
+  $("#formArea")
+    .find('input[id="btn_set_company"]')
+    .click(function (event) {
+      event.preventDefault();
+
+      let AREA_EMPRESA = $("#formArea")
+        .find('input[id="RAZON_SOCIAL_EMPRESA"]')
+        .val();
+
+      if (AREA_EMPRESA == "") {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Debe ingresar el nombre del area!",
+        });
+      } else {
+        $.ajax({
+          url: "http://localhost/inventario_equipos/?controlador=Empresas&accion=RegistrarEmpresa",
+          type: "POST",
+          dataType: "json",
+          data: { RAZON_SOCIAL_EMPRESA: AREA_EMPRESA },
+          success: function (data) {
+            if (data.state == "ok") {
+              window.location.href = `http://localhost/inventario_equipos/${data.link}`;
+            } else {
+              Swal.fire({
+                icon: "warning",
+                title: "Ha ocurrido un error...",
+                text: "No se pudo completar el registro! Verifique los datos",
+              });
             }
           },
         });
