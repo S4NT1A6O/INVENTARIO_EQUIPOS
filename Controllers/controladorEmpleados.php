@@ -22,11 +22,9 @@ class controladorEmpleados
 
     public function RegistroEmpleado()
     {
-
         $data['list-empresas'] = modeloEmpleados::selectDataEmpresa();
         if ($_POST) {
-
-            $ID_EMPRESA_FK = $_POST['ID_EMPRESA_FK'];
+            $ID_EMPRESA_FK = trim($_POST['ID_EMPRESA_FK']);
             $NOMBRE_COMPLETO_EMPLEADO = $_POST['NOMBRE_COMPLETO_EMPLEADO'];
             $CORREO_EMPLEADO = $_POST['CORREO_EMPLEADO'];
             $TIPO_DOCUMENTO_EMPLEADO = $_POST['TIPO_DOCUMENTO_EMPLEADO'];
@@ -40,6 +38,15 @@ class controladorEmpleados
             $CREATED_AT = $time->format("Y-m-d h:i:s");
             $UPDATED_AT = $time->format("Y-m-d h:i:s");
 
+            // $existEmployee = existEmployeeDb();
+            $existEmployee = modeloEmpleados::existEmployee($NUMERO_DOCUMENTO_EMPLEADO, $CORREO_EMPLEADO);
+
+            if (count($existEmployee) > 0) {
+                echo "El empleado ya existe, vete a la mi!";
+                die();
+            }
+
+            // Insertar el registro en la base de datos
             modeloEmpleados::setEmpleado($ID_EMPRESA_FK, $NOMBRE_COMPLETO_EMPLEADO, $CORREO_EMPLEADO, $TIPO_DOCUMENTO_EMPLEADO, $NUMERO_DOCUMENTO_EMPLEADO, $FECHA_NACIMIENTO_EMPLEADO, $NUMERO_CELULAR_EMPLEADO, $NUMERO_FIJO_EMPLEADO, $ESTADO, $CREATED_AT, $UPDATED_AT);
 
             header("Location:./?controlador=Empleados&accion=Empleados");
@@ -57,7 +64,7 @@ class controladorEmpleados
 
             $info = array();
 
-            
+
 
             http_response_code(200);
             header('Cache-Control: no-store, no-cache, must-revalidate, max-age=0');
@@ -66,5 +73,10 @@ class controladorEmpleados
             header('Content-type: application/json; charset=UTF-8');
             echo json_encode($info);
         }
+    }
+
+    private function validateEmail(string $email)
+    {
+        filter_var($email, FILTER_VALIDATE_EMAIL);
     }
 }

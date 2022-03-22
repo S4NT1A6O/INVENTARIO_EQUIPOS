@@ -48,7 +48,7 @@
 
                                 <div class="mb-3">
                                     <label for="CORREO_EMPLEADO" class="form-label">Correo Empleado</label>
-                                    <input type="email" class="form-control" name="CORREO_EMPLEADO" id="CORREO_EMPLEADO" placeholder=" Example@exam.ple...">
+                                    <input type="email" class="form-control" name="CORREO_EMPLEADO" id="CORREO_EMPLEADO" placeholder="example@example.com...">
                                 </div>
 
                                 <div class="mb-3">
@@ -66,7 +66,7 @@
                             <div class="container">
                                 
                                 <div class="mb-3">
-                                    <label for="NUMERO_DOCUMENTO_EMPLEADO" class="form-label">Numero de Identificación Empleado</label>
+                                    <label for="NUMERO_DOCUMENTO_EMPLEADO" class="form-label">Número de Identificación Empleado</label>
                                     <input type="number" class="form-control" name="NUMERO_DOCUMENTO_EMPLEADO" id="NUMERO_DOCUMENTO_EMPLEADO" placeholder=" Numero de Identificación...">
                                 </div>
 
@@ -76,12 +76,12 @@
                                 </div>
 
                                 <div class="mb-3">
-                                    <label for="NUMERO_CELULAR_EMPLEADO" class="form-label">Telefono Celular Empleado</label>
+                                    <label for="NUMERO_CELULAR_EMPLEADO" class="form-label">Teléfono Celular Empleado</label>
                                     <input type="number" class="form-control" name="NUMERO_CELULAR_EMPLEADO" id="NUMERO_CELULAR_EMPLEADO" placeholder=" Telefono Celular...">
                                 </div>
 
                                 <div class="mb-3">
-                                    <label for="NUMERO_FIJO_EMPLEADO" class="form-label">Telefono Fijo Empleado</label>
+                                    <label for="NUMERO_FIJO_EMPLEADO" class="form-label">Teléfono Fijo Empleado</label>
                                     <input type="number" class="form-control" name="NUMERO_FIJO_EMPLEADO" id="NUMERO_FIJO_EMPLEADO" placeholder=" Telefono Fijo...">
                                 </div>
 
